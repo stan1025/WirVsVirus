@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+
 namespace vdivsvirus.types
 {
     // ##############################
@@ -26,7 +29,7 @@ namespace vdivsvirus.types
      * bool : YesNo Frage
      * scalar : 0 - 5
      */
-    enum SymptomeClassifier
+    public enum SymptomeClassifier
     {
         none = 0,
         yesno = 1,
@@ -48,7 +51,7 @@ namespace vdivsvirus.types
      * 4 - stark
      * 5 - sehr stark
      */
-    enum SymptomeStrength
+    public enum SymptomeStrength
     {
         none = 0,
         yes = 1, //veryweak
@@ -87,7 +90,7 @@ namespace vdivsvirus.types
     {
         public double latitude { get; set; }
         public double longitude { get; set; }
-        public int64 time { get; set; } //milliseconds since 1.1.1970 (UTC)
+        public Int64 time { get; set; } //milliseconds since 1.1.1970 (UTC)
         public double accuracy { get; set; }
     }
 
@@ -97,9 +100,9 @@ namespace vdivsvirus.types
     public class SymptomeInputDataSet
     {
         public string userID { get; set; }
-        public list<SymptomeInputData> symptomes { get; set; }
-        public list<GeoData> geodata { get; set; }
-        public int64 time { get; set; } //milliseconds since 1.1.1970 (UTC)
+        public List<SymptomeInputData> symptomes { get; set; }
+        public List<GeoData> geodata { get; set; }
+        public Int64 time { get; set; } //milliseconds since 1.1.1970 (UTC)
     }
 
 
@@ -125,7 +128,7 @@ namespace vdivsvirus.types
         public string diseaseID { get; set; }
         public bool testResult { get; set; }
         public AuthenticationData authenticator { get; set; }
-        public int64 time { get; set; } //milliseconds since 1.1.1970 (UTC)
+        public Int64 time { get; set; } //milliseconds since 1.1.1970 (UTC)
     }
 
 
@@ -140,8 +143,8 @@ namespace vdivsvirus.types
     public class SymptomeDataSet
     {
         public string userID { get; set; }
-        public int64 time { get; set; }
-        public map<string, SymptomeStrength> symptomes { get; set; }
+        public Int64 time { get; set; }
+        public Dictionary<string, SymptomeStrength> symptomes { get; set; }
     }
 
     /**
@@ -150,8 +153,8 @@ namespace vdivsvirus.types
     public class PropabilityDataSet
     {
         public string userID { get; set; }
-        public int64 time { get; set; }
-        public map<string, int8> propabilities { get; set; }
+        public Int64 time { get; set; }
+        public Dictionary<string, sbyte> propabilities { get; set; }
     }
 
 
@@ -169,7 +172,7 @@ namespace vdivsvirus.types
     public class PropabilityHistorySet
     {
         public string userID { get; set; }
-        public list<PropabilityDataSet> history { get; set; }
+        public List<PropabilityDataSet> history { get; set; }
     }
 
 
@@ -194,9 +197,9 @@ namespace vdivsvirus.types
     public class UserResponseDataSet
     {
         public string userID { get; set; }
-        public int64 time { get; set; }
+        public Int64 time { get; set; }
         public PropabilityDataSet propabilities { get; set; }
-        public map<string, DiseaseType> diseaseTypes { get; set; }
+        public Dictionary<string, DiseaseType> diseaseTypes { get; set; }
         public string message { get; set; }
     }
 
@@ -206,8 +209,8 @@ namespace vdivsvirus.types
     public class UserHistoryDataSet
     {
         public string userID { get; set; }
-        public map<i64, PropabilityDataSet> history { get; set; }
-        public map<string, DiseaseType> diseaseTypes { get; set; }
+        public Dictionary<Int64, PropabilityDataSet> history { get; set; }
+        public Dictionary<string, DiseaseType> diseaseTypes { get; set; }
         public string message { get; set; }
     }
 
