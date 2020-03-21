@@ -66,7 +66,7 @@ namespace vdivsvirus.types
      */
     public class SymptomeType
     {
-        public string id { get; set; }                     //SymptomeID
+        public int id { get; set; }                     //SymptomeID
         public SymptomeClassifier classifier { get; set; }      //SymptomeClassifier
         public string name { get; set; }                   //SymptomeName
         public string desc { get; set; }                   //SymptomeDescription
@@ -99,7 +99,7 @@ namespace vdivsvirus.types
      */
     public class SymptomeInputDataSet
     {
-        public string userID { get; set; }
+        public Guid userID { get; set; }
         public List<SymptomeInputData> symptomes { get; set; }
         public List<GeoData> geodata { get; set; }
         public Int64 time { get; set; } //milliseconds since 1.1.1970 (UTC)
@@ -124,8 +124,8 @@ namespace vdivsvirus.types
      */
     public class DiseaseDataSet
     {
-        public string userID { get; set; }
-        public string diseaseID { get; set; }
+        public Guid userID { get; set; }
+        public int diseaseID { get; set; }
         public bool testResult { get; set; }
         public AuthenticationData authenticator { get; set; }
         public Int64 time { get; set; } //milliseconds since 1.1.1970 (UTC)
@@ -142,9 +142,9 @@ namespace vdivsvirus.types
      */
     public class SymptomeDataSet
     {
-        public string userID { get; set; }
+        public Guid userID { get; set; }
         public Int64 time { get; set; }
-        public Dictionary<string, SymptomeStrength> symptomes { get; set; }
+        public Dictionary<int, SymptomeStrength> symptomes { get; set; }
     }
 
     /**
@@ -152,9 +152,9 @@ namespace vdivsvirus.types
      */
     public class PropabilityDataSet
     {
-        public string userID { get; set; }
+        public Guid userID { get; set; }
         public Int64 time { get; set; }
-        public Dictionary<string, sbyte> propabilities { get; set; }
+        public Dictionary<int, sbyte> propabilities { get; set; }
     }
 
 
@@ -171,7 +171,7 @@ namespace vdivsvirus.types
      */
     public class PropabilityHistorySet
     {
-        public string userID { get; set; }
+        public Guid userID { get; set; }
         public List<PropabilityDataSet> history { get; set; }
     }
 
@@ -186,7 +186,7 @@ namespace vdivsvirus.types
      */
     public class DiseaseType
     {
-        public string id { get; set; }                     //DiseaseID
+        public int id { get; set; }                     //DiseaseID
         public string name { get; set; }                   //DiseaseName
         public string desc { get; set; }                   //DiseaseDescription
     }
@@ -196,10 +196,10 @@ namespace vdivsvirus.types
      */
     public class UserResponseDataSet
     {
-        public string userID { get; set; }
+        public Guid userID { get; set; }
         public Int64 time { get; set; }
         public PropabilityDataSet propabilities { get; set; }
-        public Dictionary<string, DiseaseType> diseaseTypes { get; set; }
+        public Dictionary<int, DiseaseType> diseaseTypes { get; set; }
         public string message { get; set; }
     }
 
@@ -208,9 +208,9 @@ namespace vdivsvirus.types
      */
     public class UserHistoryDataSet
     {
-        public string userID { get; set; }
+        public Guid userID { get; set; }
         public Dictionary<Int64, PropabilityDataSet> history { get; set; }
-        public Dictionary<string, DiseaseType> diseaseTypes { get; set; }
+        public Dictionary<int, DiseaseType> diseaseTypes { get; set; }
         public string message { get; set; }
     }
 
