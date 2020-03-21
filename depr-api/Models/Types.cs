@@ -102,7 +102,7 @@ namespace vdivsvirus.types
         public Guid userID { get; set; }
         public List<SymptomeInputData> symptomes { get; set; }
         public List<GeoData> geodata { get; set; }
-        public Int64 time { get; set; } //milliseconds since 1.1.1970 (UTC)
+        public DateTime time { get; set; } //milliseconds since 1.1.1970 (UTC)
     }
 
 
@@ -128,7 +128,7 @@ namespace vdivsvirus.types
         public int diseaseID { get; set; }
         public bool testResult { get; set; }
         public AuthenticationData authenticator { get; set; }
-        public Int64 time { get; set; } //milliseconds since 1.1.1970 (UTC)
+        public DateTime time { get; set; } //milliseconds since 1.1.1970 (UTC)
     }
 
 
@@ -143,7 +143,7 @@ namespace vdivsvirus.types
     public class SymptomeDataSet
     {
         public Guid userID { get; set; }
-        public Int64 time { get; set; }
+        public DateTime time { get; set; }
         public Dictionary<int, SymptomeStrength> symptomes { get; set; }
     }
 
@@ -153,7 +153,7 @@ namespace vdivsvirus.types
     public class PropabilityDataSet
     {
         public Guid userID { get; set; }
-        public Int64 time { get; set; }
+        public DateTime time { get; set; }
         public Dictionary<int, sbyte> propabilities { get; set; }
     }
 
@@ -197,7 +197,7 @@ namespace vdivsvirus.types
     public class UserResponseDataSet
     {
         public Guid userID { get; set; }
-        public Int64 time { get; set; }
+        public DateTime time { get; set; }
         public PropabilityDataSet propabilities { get; set; }
         public Dictionary<int, DiseaseType> diseaseTypes { get; set; }
         public string message { get; set; }
@@ -209,7 +209,7 @@ namespace vdivsvirus.types
     public class UserHistoryDataSet
     {
         public Guid userID { get; set; }
-        public Dictionary<Int64, PropabilityDataSet> history { get; set; }
+        public Dictionary<DateTime, PropabilityDataSet> history { get; set; }
         public Dictionary<int, DiseaseType> diseaseTypes { get; set; }
         public string message { get; set; }
     }
