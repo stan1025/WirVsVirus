@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace depr_api.Controllers
+namespace vdivsvirus.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
