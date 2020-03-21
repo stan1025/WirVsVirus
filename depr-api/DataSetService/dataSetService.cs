@@ -17,12 +17,26 @@ namespace vdivsvirus.Services
 
         public bool DataSetAvailable()
         {
-            throw new NotImplementedException();
+            return true;
         }
 
         public List<SymptomeType> GetSymptomeTypes()
         {
-            throw new NotImplementedException();
+            return new List<SymptomeType>()
+            {
+                new SymptomeType{ id = 1, classifier = SymptomeClassifier.none, desc = "", name = "Fieber" },
+                new SymptomeType{ id = 2, classifier = SymptomeClassifier.none, desc = "", name = "Husten" },
+                new SymptomeType{ id = 3, classifier = SymptomeClassifier.none, desc = "", name = "Abgeschlagenheit" },
+                new SymptomeType{ id = 4, classifier = SymptomeClassifier.none, desc = "", name = "Kurzatmigkeit" },
+                new SymptomeType{ id = 5, classifier = SymptomeClassifier.none, desc = "", name = "Muskel-/Gelenkschmerz" },
+                new SymptomeType{ id = 6, classifier = SymptomeClassifier.none, desc = "", name = "Halsschmerz" },
+                new SymptomeType{ id = 7, classifier = SymptomeClassifier.none, desc = "", name = "Kopfschmerz" },
+                new SymptomeType{ id = 8, classifier = SymptomeClassifier.none, desc = "", name = "Schüttelfrost" },
+                new SymptomeType{ id = 9, classifier = SymptomeClassifier.none, desc = "", name = "Übelkeit" },
+                new SymptomeType{ id = 10, classifier = SymptomeClassifier.none, desc = "", name = "Verstopfte Nase" },
+                new SymptomeType{ id = 11, classifier = SymptomeClassifier.none, desc = "", name = "Durchfall" },
+            };
+
         }
 
         public bool HistorySetAvailable()
@@ -32,7 +46,7 @@ namespace vdivsvirus.Services
 
         public SymptomeDataSet RequestDataSet()
         {
-            throw new NotImplementedException();
+            return new SymptomeDataSet() { userID = Guid.NewGuid(), time = DateTime.Now, symptomes = new Dictionary<int, SymptomeStrength>() { [1] = SymptomeStrength.strong } };
         }
 
         public PropabilityDataSet RequestDiseasePropability(Guid userID, DateTime time)

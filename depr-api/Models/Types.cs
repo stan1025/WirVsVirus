@@ -31,9 +31,10 @@ namespace vdivsvirus.Types
      */
     public enum SymptomeClassifier
     {
-        none = 0,
-        yesno = 1,
-        scalar = 2
+        none = 0,   //Hidden Field
+        yesno = 1,  //Yes No Question
+        scalar = 2, //Integer Value
+        fever = 3
     }
 
     /**

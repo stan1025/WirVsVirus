@@ -27,7 +27,7 @@ namespace vdivsvirus.Services
 
         internal override void Execute()
         {
-            var data = dataService.RequestDataSet();
+            inputData = dataService.RequestDataSet();
 
             executeAnalyzing();
 
