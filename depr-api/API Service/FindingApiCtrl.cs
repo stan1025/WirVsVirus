@@ -12,12 +12,12 @@ namespace vdivsvirus.Services
 
     [Route("api/[controller]")]
     [ApiController]
-    public class FindingApiController : ControllerBase
+    public class FindingController : ControllerBase
     {
         private readonly IResponseService responseService;
 
 
-        public FindingApiController(IResponseService service)
+        public FindingController(IResponseService service)
         {
             if (service == null) throw new ArgumentNullException("No response service");
             responseService = service;

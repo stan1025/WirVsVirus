@@ -10,12 +10,12 @@ namespace vdivsvirus.Services
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class SymptomeApiController : ControllerBase
+    public class SymptomeController : ControllerBase
     {
         private readonly ISendSymptome dataService;
 
 
-        public SymptomeApiController(ISendSymptome service)
+        public SymptomeController(ISendSymptome service)
         {
             if (service == null) throw new ArgumentNullException("No data service");
             dataService = service;
