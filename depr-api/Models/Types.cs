@@ -23,64 +23,115 @@ namespace vdivsvirus.Types
     // ##############################
 
 
-    /**
-     * Symptome Classifier
-     * none : Keine Symptome Classifizierung (hidden field)
-     * bool : YesNo Frage
-     * scalar : 0 - 5
-     */
-    public enum SymptomeClassifier
+    /// <summary>
+    /// Symptome Input Type Enumeration
+    /// </summary>
+    public enum SymptomeInputType
     {
-        none = 0,   //Hidden Field
-        yesno = 1,  //Yes No Question
-        scalar = 2, //Integer Value
-        fever = 3
+        /// <summary>
+        /// Not displayed - hidden filed
+        /// </summary>
+        none = 0,  
+        /// <summary>
+        /// YesNoQuestion
+        /// </summary>
+        yesno = 1,  
+        /// <summary>
+        /// Slider Value
+        /// settingString = min=x;max=y;stepz
+        /// </summary>
+        slider = 2,
+        /// <summary>
+        /// Enumeration List
+        /// settingString = key1=value1;key2=value2;...
+        /// </summary>
+        list = 3 
     }
 
-    /**
-     * Symptome Strength
-     *
-     * wenn Class: bool
-     * none - Kein Symptom
-     * yes - Habe Symptom
-     *
-     * wenn Class: scalar
-     * 0 - kein Symptom
-     * 1 - sehr schwach
-     * 2 - schwach
-     * 3 - mittel
-     * 4 - stark
-     * 5 - sehr stark
-     */
-    public enum SymptomeStrength
-    {
-        none = 0,
-        yes = 1, //veryweak
-        weak = 2,
-        middle = 3,
-        strong = 4,
-        verystrong = 5
-    }
-
-    /**
-     * Structs of SymptomeType
-     */
+    /// <summary>
+    /// Symptome Type Information
+    /// (all data)
+    /// </summary>
     public class SymptomeType
     {
-        public int id { get; set; }                     //SymptomeID
-        public SymptomeClassifier classifier { get; set; }      //SymptomeClassifier
-        public string name { get; set; }                   //SymptomeName
-        public string desc { get; set; }                   //SymptomeDescription
+
+        public SymptomeType()
+        {
+            //Default Scale Func is Input == Output -> 1:1 Mapping
+            ScaleFunc = input => input;
+        }
+
+        /// <summary>
+        /// Symptome Identifier
+        /// </summary>
+        public int id { get; set; }
+
+        /// <summary>
+        /// Symptome Propability Factor 
+        /// Setting for Proability Data Analysis 
+        /// </summary>
+        public float symptomePropability { get; set; }
+
+        /// <summary>
+        /// Symptome Display Data
+        /// (will be sent to app)
+        /// </summary>
+        public SymptomeDisplayData DisplayData { get; set; }
+
+        /// <summary>
+        /// Scaling Function for mapping of input value
+        /// to propability scale
+        /// </summary>
+        public Func<float, float> ScaleFunc { get; set; }
+
+
+
     }
 
-    /**
-     * Structs of Symptome Input Data
-     */
+    /// <summary>
+    /// Symptome Display Data
+    /// (display only information)
+    /// </summary>
+    public class SymptomeDisplayData
+    {
+
+        /// <summary>
+        /// Symptome Input Classifier
+        /// </summary>
+        public SymptomeInputType inputType { get; set; }
+
+        /// <summary>
+        /// Symptome Display Type
+        /// </summary>
+        public string name { get; set; }
+
+        /// <summary>
+        /// Symptome Display Description
+        /// </summary>
+        public string desc { get; set; }
+
+        /// <summary>
+        /// Symptome Input Settings 
+        /// </summary>
+        public string settings { get; set; }
+    }
+
+
+
+    /// <summary>
+    /// Symptome Input Data
+    /// (feedback from app)
+    /// </summary>
     public class SymptomeInputData
     {
-        public SymptomeType type { get; set; }             //SymptomeType
-        public SymptomeStrength strength { get; set; }      //SymptomeStrength
-
+        /// <summary>
+        /// Symptome ID
+        /// </summary>
+        public int id { get; set; }             
+        /// <summary>
+        /// Symptome Strength
+        /// </summary>
+        public int strength { get; set; }
     }
 
     /**
@@ -95,15 +146,27 @@ namespace vdivsvirus.Types
         public double accuracy { get; set; }
     }
 
-    /**
-     * Structs of SymptomeInputDataSet
-     */
+    /// <summary>
+    /// Symptome Input Data Set
+    /// </summary>
     public class SymptomeInputDataSet
     {
+        /// <summary>
+        /// Anonymized User ID
+        /// </summary>
         public Guid userID { get; set; }
+        /// <summary>
+        /// Symptome Inputs
+        /// </summary>
         public List<SymptomeInputData> symptomes { get; set; }
+        /// <summary>
+        /// Moving Profile Data
+        /// </summary>
         public List<GeoData> geodata { get; set; }
-        public DateTime time { get; set; } //milliseconds since 1.1.1970 (UTC)
+        /// <summary>
+        /// Timestamp
+        /// </summary>
+        public DateTime time { get; set; } 
     }
 
 
@@ -145,7 +208,7 @@ namespace vdivsvirus.Types
     {
         public Guid userID { get; set; }
         public DateTime time { get; set; }
-        public Dictionary<int, SymptomeStrength> symptomes { get; set; }
+        public Dictionary<int, float> symptomes { get; set; }
     }
 
     /**
@@ -155,7 +218,7 @@ namespace vdivsvirus.Types
     {
         public Guid userID { get; set; }
         public DateTime time { get; set; }
-        public Dictionary<int, sbyte> propabilities { get; set; }
+        public Dictionary<int, float> propabilities { get; set; }
     }
 
 

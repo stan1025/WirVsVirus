@@ -13,6 +13,12 @@ namespace vdivsvirus.Interfaces
      */
     public interface IRequestDataSet
     {
+        /// <summary>
+        /// Get Symptome Data for Internal Use
+        /// </summary>
+        /// <returns>List of all Symptome Data Types</returns>
+        List<SymptomeType> GetSymptomeInternals();
+
         /**
         * NextDataSetAvailable 
         * ... request the availability of new to analyse data
