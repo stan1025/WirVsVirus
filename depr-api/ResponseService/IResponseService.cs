@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using vdivsvirus.types;
 
 
-namespace vdivsvirus.ResponseService
+namespace vdivsvirus.Interfaces
 {
     /**
      * Response-Service

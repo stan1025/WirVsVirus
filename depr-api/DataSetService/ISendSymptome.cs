@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using vdivsvirus.types;
 
-namespace vdivsvirus.DataSetService
+namespace vdivsvirus.Interfaces
 {
     /**
      * SendSymptome-Service
