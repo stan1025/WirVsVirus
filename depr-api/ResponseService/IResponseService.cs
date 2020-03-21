@@ -12,7 +12,7 @@ namespace vdivsvirus.ResponseService
      * ... UI Service (Client)
      * ... Response Service (Server)
      */
-    interface IResponseService
+    public interface IResponseService
     {
         /**
         * NewFindingAvailable 

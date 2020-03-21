@@ -11,7 +11,7 @@ namespace vdivsvirus.PropabilisticAnalysisService
      * ... Analysing Service (Client)
      * ... DataSet Service (Server)
      */
-    interface IRequestDataSet
+    public interface IRequestDataSet
     {
         /**
         * NextDataSetAvailable 

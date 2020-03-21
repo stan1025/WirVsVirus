@@ -11,7 +11,7 @@ namespace vdivsvirus.DataSetService
      * ... UI Service (Client)
      * ... DataSet Service (Server)
      */
-    interface ISendSymptome
+    public interface ISendSymptome
     {
         /**
         * SendSymptomes 
