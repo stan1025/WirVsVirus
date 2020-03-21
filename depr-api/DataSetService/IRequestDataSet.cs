@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using vdivsvirus.types;
+using vdivsvirus.Types;
 
 namespace vdivsvirus.Interfaces
 {

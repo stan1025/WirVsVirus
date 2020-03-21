@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace vdivsvirus.types
+namespace vdivsvirus.Types
 {
     // ##############################
     // Base Data Type Definitions

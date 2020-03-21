@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace vdivsvirus.BaseAnalysingService
+namespace vdivsvirus.Services
 {
 
     //++++++++++++++++++++++++++++++++++++++++++++++

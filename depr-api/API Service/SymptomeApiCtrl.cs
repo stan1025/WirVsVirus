@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using vdivsvirus.Interfaces;
-using vdivsvirus.types;
+using vdivsvirus.Types;
 
 namespace vdivsvirus.Services
 {

@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using vdivsvirus.Interfaces;
+using vdivsvirus.Types;
 
 namespace vdivsvirus.Services
 {
-    public class pdaService
-{
+    public class pdaService : CyclicBackgroundService
+    {
         private readonly IRequestDataSet dataService;
+        SymptomeDataSet inputData;
+        PropabilityDataSet outputData;
+
 
         public pdaService(IRequestDataSet service)
         {
@@ -16,7 +20,19 @@ namespace vdivsvirus.Services
             dataService = service;
         }
 
+        internal override bool Check()
+        {
+            return dataService.DataSetAvailable();
+        }
 
+        internal override void Execute()
+        {
+            var data = dataService.RequestDataSet();
+
+            executeAnalyzing();
+
+            dataService.SendDataResultSet(outputData);
+        }
 
         private void executeAnalyzing()
         {

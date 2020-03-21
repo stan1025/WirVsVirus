@@ -6,8 +6,8 @@ using vdivsvirus.Interfaces;
 
 namespace vdivsvirus.Services
 {
-    public class pgaService
-{
+    public class pgaService : CyclicBackgroundService
+    {
         private readonly IRequestDataSet dataService;
 
         public pgaService(IRequestDataSet service)
@@ -16,7 +16,15 @@ namespace vdivsvirus.Services
             dataService = service;
         }
 
+        internal override bool Check()
+        {
+            throw new NotImplementedException();
+        }
 
+        internal override void Execute()
+        {
+            throw new NotImplementedException();
+        }
 
         private void executeAnalyzing()
         {
