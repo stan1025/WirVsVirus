@@ -18,7 +18,7 @@ namespace vdivsvirus.Interfaces
         * NewFindingAvailable 
         * ... request the availability of new to finding
         */
-        bool NewFindingAvailable();
+        bool NewFindingAvailable(Guid id);
 
         /**
         * RequestNextDataSet 

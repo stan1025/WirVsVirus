@@ -25,19 +25,21 @@ namespace vdivsvirus.Services
         [HttpGet("GetSymptomeTypes")]
         public ActionResult<IEnumerable<SymptomeType>> GetSymptomeTypes()
         {
-            return new List<SymptomeType>();
+            return dataService.GetSymptomeTypes();
         }
 
         // POST api/symptome/SendDiseaseDataSet
         [HttpPost("SendDiseaseDataSet/{id}")]
         public void SendDiseaseDataSet([FromBody] DiseaseDataSet value)
         {
+            dataService.SendDiseaseDataSet(value);
         }
 
         // POST api/symptome/SendSymptomeDataSet
         [HttpPost("SendSymptomeDataSet")]
         public void SendSymptomeDataSet([FromBody] SymptomeInputData value)
         {
+            dataService.SendSymptomeDataSet(value);
         }
     }
 
