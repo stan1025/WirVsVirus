@@ -219,7 +219,7 @@ Wir haben Funktionen definiert, die für uns in der täglichen Nutzung der App w
 
 Der Analyse Algorithmus hat das Ziel, die vom Nutzer eingegebenen Daten auszuwerten. Die Eingaben erfolgen über die Benutzeroberfläche. Erfasst werden dabei sowohl Symptome wie Fieber und Husten, als auch Angaben zu Alter, Wohnsituation, beruflichem Umfeld etc.
 
-Das Ergebnis des Algorithmus ist eine Wahrscheinlichkeit, hier Disease Probability (DP) genannt, mit der der Nutzer, basierend auf seinen aktuellen Symptomen an COVID-19 erkrankt ist. Die Wahrscheilichkeiten basieren dabei auf Daten der WHO. Im  [Report of the WHO-China Joint Mission on Coronavirus Disease 2019 (COVID-19)] (https://www.who.int/docs/default-source/coronaviruse/who-china-joint-mission-on-covid-19-final-report.pdf) findet sich eine Auflistung der, im Zusammenhang mit der COVID-19 Lungenkrankheit, auftretenden Symptome und einer Wahrscheinlichkeit mit der sie bei Patienten beobachtet werden. 
+Das Ergebnis des Algorithmus ist eine Wahrscheinlichkeit, hier Disease Probability (DP) genannt, mit der der Nutzer, basierend auf seinen aktuellen Symptomen an COVID-19 erkrankt ist. Die Wahrscheilichkeiten basieren dabei auf Daten der WHO. Im  [Report of the WHO-China Joint Mission on Coronavirus Disease 2019 (COVID-19)](https://www.who.int/docs/default-source/coronaviruse/who-china-joint-mission-on-covid-19-final-report.pdf) findet sich eine Auflistung der, im Zusammenhang mit der COVID-19 Lungenkrankheit, auftretenden Symptome und einer Wahrscheinlichkeit mit der sie bei Patienten beobachtet werden. 
 
 <p align="center">
 <img src="images/WHO_Symptoms.png" width="700">
@@ -258,6 +258,8 @@ etc.
 Darauf folgt die Berechnung der Wahrscheinlichkeit für jedes Symptom (Symptom Probability) unter Einbeziehung des Schweregrades der vom Nutzer angegeben wurde. 
 Die Symptom Probability erfolgt durch Multiplikation vom Schwerefaktor mit der gemittelten Wahrscheinlichkeit für jedes Symptom.
 
+Beispiel:
+
 - Fieber = 51% * 31,44%               = 16,008 %
 - Husten = 80% * 24,22%               = 19,376 %
 - Abgeschlagenheit = 60% * 13,63%     = 8,178 %
@@ -274,6 +276,10 @@ Die Symptom Probability erfolgt durch Multiplikation vom Schwerefaktor mit der g
 Die als Disease Probability bezeichnete Gesamtwahrscheinlichkeit wird nun aus der Summe der Symptom Probabilities zusammengesetzt.
 
 DP = 57,6002 %
+
+Um über die DEEPER-App eine Handlungsempfehlung auszusprechen, wird nun ein Schwellenwert festgelegt. Liegt die DP unter dem Schwellenwert, wird der Nutzer als nicht gefährdet eingestuft. Befindet sich die Person mit ihrer DP jedoch über dem Schwellenwert so wird sie als gefährdet eingestift und bekommt eine entsprechende Empfehlung als Push-Nachricht auf ihr Endgerät gesendet.
+
+Die Höhe des Schwellenwerts wird individuell für jeden Nutzer festgelegt. Sie orientiert sich dabei an seinem persönlichen Risikopotenzial, welches mithilfe verschiedener Fragen z. B. zu Alter, Wohnsituation und beruflichem Umfeld ermittelt wird.
 
 # Konzeptionierung / Vision Architecture
 
