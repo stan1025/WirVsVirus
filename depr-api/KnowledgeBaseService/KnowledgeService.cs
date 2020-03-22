@@ -344,6 +344,11 @@ namespace vdivsvirus.Services
             return diseaseList;
         }
 
+        public String EvaluateSpecificDisease(string id, float probability)
+        {
+            return diseaseList.Find(x => x.IdentData.id == id).GetRecommendation(probability);
+        }
+
         public List<DiseaseIdentData> GetDiseaseIdentData()
         {
             return diseaseList.Select(item => item.IdentData).ToList();

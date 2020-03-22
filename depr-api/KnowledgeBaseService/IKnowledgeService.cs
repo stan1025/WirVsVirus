@@ -35,6 +35,12 @@ namespace vdivsvirus.Interfaces
         List<DiseaseType> GetDiseaseTypes();
 
         /// <summary>
+        /// Evaluates a specific disease by the resulting probaility
+        /// </summary>
+        /// <returns>Recommended action</returns>
+        String EvaluateSpecificDisease(string id, float probability);
+
+        /// <summary>
         /// Returns the list of all available
         /// to show disease patterns.
         /// </summary>
