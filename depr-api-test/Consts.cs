@@ -2,6 +2,6 @@
 {
     public static class Constants
     {
-        public const string url = "http://localhost:5000";
+        public const string url = "http://dper.us-east-1.elasticbeanstalk.com/";
     }
 }

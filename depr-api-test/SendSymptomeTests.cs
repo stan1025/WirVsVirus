@@ -45,17 +45,17 @@ namespace depr_api_test
                 geodata = new List<GeoData>(),
                 symptomes = new List<SymptomeInputData>()
                 {
-                    new SymptomeInputData(){ id = 1, strength = 70f },
-                    new SymptomeInputData(){ id = 1, strength = 80f },
-                    new SymptomeInputData(){ id = 1, strength = 60f },
-                    new SymptomeInputData(){ id = 1, strength = 30f },
-                    new SymptomeInputData(){ id = 1, strength = 40f },
-                    new SymptomeInputData(){ id = 1, strength = 30f },
-                    new SymptomeInputData(){ id = 1, strength = 20f },
-                    new SymptomeInputData(){ id = 1, strength = 70f },
-                    new SymptomeInputData(){ id = 1, strength = 0f },
-                    new SymptomeInputData(){ id = 1, strength = 40f },
-                    new SymptomeInputData(){ id = 1, strength = 0f }
+                    new SymptomeInputData(){ id = "1", strength = 70f },
+                    new SymptomeInputData(){ id = "2", strength = 80f },
+                    new SymptomeInputData(){ id = "3", strength = 60f },
+                    new SymptomeInputData(){ id = "4", strength = 30f },
+                    new SymptomeInputData(){ id = "5", strength = 40f },
+                    new SymptomeInputData(){ id = "6", strength = 30f },
+                    new SymptomeInputData(){ id = "7", strength = 20f },
+                    new SymptomeInputData(){ id = "8", strength = 70f },
+                    new SymptomeInputData(){ id = "9", strength = 0f },
+                    new SymptomeInputData(){ id = "10", strength = 40f },
+                    new SymptomeInputData(){ id = "11", strength = 0f }
                 }
             };
             var json = JsonConvert.SerializeObject(resData);
