@@ -23,7 +23,7 @@ namespace vdivsvirus.Services
 
         public bool NewFindingAvailable(Guid userId, DateTime time)
         {
-            return dataService.RequestDiseasePropability(userId, time).propabilities.Count != 0;
+            return (dataService.RequestDiseasePropability(userId, time)?.propabilities.Count ?? 0) != 0;
         }
 
         public UserResponseDataSet RequestFinding(Guid userId, DateTime time)
@@ -45,7 +45,7 @@ namespace vdivsvirus.Services
             UserResponseDataSet res = new UserResponseDataSet();
             res.userID = userId;
             res.time = time;
-            res.propabilities = sourceData.propabilities;
+            res.propabilities = sourceData?.propabilities;
             res.message = "Das ist eine Test Nachricht";
 
             return res;
