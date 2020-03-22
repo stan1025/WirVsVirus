@@ -72,8 +72,10 @@ namespace vdivsvirus.Services
             lock(tableLock)
             {
                 var prob = table.FirstOrDefault(item => item.Ident.Equals(userID) && item.Time.Equals(time));
+                var propabilities = prob?.ExtPropabilities ?? prob?.RawPropabilities;
+                if (propabilities == null) return null;
                 return new PropabilityDataSet()
-                    {userID = userID, time = time, propabilities = prob.ExtPropabilities ?? prob.RawPropabilities};
+                    {userID = userID, time = time, propabilities = propabilities };
             }
         }
 

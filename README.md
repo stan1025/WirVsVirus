@@ -1,5 +1,70 @@
 # #WirVsVirus
-![KeyVisual of Hackathon](documentations/images/KeyVisual.jpg)
+![KeyVisual of Hackathon](documentation/images/KeyVisual.jpg)
+
+
+# Disease Pattern Early Recognition in Global Distribution!
+
+## Problembeschreibung
+Viruserkrankungen sind Teil von unserem Leben. Jedes Jahr treten - vor allem in den Wintermonaten - 
+"Erkrankungen durch saisonal zirkulierende, humane Influenzaviren"[1] auf. Dies erfolgt durch die Mutation der Viren, welche aber prognostiziert und daher gut therapiert werden können. 
+
+Im Vergleich dazu gibt es Viren, "gegen [die] es in der Bevölkerung keine oder nur in einem kleinen Anteil der Bevölkerung eine vorbestehende Immunität gibt, [die] humanpathogen [sind] und [die] sich leicht von Mensch zu Mensch [verbreiten]" [1]. Der SARS-CoV-2 zählt zu diesen Viren. 
+
+Durch eine immer engere Vernetzung der Menschen sowohl im Gesellschaftlichem wie im Wirtschaftlichem als auch länder- und kontinentenübergreifend, ist die Ausbreitungsgeschwindigkeit für solche Viren immer mehr gestiegen. Kommen dann noch lange Inkubationszeiten und unterschiedliche Krankheitsverläufe, wie bei Covid-19 dazu, wird auch die Ermittlung von Infektionsketten sowie die Vorhersage, wo in naher Zukunft Hotspots von Infizierten entstehen, erschwert. Aus diesen Gründen kann es schnell von einer Epidemie zu einer weltweiten Pandemie kommen. Dies steigert die Angst in der Bevölkerung, sich selber zu infiziert. 
+
+Zusammengefasst sind die Hauptprobleme:
+
+1. die Eigenschaften der Viren sind zu Beginn des Auftretens unbekannt,
+2. der Krankheitsverlauf ist unbekannt und unterschiedlich,
+3. es existiert keine passende Therapie,
+4. es steht noch kein Impfstoff zur Verfügung,
+5. die Ausbreitungsgeschwindigkeit ist sehr hoch,
+6. die Ermittlung von Infizierten und Infektionsketten ist schwierig,
+7. die Vorhersage von entstehenden Hotspots von Infizierten ist nicht gegeben und
+8. die Angst in der Bevölkerung steigt.
+
+Dies hat unter anderem zur Folge, dass Ärzte häufiger aufgesucht werden, eine hohe Dunkelziffer von Infizierten vorliegt und das gerade über milde Verläufe wenig bis keine Kenntnisse möglich sind. Dies zusammen hat dann meistens zur Folge, dass vor allem die öffentlichen und medizinischen Gesundheitssysteme an ihre Kapazitäten stoßen. Um dem entgegen zu wirken, müssen Lösungen für die verschiedenen Probleme entwickelt werden. 
+
+[1] Nationaler Pandemieplan Teil II. "Wissenschaftliche Grundlagen." Robert Koch-Institut, März 2017.
+
+## Lösung
+Im Rahmen des Hackathons wurde eine Lösung entwickelt, die die Probleme 6-8 adressiert. Hierfür wurde eine App entwickelt, die 
+
+- Daten, wie Ausprägung der Symptome oder Positionsdaten, vom Nutzer entgegen nimmt,
+- diese mit Algorithmen verarbeitet und
+- die Ergebnisse dem Nutzer in einfacher verständlicher Weise anzeigt sowie
+- Schnittstellen für andere Datennutzer (z. B. Regierung, medizinische Forschung) zur Verfügung stellt.
+
+## Methodik
+Zur Erstellung der Lösung wurde methodisch vorgegangen. Es wurden zunächst Personas für die Nutzer entwickelt und Umfragen zum Funktionsumfang und Nutzerverhalten durchgeführt. Basierend auf den Ergebnissen wurden die Herausforderungen an diese App ermittelt, die sich in drei Hauptkategorien unterteilen lassen: Akzeptanz in der Gesellschaft, Nutzung der App und technische Umsetzung. Zu jeder der Hauptkategorien haben wir Fragen ermittelt, die beantwortet werden müssen.
+
+In einem nächsten Schritt haben wir eine Analyse bestehender Lösungen durchgeführt und ermittelt, dass keiner der Lösungen, die Herausforderungen voll umfänglich erfüllt. Aus diesem Grund haben wir ein eigenes Konzept einer App entwickelt und für dieses zwei prototypische Umsetzung in Form eines Klick-Dummys sowie einer Implementierung entwickelt, auf denen im Anschluss weiter aufgebaut werden kann.
+
+## Ergebnisse
+
+[Personas](documentation/Personas.md)
+[Umfragen](documentation/Umfragen.md)
+
+[Lösungskonzept](documentation/Konzept.md)
+
+[Klick-Dummy](documentation/Klick-Dummy.md)
+[Implementierung](documentation/Implementierung.md)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Topic Introduction
 

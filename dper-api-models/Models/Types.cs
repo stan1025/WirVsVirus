@@ -4,29 +4,6 @@ using System.Collections.Generic;
 namespace vdivsvirus.Types
 {
 
-    #region Database Types
-
-    internal class UserDataHistory
-    {
-        public Guid userID { get; set; }
-        public List<UserDataSet> history { get; set; }
-        public bool hasNew { get; set; } // has unprocessed UserDataSet
-    }
-
-    internal class UserDataSet
-    {
-        public Dictionary<int, int> symptomes { get; set; }
-        public Dictionary<int, sbyte> propabilities { get; set; }
-        public List<GeoData> geodata { get; set; }
-        public DateTime time { get; set; }
-    }
-
-    #endregion
-
-
-
-
-
     #region Symptome Data Set Data Types
 
     /// <summary>
@@ -75,14 +52,17 @@ namespace vdivsvirus.Types
         /// </summary>
         public SymptomeIdentData IdentData { get; set; }
 
-
-
-
         /// <summary>
         /// Symptome Propability Factor 
         /// Setting for Proability Data Analysis 
         /// </summary>
         public float symptomePropability { get; set; }
+
+        /// <summary>
+        /// Threshold Propability Factor 
+        /// Setting for Get Recommendation Analysis 
+        /// </summary>
+        public float thresholdFactor { get; set; }
 
         /// <summary>
         /// Scaling Function for mapping of input value
@@ -236,9 +216,7 @@ namespace vdivsvirus.Types
         /// Disease Information Link 
         /// </summary>
         public string infoLink { get; set; }
-
     }
-
 
     /// <summary>
     /// Disease Type with Ident and Internal Data
@@ -262,12 +240,7 @@ namespace vdivsvirus.Types
         /// based on the given symptome data set.
         /// </summary>
         public Func<SymptomeDataSet, float> propabilityAlgorithm { get; set; }
-
-
     }
-
-
-
 
     /**
      * Structs of AuthenticationData
@@ -344,7 +317,7 @@ namespace vdivsvirus.Types
         public Guid userID { get; set; }
         public DateTime time { get; set; }
         public List<DiseaseData> propabilities { get; set; }
-        public Dictionary<string, DiseaseType> diseaseTypes { get; set; }
+        public List<DiseaseIdentData> diseaseTypes { get; set; }
         public string message { get; set; }
     }
 

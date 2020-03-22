@@ -1,10 +1,13 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using RestSharp;
 using System;
 using System.Collections.Generic;
-using System.Net;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
 using System.Text.Json.Serialization;
 using vdivsvirus.Types;
+using Newtonsoft.Json.Linq;
 
 namespace depr_api_test
 {
@@ -18,67 +21,97 @@ namespace depr_api_test
         public void FindingAvailableTest()
         {
             // arrange
-            RestClient client = new RestClient("http://localhost:5000");
-            RestRequest request = new RestRequest("api/finding/newfindingavailable", Method.GET);
-
-            // act
-            IRestResponse response = client.Execute(request);
-
-
-
-            // assert
-            Assert.IsTrue(bool.Parse(response.Content));
-        }
-
-        [TestMethod]
-        [Timeout(200)]
-        public void RequestFinding()
-        {
+            var _client = new HttpClient();
+            var uri = new Uri(Constants.url + "/api/finding/newfindingavailable");
             Guid userId = Guid.NewGuid();
-            // arrange
-            RestClient client = new RestClient("http://localhost:5000");
-            RestRequest request = new RestRequest($"api/finding/requestfinding/{userId}", Method.POST);
+            DateTime time = DateTime.Now;
 
             // act
-            IRestResponse response = client.Execute(request);
+            JObject o = new JObject();
+            o.Add("id", userId);
+            o.Add("time", time);
 
-            PropabilityDataSet data = SimpleJson.DeserializeObject<PropabilityDataSet>(response.Content);
+            string json = o.ToString();
+            var request = new HttpRequestMessage
+            {
+                Method = HttpMethod.Get,
+                RequestUri = uri,
+                Content = new StringContent(json, Encoding.UTF8, "application/json"),
+            };
+
+            var response = _client.SendAsync(request).Result;
 
             // assert
-            Assert.IsNotNull(response.Content);
+            Assert.IsTrue(response.IsSuccessStatusCode, "Statuscode " + response.StatusCode + " returned");
+            Assert.IsFalse(JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result));
         }
-
 
         [TestMethod]
         [Timeout(200)]
-        public void SendDiseaseDataSet()
+        public void RequestFindingTest()
         {
             // arrange
-            RestClient client = new RestClient("http://localhost:5000");
-            RestRequest request = new RestRequest("api/symptome/senddiseasedataset", Method.POST);
-
-            DiseaseAcknowledgeSet resData = new DiseaseAcknowledgeSet()
-            {
-                userID = Guid.NewGuid(),
-                time = DateTime.Now,
-                diseaseID = 1,
-                testResult = true,
-                authenticator = new AuthenticationData() {  userName = "Dr. Stutz", hashedPwd="abc123def"}
-            };  
-
-            request.Body = new RequestBody("application/json", string.Empty, SimpleJson.SerializeObject(resData));
-
+            var _client = new HttpClient();
+            var uri = new Uri(Constants.url + "/api/finding/requestfinding");
+            Guid userId = Guid.NewGuid();
+            DateTime time = DateTime.Now;
 
             // act
-            IRestResponse response = client.Execute(request);
+            JObject o = new JObject();
+            o.Add("id", userId);
+            o.Add("time", time);
+
+            string json = o.ToString();
+            var request = new HttpRequestMessage
+            {
+                Method = HttpMethod.Get,
+                RequestUri = uri,
+                Content = new StringContent(json, Encoding.UTF8, "application/json"),
+            };
+
+            var response = _client.SendAsync(request).Result;
 
 
+            Assert.IsTrue(response.IsSuccessStatusCode, "Statuscode " + response.StatusCode + " returned");
 
+            UserResponseDataSet data = JsonConvert.DeserializeObject<UserResponseDataSet>(response.Content.ReadAsStringAsync().Result);
 
             // assert
             Assert.IsNotNull(response.Content);
         }
 
+
+       /* [TestMethod]
+        [Timeout(200)]
+        public void RequestFindingHistoryTest()
+        {
+            // arrange
+            var _client = new HttpClient();
+            var uri = new Uri(Constants.url + "/api/finding/RequestFindingHistory");
+            Guid userId = Guid.NewGuid();
+
+            // act
+            JObject o = new JObject();
+            o.Add("id", userId);
+
+            string json = o.ToString();
+            var request = new HttpRequestMessage
+            {
+                Method = HttpMethod.Get,
+                RequestUri = uri,
+                Content = new StringContent(json, Encoding.UTF8, "application/json"),
+            };
+
+            var response = _client.SendAsync(request).Result;
+
+            Assert.IsTrue(response.IsSuccessStatusCode, "Statuscode " + response.StatusCode + " returned");
+
+            UserHistoryDataSet data = JsonConvert.DeserializeObject<UserHistoryDataSet>(response.Content.ReadAsStringAsync().Result);
+
+            // assert
+            Assert.IsNotNull(response.Content);
+        }
+        */
 
     }
 }

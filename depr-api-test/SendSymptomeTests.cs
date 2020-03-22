@@ -1,9 +1,12 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Text.Json.Serialization;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
 using vdivsvirus.Types;
 
 namespace depr_api_test
@@ -16,15 +19,15 @@ namespace depr_api_test
         public void GetSymptomeTypes()
         {
             // arrange
-            RestClient client = new RestClient("http://localhost:5000");
-            RestRequest request = new RestRequest("api/symptome/getsymptometypes", Method.GET);
+            var _client = new HttpClient();
+            HttpResponseMessage response = _client.GetAsync(new Uri(Constants.url + "/api/symptome/GetSymptomeTypes")).Result;
 
             // act
-            IRestResponse response = client.Execute(request);
 
 
 
             // assert
+            Assert.IsTrue(response.IsSuccessStatusCode, "Statuscode " + response.StatusCode + " returned");
             Assert.IsNotNull(response.Content);
         }
 
@@ -33,8 +36,7 @@ namespace depr_api_test
         public void SendSymptomeDataSet()
         {
             // arrange
-            RestClient client = new RestClient("http://localhost:5000");
-            RestRequest request = new RestRequest("api/symptome/sendsymptomedataset", Method.POST);
+            var _client = new HttpClient();
 
             SymptomeInputDataSet resData = new SymptomeInputDataSet()
             {
@@ -56,16 +58,14 @@ namespace depr_api_test
                     new SymptomeInputData(){ id = 1, strength = 0f }
                 }
             };
+            var json = JsonConvert.SerializeObject(resData);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            request.AddParameter("UserID", resData.userID);
-            request.Body = new RequestBody("application/json", string.Empty, SimpleJson.SerializeObject(resData));
+            //act
+            HttpResponseMessage response = _client.PostAsync(new Uri(Constants.url + "/api/symptome/sendsymptomedataset"), content).Result;
 
 
-            // act
-            IRestResponse response = client.Execute(request);
-
-           
-            
+            Assert.IsTrue(response.IsSuccessStatusCode, "Statuscode " + response.StatusCode + " returned");
 
             // assert
             Assert.IsNotNull(response.Content);
@@ -77,28 +77,27 @@ namespace depr_api_test
         public void SendDiseaseDataSet()
         {
             // arrange
-            RestClient client = new RestClient("http://localhost:5000");
-            RestRequest request = new RestRequest("api/symptome/senddiseasedataset", Method.POST);
+            var _client = new HttpClient();
 
             DiseaseAcknowledgeSet resData = new DiseaseAcknowledgeSet()
             {
                 userID = Guid.NewGuid(),
                 time = DateTime.Now,
-                diseaseID = 1,
+                diseaseID = "1",
                 testResult = true,
                 authenticator = new AuthenticationData() {  userName = "Dr. Stutz", hashedPwd="abc123def"}
-            };  
+            };
 
-            request.Body = new RequestBody("application/json", string.Empty, SimpleJson.SerializeObject(resData));
-
+            var json = JsonConvert.SerializeObject(resData);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
 
             // act
-            IRestResponse response = client.Execute(request);
-
+            HttpResponseMessage response = _client.PostAsync(new Uri(Constants.url + "/api/symptome/senddiseasedataset"), content).Result;
 
 
 
             // assert
+            Assert.IsTrue(response.IsSuccessStatusCode, "Statuscode " + response.StatusCode + " returned");
             Assert.IsNotNull(response.Content);
         }
 
