@@ -46,7 +46,7 @@ Auf dem Weg zur Entwicklung des Click-Dummies und der technischen Umsetzung ware
 
 [Analyse existierender Lösungen](documentation/Wettbewerbsanalyse.md)
 
-[Funktionsdefintion](documentation/Funktionsdefinition.md)
+[Funktionsdefinition](documentation/Funktionsdefinition.md)
 
 [Lösungskonzept](documentation/Konzept.md)
 
