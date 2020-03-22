@@ -1,0 +1,17 @@
+# Umfragen und Ermittlung der Herausforderungen
+- Akzeptanz in der Gesellschaft
+	- Wird der Datenschutz sichergestellt?
+	- Ist die Seriosität gewährleistet?
+	- Wurde eine Panikmache in der Bevölkerung aufgrund der Ergebnisdarstellung berücksichtigt?
+- Nutzung der App
+	- Wie kann sichergestellt werden, dass die App regelmäßig genutzt wird?
+	- Wie kann sichergestellt werden, dass jeder Bürger (auch gesunde) die App nutzen?
+	- Wie kann sichergestellt werden, dass absichtlich falsche Eingaben getätigt werden?
+- Technische Umsetzung
+	- Gibt es Möglichkeiten der Symptomerfassung?
+	- Gibt es Möglichkeiten der Standorterfassung?
+	- Gibt es Algorithmen zur Ermittlung von Infektionsketten?
+	- Gibt es Algorithmen zur Vorhersage von Hotspots von Infizierten?
+	- Gibt es Algorithmen zur Einschätzung der Symptome?
+	- Gibt es Konzepte zur Erweiterung?
+	- Gibt es Möglichkeiten zur Einbindung in andere Systeme?
