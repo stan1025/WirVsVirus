@@ -340,7 +340,7 @@ namespace vdivsvirus.Types
         public Guid userID { get; set; }
         public DateTime time { get; set; }
         public List<DiseaseData> propabilities { get; set; }
-        public Dictionary<string, DiseaseType> diseaseTypes { get; set; }
+        public List<DiseaseIdentData> diseaseTypes { get; set; }
         public string message { get; set; }
     }
 

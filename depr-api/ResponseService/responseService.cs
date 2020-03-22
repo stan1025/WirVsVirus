@@ -46,6 +46,8 @@ namespace vdivsvirus.Services
             res.userID = userId;
             res.time = time;
             res.propabilities = sourceData?.propabilities;
+            res.diseaseTypes = knowledgeService.GetDiseaseIdentData();
+            var keyOfMaxProbability = res.propabilities.Aggregate((x, y) => x.propability > y.propability ? x : y).id;
             res.message = "Das ist eine Test Nachricht";
 
             return res;
