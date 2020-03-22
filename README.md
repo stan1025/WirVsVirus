@@ -57,44 +57,30 @@ In einem nächsten Schritt haben wir eine Analyse bestehender Lösungen durchgef
 Wir sind ein bund gemischtes Team, zu Beginn alles Mitglieder/Freunde des Netzwerks der Studenten und Jungingenieure des VDI (Verein Deutscher Ingenieure).
 Im weiteren Verlauf des Hackathons haben wir uns mit Experteninnen und Experten verschiedener Fachrichtungen ausgetauscht und ergänzt. 
 
-## Unser Team:
+Unser Team:
 
 **System Development / Hacking** Architecture / Development of a scalable micro-service oriented architecture 
 
-Andreas Stutz (Architecture, Deployment, )
-
-Benedikt Geib (REST-API / Mobile App)
-
-Janik Ritz (Data Persistance)
-
-Melanie Wassmer (Mobile App)
-
-Philipp Gesner (Data Analysis)
-
-Marwin Madsen (Mobile App)
+- Andreas Stutz (Architecture, Deployment, )
+- Benedikt Geib (REST-API / Mobile App)
+- Janik Ritz (Data Persistance)
+- Melanie Wassmer (Mobile App)
+- Philipp Gesner (Data Analysis)
+- Marwin Madsen (Mobile App)
 
 **Scientific Research**
-
-Kathrin Krote
-
-Johanna Hoppe 
-
-Charlotte Maschke
+- Kathrin Krote
+- Johanna Hoppe 
+- Charlotte Maschke
 
 
 **Public Research**
-
-Luisa Miny (User Experience)
-
-Torben Deppe (Research Communication)
-
-David Seck (???)
-
-Vincent Laux (MockUp / Usability)
-
-Riadh Dhaoui (Video Design)
-
-Jonas Thees (???)
+- Luisa Miny (User Experience)
+- Torben Deppe (Research Communication)
+- David Seck (???)
+- Vincent Laux (MockUp / Usability)
+- Riadh Dhaoui (Video Design)
+- Jonas Thees (???)
 
 
 # List of Repositories
