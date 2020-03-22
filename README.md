@@ -222,7 +222,7 @@ Der Analyse Algorithmus hat das Ziel, die vom Nutzer eingegebenen Daten auszuwer
 Das Ergebnis des Algorithmus ist eine Wahrscheinlichkeit, hier Disease Probability (DP) genannt, mit der der Nutzer, basierend auf seinen aktuellen Symptomen an COVID-19 erkrankt ist. Die Wahrscheilichkeiten basieren dabei auf Daten der WHO. Im  [Report of the WHO-China Joint Mission on Coronavirus Disease 2019 (COVID-19)] (https://www.who.int/docs/default-source/coronaviruse/who-china-joint-mission-on-covid-19-final-report.pdf) findet sich eine Auflistung der, im Zusammenhang mit der COVID-19 Lungenkrankheit, auftretenden Symptome und einer Wahrscheinlichkeit mit der sie bei Patienten beobachtet werden. 
 
 <p align="center">
-<img src="WHO_Symptoms.png" width="700">
+<img src="images/WHO_Symptoms.png" width="700">
 </p>
 
 Diese Werte dienen dem Analyse Algorithmus als wissenschaftlich fundierte Bemessungsgrundlage. 
