@@ -1,4 +1,4 @@
-# Disease Pattern Early Recognition in Global Distribution!
+﻿# Disease Pattern Early Recognition in Global Distribution!
 \#WirVsVirus
 
 <p align="center">
@@ -45,6 +45,8 @@ Zur Erstellung der Lösung wurde methodisch vorgegangen. Es wurden zunächst Per
 [Umfragen](documentation/Umfragen.md)
 
 [Analyse existierender Lösungen](documentation/Wettbewerbsanalyse.md)
+
+[Funktionsdefintion](documentation/Funktionsdefinition.md)
 
 [Lösungskonzept](documentation/Konzept.md)
 
