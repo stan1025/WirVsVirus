@@ -1,14 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Buffers;
+using System.Data.Common;
+using System.Diagnostics;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Formatters;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
+using MySql.Data.MySqlClient;
+using Newtonsoft.Json;
+using vdivsvirus.Models;
+using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
+using vdivsvirus.Interfaces;
+using vdivsvirus.Services;
 
 using vdivsvirus.Interfaces;
 using vdivsvirus.Services;
@@ -49,6 +58,12 @@ namespace vdivsvirus
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             
+            ConfigureEntityFramework(services);
+        }
+
+        public static void ConfigureEntityFramework(IServiceCollection services)
+        {
+            services.AddDbContextPool<DataSetContext>(options => options.UseMySql(Helpers.GetRDSConnectionString()));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

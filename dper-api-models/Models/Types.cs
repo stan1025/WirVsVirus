@@ -4,10 +4,27 @@ using System.Collections.Generic;
 namespace vdivsvirus.Types
 {
 
-    // ##############################
-    // Symptome Data Set Data Types
-    // ##############################
+    #region Database Types
 
+    internal class UserDataHistory
+    {
+        public Guid userID { get; set; }
+        public List<UserDataSet> history { get; set; }
+        public bool hasNew { get; set; } // has unprocessed UserDataSet
+    }
+
+    internal class UserDataSet
+    {
+        public Dictionary<int, int> symptomes { get; set; }
+        public Dictionary<int, sbyte> propabilities { get; set; }
+        public List<GeoData> geodata { get; set; }
+        public DateTime time { get; set; }
+    }
+
+    #endregion
+
+
+    #region Symptome Data Set Data Types
 
     /// <summary>
     /// Symptome Input Type Enumeration
@@ -17,21 +34,24 @@ namespace vdivsvirus.Types
         /// <summary>
         /// Not displayed - hidden filed
         /// </summary>
-        none = 0,  
+        none = 0,
+
         /// <summary>
         /// YesNoQuestion
         /// </summary>
-        yesno = 1,  
+        yesno = 1,
+
         /// <summary>
         /// Slider Value
         /// settingString = min=x;max=y;stepz
         /// </summary>
         slider = 2,
+
         /// <summary>
         /// Enumeration List
         /// settingString = key1=value1;key2=value2;...
         /// </summary>
-        list = 3 
+        list = 3
     }
 
     /// <summary>
@@ -40,7 +60,6 @@ namespace vdivsvirus.Types
     /// </summary>
     public class SymptomeType
     {
-
         public SymptomeType()
         {
             //Default Scale Func is Input == Output -> 1:1 Mapping
@@ -69,9 +88,6 @@ namespace vdivsvirus.Types
         /// to propability scale
         /// </summary>
         public Func<float, float> ScaleFunc { get; set; }
-
-
-
     }
 
     /// <summary>
@@ -80,7 +96,6 @@ namespace vdivsvirus.Types
     /// </summary>
     public class SymptomeDisplayData
     {
-
         /// <summary>
         /// Symptome Input Classifier
         /// </summary>
@@ -103,7 +118,6 @@ namespace vdivsvirus.Types
     }
 
 
-
     /// <summary>
     /// Symptome Input Data
     /// (feedback from app)
@@ -113,7 +127,8 @@ namespace vdivsvirus.Types
         /// <summary>
         /// Symptome ID
         /// </summary>
-        public int id { get; set; }             
+        public int id { get; set; }
+
         /// <summary>
         /// Symptome Strength
         /// </summary>
@@ -141,32 +156,35 @@ namespace vdivsvirus.Types
         /// Anonymized User ID
         /// </summary>
         public Guid userID { get; set; }
+
         /// <summary>
         /// Symptome Inputs
         /// </summary>
         public List<SymptomeInputData> symptomes { get; set; }
+
         /// <summary>
         /// Moving Profile Data
         /// </summary>
         public List<GeoData> geodata { get; set; }
+
         /// <summary>
         /// Timestamp
         /// </summary>
-        public DateTime time { get; set; } 
+        public DateTime time { get; set; }
     }
 
+    #endregion
 
-    // ##############################
-    // Disease Data Set Data Types
-    // ##############################
+
+    #region Disease Data Set Data Types
 
     /**
      * Structs of AuthenticationData
      */
     public class AuthenticationData
     {
-        public string userName { get; set; }       //User Name of the to authenticate Person                 
-        public string hashedPwd { get; set; }       //User Password in a hashed format of the to authenticate Person
+        public string userName { get; set; } //User Name of the to authenticate Person                 
+        public string hashedPwd { get; set; } //User Password in a hashed format of the to authenticate Person
     }
 
     /**
@@ -181,11 +199,9 @@ namespace vdivsvirus.Types
         public DateTime time { get; set; } //milliseconds since 1.1.1970 (UTC)
     }
 
+    #endregion
 
-    // #######################################
-    // Propabilistic Data Analysis (PDA)
-    // (Disease Pattern Early Recoginition)
-    // #######################################
+    #region PDA
 
     /**
      * Structs of SymptomeDataSet [INPUT]
@@ -207,14 +223,13 @@ namespace vdivsvirus.Types
         public Dictionary<int, float> propabilities { get; set; }
     }
 
+    #endregion
 
 
+    #region PGA
 
-    // #######################################
     // Propabilistic Gradient Analysis (PGA)
     // (Disease Pattern Early Recoginition)
-    // #######################################
-
 
     /**
      * Structs of PropabilityHistorySet [INPUT]
@@ -225,20 +240,18 @@ namespace vdivsvirus.Types
         public List<PropabilityDataSet> history { get; set; }
     }
 
+    #endregion
 
-    // #######################################
-    // Response Data Set Data Types
-    // #######################################
-
+    #region Response Data Set Data Types
 
     /**
      * Structs of DiseaseType
      */
     public class DiseaseType
     {
-        public int id { get; set; }                     //DiseaseID
-        public string name { get; set; }                   //DiseaseName
-        public string desc { get; set; }                   //DiseaseDescription
+        public int id { get; set; } //DiseaseID
+        public string name { get; set; } //DiseaseName
+        public string desc { get; set; } //DiseaseDescription
     }
 
     /**
@@ -264,4 +277,5 @@ namespace vdivsvirus.Types
         public string message { get; set; }
     }
 
+    #endregion
 }
