@@ -23,11 +23,11 @@ namespace vdivsvirus
     /// 
     /// Attention:
     /// For the hackathon the several service parts are 
-    /// build together within a monolitic application
+    /// build together within a monolithic application
     /// structure. 
     /// 
     /// In a scalable application environment, the services
-    /// can be seperated into several standalone service
+    /// can be separated into several standalone service
     /// who are working via rest interfaces as micro-service
     /// system.
     /// </summary>
@@ -37,19 +37,14 @@ namespace vdivsvirus
         {
             var host = CreateWebHostBuilder(args).Build();
 
-            using (var serviceScope = host.Services.CreateScope())
-            {
-                var services = serviceScope.ServiceProvider;
-
-            }
-
             await host.RunAsync();
         }
 
-
-
-
-
+        /// <summary>
+        /// Configure Startup
+        /// (Configure rest of Builder here)</summary>
+        /// <param name="args">console parameters</param>
+        /// <returns></returns>
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>();
