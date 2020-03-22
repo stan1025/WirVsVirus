@@ -33,7 +33,7 @@ Dies hat unter anderem zur Folge, dass Ärzte häufiger aufgesucht werden, eine 
 Im Rahmen des Hackathons haben wir eine Lösung entwickelt, die die Probleme 2, 6, 7 und 8 aus der Problembeschreibung adressiert. Hierfür haben wir ein App-Konzept sowie eine prototypische Umsetzung entwickelt. Die App soll 
 
 - Daten, wie Symptomausprägung und Positionsdaten, vom Nutzer entgegennehmen,
-- diese mit Hilfe von Algorithmen verarbeiten,
+- diese Datenanalysealgorithmen verarbeiten,
 - die Ergebnisse dem Nutzer in einfacher und verständlicher Weise anzeigen sowie
 - Schnittstellen für andere Datennutzer (z. B. Regierung, medizinische Forschung) zur Verfügung stellen.
 
@@ -160,7 +160,9 @@ Einen anderen Ansatz verfolgen die Wissenschaftler hinter der [Geohealth App](ht
 
 Ein entscheidender Faktor im Kampf gegen die Verbreitung der Pandemie ist die Nachvollziehbarkeit von Infektionsketten und Definition von Risikogebieten.  Mit Hilfe der App können diese Informationen besser erhoben werden. Die Daten müssen zum jetzigen Zeitpunkt von der infizierten Personen gespendet werden. Das setzt eine hohe Interaktionsfreudigkeit mit der Anwendung und eine breite Akzeptanz voraus, um einen sinnvollen Effekt zu erzielen. Dieses wird von den Machern als digitale Impfung bezeichnet, wenn nur ca. 3% der Bevölkerung mitmachen, zeige es keine Wirkung. Lediglich mit der Mehrheit der Daten von Indexpersonen kann eine flächendeckende Funktion gewährleistet werden. Die Umfrage von Heise und weitere von unserer Gruppe durchgeführte Umfrage zeigen eine generelle Bereitschaft der Bürger ihre Daten zur Verfügung zu stellen. 
 
-![Umfrage von Heiser zu Standortdaten](images/umfrage_1.PNG)
+<p align="center">
+<img src="images/umfrage_1.PNG">
+</p>
 
 Einerseits können sich die Mitbürger darüber Informationen einholen, ob bei Ihnen innerhalb der letzten Tage ein Kontakt zu einem positiven Mitbürger bestand, um so beispielsweise grippale Symptome besser einzuschätzen. Andererseits können sich die Benutzer der App an einer Übersichtskarte orientieren, wie viele Menschen in Ihrer näheren Umgebung infiziert wurden.
 
@@ -186,7 +188,32 @@ Da es bei einer Pandemie allerdings auf eine überregionale, nationale, sogar in
 Deshalb ist es sinnvoll die verschiedenen Funktionen in einer Anwendung zu vereinen. Dadurch kann man medizinische mit geographischen Daten in Verbindung setzen, die Daten für die Forschung, die Behörden und die Bürger verwenden. 
 
 ## Definition der Funktionen
+ 
+ Aus den Ergebnissen von Personas, Umfragen und Recherchen konnten wir konkrete Funktionen für die App definieren. Dabei haben wir die Perspektive der Nutzer eingenommen: Welche Funktionen können für Nutzer hilfreich sein? Welche Funktionen wünschen sich Nutzer? Welche Funktionen möchten wir anbieten? 
+ 
+ Am Anfang jeder User Journey steht der Download und das erste Öffnen einer App. Rund um diesen Part sollte es aus unserer Sicht fünf Funktionen geben:
+ 
+<p align="center">
+<img src="images/Funktionsdefinition.png">
+</p>
+ 
+ Startet ein Nutzer das erste Mal unsere App, erhält er ein ausführliches Onboarding. In dem Onboarding wird dem Nutzer kurz und prägnant aufgezeigt, was die Idee hinter der App ist und welchen Mehrwert der Nutzer von dieser App, sowie die Anonymisierung seiner Daten und Gewährleistung seiner Privatsphäre versprochen. Danach wird der Nutzer darum gebeten sich zu registrieren. Nach erfolgreicher Registrierung erfolgt der Login. Als erstes soll der Nutzer dann für eine genauere Analyse seine aktuellen Gesundheitsdaten und Vorerkrankungen eingeben. Diese werden in seinem Profil hinterlegt, in welchem er diese immer wieder anpassen kann. Hat der Nutzer den ersten Teil abgeschlossen, öffnet sich der Startbildschirm der App und der Nutzer bekommt ein Tutorial angezeigt, das er (optional) anschauen kann. Danach startet die eigentliche Nutzung der App.
 
+ <p align="center">
+<img src="images/Funktionsdefinition_2.png">
+</p>
+ 
+Die Hauptfunktion der App ist die Eingabe der Symptome. In einer Eingabemaske kann der Nutzer jeden Tage seine aktuellen Symptome sowie deren Ausprägung eingeben. Dies ist sowohl für ihn selbst als auch für andere möglich. Letztes ist vor allem für Familien mit Kindern oder älteren Menschen relevant, die kein eigenes Smartphone besitzen, um die Daten selbst einzugeben. Auch kann das Ergebnis eines eventuellen Covid-19-Tests eingegeben werden. Der Nutzer kann sich nach der Eingabe seine Symptome ansehen. Dabei werden ihm diese für den heutigen Tag angezeigt sowie ein Verlauf, beispielsweise über die letzten zwei Wochen. So kann der Nutzer selbst seinen Gesundheitszustand überwachen.
+
+Um einen größeren Mehrwert für den Nutzer zu generieren, könnte es eine Kartendarstellung von Risikogebieten geben. Auf diesen Karten wird dem Nutzer ganz Deutschland in Regionen eingeteilt angezeigt. Die Regionen werden nach ihrem Risiko beurteilt: geringes, mittleres oder hohes Risiko. So kann der Nutzer sehen, welche Regionen gerade ein besonders großes Risiko zeigen. Zudem kann der Nutzer sich seinen Standort anzeigen lassen und so sehen, ob er sich in einem Risikogebiet befindet. Je nach Höhe des Risikos in seinem Gebiet, wird ihm eine Empfehlung ausgesprochen. In einem Hochrisikogebiet könnte die Empfehlung lauten "Bleiben Sie zuhause.". 
+
+Um den Nutzer daran zu erinnern, seine Symptome täglich einzugeben, sollte es Erinnerungsfunktion geben. Diese könnte in Form von Push-Notifications realisiert werden. Der Nutzer könnte beispielsweise täglich per Push an die Eingabe seiner Symptome erinnert werden. 
+
+Zusätzlich zu den wichtigsten Funktionen könnte die App dem Nutzer Informationen zur Verfügung stellen. Das könnten Informationen sein zu dem Virus Covid-19, Symptomen und Krankheitsverlauf. Auch Hygienemaßnahmen und Verhaltensregeln sowie aktuelle Zahlen und Statistiken und Anlaufstellen können den Mehrwert der App erhöhen. 
+
+Funktionen, die in fast jeder App zu finden sind und auch hier nicht fehlen sollten, sind Einstellungen (z.B. Einstellung von Schrift- und Icongröße) und das Profil. 
+ 
+Wir haben Funktionen definiert, die für uns in der täglichen Nutzung der App wichtig sind. Diese Liste ist nicht als erschöpfend zu betrachten. Die Entwicklung einer App ist dynamisch. So können Funktionen im Laufe der Entwicklung hinzugefügt, gelöscht oder durch andere ersetzt werden. Aber diese Liste stellt unsere Leitlinie und einen Ausgangspunkt für weitere Entwicklungen dar. 
 ## Data Analysis Algorithm
 
 ## Architektur
@@ -209,49 +236,40 @@ Basierend auf dem ersten Entwurf sollte weitergearbeitet werden, um eine vollumf
 ## Implementierung
 
 
-# Team Introduction
-
-Wir sind ein bunt gemischtes Team, zu Beginn alles Mitglieder/Freunde des Netzwerks der Studenten und Jungingenieure des VDI (Verein Deutscher Ingenieure).
-Im weiteren Verlauf des Hackathons haben wir uns mit Experteninnen und Experten verschiedener Fachrichtungen ausgetauscht und ergänzt. 
+# Teamvorstellung
+Wir sind ein vielfältiges Team aus dem deutschlandweiten Netzwerk der Studenten und Jungingenieure des VDI (Verein Deutscher Ingenieure e.V.).	Wir sind ein bunt gemischtes Team, zu Beginn alles Mitglieder/Freunde des Netzwerks der Studenten und Jungingenieure des VDI (Verein Deutscher Ingenieure). Zum Teil kannten wir uns vor der Zusammenarbeit noch nicht. Im weiteren Verlauf des Hackathons haben wir uns mit Experteninnen und Experten verschiedener Fachrichtungen ausgetauscht und ergänzt. Wir haben das ganze Wochenende unglaublich gut zusammen gearbeitet und mit viel Witz und Spaß eine tolle App entwickelt! 	
 
 Unser Team:
-
-**System Development / Hacking** Architecture / Development of a scalable micro-service oriented architecture 
-
-- Andreas Stutz (Architecture, Deployment, )
+**System Entwicklung / Hacking** Architektur / Entwicklung von skalierbaren mikro-service orientierten Architekturen
+- Andreas Stutz (Ideengeber, Entwickler, Architektur )
 - Benedikt Geib (REST-API / Mobile App)
 - Janik Ritz (Data Persistance)
 - Melanie Wassmer (Mobile App)
-- Philipp Gesner (Data Analysis)
+- Philipp Gesner (Datenanalyse)
 - Marwin Madsen (Mobile App)
 
 **Scientific Research**
-- Kathrin Korte (Data Analysis Algorithm)
-- Johanna Hoppe 
+- Kathrin Korte (Datenanalyse Algorithmus)
 - Charlotte Maschke
 
-
 **Public Research**
-- Luisa Miny (User Experience)
-- Torben Deppe (Research Communication)
-- David Seck (???)
-- Vincent Laux (MockUp / Usability)
+- Luisa Miny (User Experience, Video Konzept)
+- Torben Deppe (Recherche, Projektmanagement)
+- David Seck (Recherche, externe Kommunikation)
+- Vincent Laux (MockUp / Umfragen)
 - Riadh Dhaoui (Video Design)
-- Jonas Thees (???)
+- Jonas Thees (Datenschutz)
+- Johanna Hoppe (Umfragen Auswertung, Video Konzept)	
 
+# Liste der Archive
 
-# List of Repositories
-
-**Cloud Application**
+**Cloud Anwendung**
 https://github.com/stan1025/WirVsVirus
 
-Special Thanks to Amazon Web Service especially to Pawel Warmuth for supporting with a billing voucher as well as the great support!
+Ein besonderer Dank gilt Amazon Web Service insbesondere Pawel Warmuth für die großartige Unterstützung beim Zugang und der Bedienung!
 
-**Mobile Application**
+**Mobile Anwendung**
 https://github.com/stan1025/WirVsVirus_App
 
 
-
-
-
-Follow the link and find more information about our idea: ["Disease-pattern-early-recognition-in-global-distribution"](https://devpost.com/software/disease-pattern-early-recognition-in-global-distribution#updates)
+Für mehr informationen zu unserer App folge diesem Link: ["Disease-pattern-early-recognition-in-global-distribution"](https://devpost.com/software/disease-pattern-early-recognition-in-global-distribution#updates)
