@@ -240,6 +240,7 @@ Basierend auf dem ersten Entwurf sollte weitergearbeitet werden, um eine vollumf
 Wir sind ein vielfältiges Team aus dem deutschlandweiten Netzwerk der Studenten und Jungingenieure des VDI (Verein Deutscher Ingenieure e.V.).	Wir sind ein bunt gemischtes Team, zu Beginn alles Mitglieder/Freunde des Netzwerks der Studenten und Jungingenieure des VDI (Verein Deutscher Ingenieure). Zum Teil kannten wir uns vor der Zusammenarbeit noch nicht. Im weiteren Verlauf des Hackathons haben wir uns mit Experteninnen und Experten verschiedener Fachrichtungen ausgetauscht und ergänzt. Wir haben das ganze Wochenende unglaublich gut zusammen gearbeitet und mit viel Witz und Spaß eine tolle App entwickelt! 	
 
 Unser Team:
+
 **System Entwicklung / Hacking** Architektur / Entwicklung von skalierbaren mikro-service orientierten Architekturen
 - Andreas Stutz (Ideengeber, Entwickler, Architektur )
 - Benedikt Geib (REST-API / Mobile App)
