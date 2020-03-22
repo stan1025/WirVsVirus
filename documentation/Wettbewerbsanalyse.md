@@ -44,7 +44,7 @@ Südkorea hat eine Handyapp an seine Bürger ausgerollt, die anhand von GPS Date
 
 Damit die Bürger nicht ein Gefühl von Überwachung und Machtlosigkeit bekommen, ist die Art und Weise mit derart persönlichen Daten umzugehen essentiell. Zum Schutz der Daten haben Forscher am MIT eine neue Technologie entwickelt mit Geodaten umzugehen. 
 
-Die [Private Kit]([http://privatekit.mit.edu/)  Entwickler beschreiben in einem [Whitepaper]([https://arxiv.org/pdf/2003.08567.pdf](https://arxiv.org/pdf/2003.08567.pdf)) die Entwickler die Herausforderungen und die technische Umsetzung.  
+Die [Private Kit](http://privatekit.mit.edu/)  Entwickler beschreiben in einem [Whitepaper]([https://arxiv.org/pdf/2003.08567.pdf](https://arxiv.org/pdf/2003.08567.pdf)) die Entwickler die Herausforderungen und die technische Umsetzung.  
 >We seek to outline the different technological approaches to mobile-phone based contact-tracing to date and elaborate on the opportunities and the risks that these technologies pose to individuals and societies. We describe advanced security enhancing approaches that can mitigate these risks and describe trade-offs one must make when developing and deploying any mass contact-tracing technology
 
 Sie entwickelten einen Algorithmus bei dem Bewegungsprofile erstellt werden, die Daten allerdings nie das Gerät des Benutzers verlassen. Diese Lösung stellen sie *Open Source* zur Verfügung. 
