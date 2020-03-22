@@ -26,7 +26,7 @@ namespace vdivsvirus.Services
             SymptomeType fieber = new SymptomeType { 
                 IdentData = new SymptomeIdentData() 
                 { 
-                    id = "1", 
+                    id = "R50.9", 
                     inputType = SymptomeInputType.slider, 
                     desc = "", 
                     name = "Fieber", 
@@ -44,7 +44,7 @@ namespace vdivsvirus.Services
             {
                 IdentData = new SymptomeIdentData()
                 {
-                    id = "2",
+                    id = "R05",
                     inputType = SymptomeInputType.slider,
                     desc = "",
                     name = "Husten",
@@ -62,7 +62,7 @@ namespace vdivsvirus.Services
             {
                 IdentData = new SymptomeIdentData()
                 {
-                    id = "3",
+                    id = "R53",
                     inputType = SymptomeInputType.slider,
                     desc = "",
                     name = "Abgeschlagenheit",
@@ -81,7 +81,7 @@ namespace vdivsvirus.Services
             {
                 IdentData = new SymptomeIdentData()
                 {
-                    id = "4",
+                    id = "R06.0",
                     inputType = SymptomeInputType.slider,
                     desc = "",
                     name = "Kurzatmigkeit",
@@ -100,7 +100,7 @@ namespace vdivsvirus.Services
             {
                 IdentData = new SymptomeIdentData()
                 {
-                    id = "5",
+                    id = "M79.6",
                     inputType = SymptomeInputType.slider,
                     desc = "",
                     name = "Muskel-/Gelenkschmerz",
@@ -118,7 +118,7 @@ namespace vdivsvirus.Services
             {
                 IdentData = new SymptomeIdentData()
                 {
-                    id = "6",
+                    id = "R07.0",
                     inputType = SymptomeInputType.slider,
                     desc = "",
                     name = "Halsschmerz",
@@ -137,7 +137,7 @@ namespace vdivsvirus.Services
             {
                 IdentData = new SymptomeIdentData()
                 {
-                    id = "7",
+                    id = "R51",
                     inputType = SymptomeInputType.slider,
                     desc = "",
                     name = "Kopfschmerz",
@@ -156,7 +156,7 @@ namespace vdivsvirus.Services
             {
                 IdentData = new SymptomeIdentData()
                 {
-                    id = "8",
+                    id = "R68.8",
                     inputType = SymptomeInputType.slider,
                     desc = "",
                     name = "Schüttelfrost",
@@ -175,7 +175,7 @@ namespace vdivsvirus.Services
             {
                 IdentData = new SymptomeIdentData()
                 {
-                    id = "9",
+                    id = "R11",
                     inputType = SymptomeInputType.slider,
                     desc = "",
                     name = "Übelkeit",
@@ -194,7 +194,7 @@ namespace vdivsvirus.Services
             {
                 IdentData = new SymptomeIdentData()
                 {
-                    id = "10",
+                    id = "R06.8",
                     inputType = SymptomeInputType.slider,
                     desc = "",
                     name = "Verstopfte Nase",
@@ -213,7 +213,7 @@ namespace vdivsvirus.Services
             {
                 IdentData = new SymptomeIdentData()
                 {
-                    id = "11",
+                    id = "A09.0",
                     inputType = SymptomeInputType.slider,
                     desc = "",
                     name = "Durchfall",
