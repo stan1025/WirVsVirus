@@ -29,6 +29,8 @@ Zusammengefasst konnten 13 Fragen in drei Hauptgruppen ermittelt werden, die von
 
 <p align="center">
 <img src="images/Polly.JPG" height="400">
+</p>
+<p align="center">
 <em>Slack-Umfrage</em>
 </p>
 
