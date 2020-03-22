@@ -1,5 +1,5 @@
 # #WirVsVirus
-![KeyVisual of Hackathon](documentations/images/KeyVisual.jpg)
+![KeyVisual of Hackathon](documentation/images/KeyVisual.jpg)
 
 # Topic Introduction
 

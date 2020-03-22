@@ -10,12 +10,14 @@ namespace vdivsvirus.Services
     public class KnowledgeService : IKnowledgeService
 {
         private List<SymptomeType> symptomeList = new List<SymptomeType>();
+        private List<SymptomeType> thresholdFactorList = new List<SymptomeType>();
         private List<DiseaseType> diseaseList = new List<DiseaseType>();
 
 
         public KnowledgeService()
         {
             loadSymptomeData();
+            loadThresholdFactors();
             LoadDiseasesTypes();
         }
 
@@ -23,17 +25,19 @@ namespace vdivsvirus.Services
         {
             #region Fieber Symptome
 
-            SymptomeType fieber = new SymptomeType { 
-                IdentData = new SymptomeIdentData() 
-                { 
-                    id = "1", 
-                    inputType = SymptomeInputType.slider, 
-                    desc = "", 
-                    name = "Fieber", 
-                    settings = "min=36.5;max=42.5;step=0.1" 
+            SymptomeType fieber = new SymptomeType
+            {
+                IdentData = new SymptomeIdentData()
+                {
+                    id = "1",
+                    inputType = SymptomeInputType.slider,
+                    desc = "",
+                    name = "Fieber",
+                    settings = "min=36.5;max=42.5;step=0.1"
                 },
-                symptomePropability = (float)87.9, 
-                ScaleFunc = input => input * 1000 };
+                symptomePropability = (float)87.9,
+                ScaleFunc = SymptomeScalingExtension.FeverScaling
+            };
 
             symptomeList.Add(fieber);
             #endregion
@@ -50,7 +54,8 @@ namespace vdivsvirus.Services
                     name = "Husten",
                     settings = "min=0;max=100;step=1"
                 },
-                symptomePropability = (float)67.7
+                symptomePropability = (float)67.7,
+                ScaleFunc = SymptomeScalingExtension.OneToOne
             };
 
             symptomeList.Add(husten);
@@ -68,7 +73,8 @@ namespace vdivsvirus.Services
                     name = "Abgeschlagenheit",
                     settings = "min=0;max=100;step=1"
                 },
-                symptomePropability = (float)38.1
+                symptomePropability = (float)38.1,
+                ScaleFunc = SymptomeScalingExtension.OneToOne
             };
 
             symptomeList.Add(abgeschlagenheit);
@@ -87,7 +93,8 @@ namespace vdivsvirus.Services
                     name = "Kurzatmigkeit",
                     settings = "min=0;max=100;step=1"
                 },
-                symptomePropability = (float)18.6
+                symptomePropability = (float)18.6,
+                ScaleFunc = SymptomeScalingExtension.OneToOne
             };
 
             symptomeList.Add(kurzatmigkeit);
@@ -106,7 +113,8 @@ namespace vdivsvirus.Services
                     name = "Muskel-/Gelenkschmerz",
                     settings = "min=0;max=100;step=1"
                 },
-                symptomePropability = (float)14.8
+                symptomePropability = (float)14.8,
+                ScaleFunc = SymptomeScalingExtension.OneToOne
             };
 
             symptomeList.Add(muskelgelenkschmerz);
@@ -124,7 +132,8 @@ namespace vdivsvirus.Services
                     name = "Halsschmerz",
                     settings = "min=0;max=100;step=1"
                 },
-                symptomePropability = (float)13.9
+                symptomePropability = (float)13.9,
+                ScaleFunc = SymptomeScalingExtension.OneToOne
             };
 
             symptomeList.Add(halsschmerz);
@@ -143,7 +152,8 @@ namespace vdivsvirus.Services
                     name = "Kopfschmerz",
                     settings = "min=0;max=100;step=1"
                 },
-                symptomePropability = (float)13.6
+                symptomePropability = (float)13.6,
+                ScaleFunc = SymptomeScalingExtension.OneToOne
             };
 
             symptomeList.Add(kopfschmerz);
@@ -162,7 +172,8 @@ namespace vdivsvirus.Services
                     name = "Schüttelfrost",
                     settings = "min=0;max=100;step=1"
                 },
-                symptomePropability = (float)11.4
+                symptomePropability = (float)11.4,
+                ScaleFunc = SymptomeScalingExtension.OneToOne
             };
 
             symptomeList.Add(schuettelfrost);
@@ -181,14 +192,15 @@ namespace vdivsvirus.Services
                     name = "Übelkeit",
                     settings = "min=0;max=100;step=1"
                 },
-                symptomePropability = (float)5.0
+                symptomePropability = (float)5.0,
+                ScaleFunc = SymptomeScalingExtension.OneToOne
             };
 
             symptomeList.Add(uebelkeit);
 
             #endregion
 
-            #region verstopfteNase Symptome
+            #region VerstopfteNase Symptome
 
             SymptomeType verstopfteNase = new SymptomeType
             {
@@ -200,7 +212,8 @@ namespace vdivsvirus.Services
                     name = "Verstopfte Nase",
                     settings = "min=0;max=100;step=1"
                 },
-                symptomePropability = (float)4.8
+                symptomePropability = (float)4.8,
+                ScaleFunc = SymptomeScalingExtension.OneToOne
             };
 
             symptomeList.Add(verstopfteNase);
@@ -219,7 +232,8 @@ namespace vdivsvirus.Services
                     name = "Durchfall",
                     settings = "min=0;max=100;step=1"
                 },
-                symptomePropability = (float)3.7
+                symptomePropability = (float)3.7,
+
             };
 
             symptomeList.Add(durchfall);
@@ -227,7 +241,93 @@ namespace vdivsvirus.Services
             #endregion
         }
 
+        private void loadThresholdFactors()
+        {
+            #region Faktor Alter
 
+            SymptomeType alter = new SymptomeType
+            {
+                IdentData = new SymptomeIdentData()
+                {
+                    id = "1",
+                    inputType = SymptomeInputType.yesno,
+                    desc = "Sind Sie über 65?",
+                    name = "Alter",
+                },
+                thresholdFactor = (float)87.9, //this should lower the threshold
+            };
+
+            thresholdFactorList.Add(alter);
+            #endregion
+
+            #region Faktor Wohnsituation
+
+            SymptomeType wohnsituation = new SymptomeType
+            {
+                IdentData = new SymptomeIdentData()
+                {
+                    id = "2",
+                    inputType = SymptomeInputType.yesno,
+                    desc = "Leben Sie bei Ihrer Familie in einer Wohngemeinschaft oder einer betreuten Gemeinschaftseinrichtung?",
+                    name = "Wohnsituation",
+                },
+                thresholdFactor = (float)87.9, //this should lower the threshold
+            };
+
+            thresholdFactorList.Add(wohnsituation);
+            #endregion
+
+            #region Faktor Arbeit
+
+            SymptomeType arbeit = new SymptomeType
+            {
+                IdentData = new SymptomeIdentData()
+                {
+                    id = "3",
+                    inputType = SymptomeInputType.yesno,
+                    desc = "Sind Sie im medizinischen Bereich oder einer Gemeinschaftseinrichtung tätig?",
+                    name = "Arbeit",
+                },
+                thresholdFactor = (float)87.9, //this should lower the threshold
+            };
+
+            thresholdFactorList.Add(arbeit);
+            #endregion
+
+            #region Faktor Reise
+
+            SymptomeType reise = new SymptomeType
+            {
+                IdentData = new SymptomeIdentData()
+                {
+                    id = "4",
+                    inputType = SymptomeInputType.yesno,
+                    desc = "Sind Sie in den letzten 4 Wochen verreist?",
+                    name = "Reise",
+                },
+                thresholdFactor = (float)87.9, //this should lower the threshold
+            };
+
+            thresholdFactorList.Add(reise);
+            #endregion
+
+            #region Faktor Verdachtsfallkontakt
+
+            SymptomeType verdachtsfallkontakt = new SymptomeType
+            {
+                IdentData = new SymptomeIdentData()
+                {
+                    id = "5",
+                    inputType = SymptomeInputType.yesno,
+                    desc = "Hatten Sie engen Kontakt zu einem Verdachtsfall?",
+                    name = "Verdachtsfallkontakt",
+                },
+                thresholdFactor = (float)87.9, //this should lower the threshold
+            };
+
+            thresholdFactorList.Add(verdachtsfallkontakt);
+            #endregion
+        }
 
         public List<SymptomeType> GetSymptomeTypes()
         {
@@ -250,9 +350,6 @@ namespace vdivsvirus.Services
             return diseaseList.Select(item => item.IdentData).ToList();
         }
 
-
-
-
         private void LoadDiseasesTypes()
         {
 
@@ -268,18 +365,12 @@ namespace vdivsvirus.Services
                     infoLink = "www.covid19.com"
                 },
                 propabilityAlgorithm = covid19Algorithm,
-                GetRecommendation = null
+                GetRecommendation = covid19Recommendation,
             };
 
             #endregion
 
-
-
         }
-
-
-
-
 
         #region Propability Algorithms
 
@@ -300,17 +391,13 @@ namespace vdivsvirus.Services
 
         #region Recommendation Algorithms
 
-
-
-
+        private String covid19Recommendation(float propabilityResult)
+        {
+            return "Das ist eine Test Nachricht";
+        }
 
         #endregion
-
-
     }
-
-
-
 
     public static class SymptomeScalingExtension
     {
