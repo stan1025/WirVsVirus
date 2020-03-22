@@ -33,7 +33,7 @@ Dies hat unter anderem zur Folge, dass Ärzte häufiger aufgesucht werden, eine 
 Im Rahmen des Hackathons haben wir eine Lösung entwickelt, die die Probleme 2, 6, 7 und 8 aus der Problembeschreibung adressiert. Hierfür haben wir ein App-Konzept sowie eine prototypische Umsetzung entwickelt. Die App soll 
 
 - Daten, wie Symptomausprägung und Positionsdaten, vom Nutzer entgegennehmen,
-- diese mit [TODO: Wording] Algorithmen verarbeiten,
+- diese mit Datenanalysealgorithmen verarbeiten,
 - die Ergebnisse dem Nutzer in einfacher und verständlicher Weise anzeigen sowie
 - Schnittstellen für andere Datennutzer (z. B. Regierung, medizinische Forschung) zur Verfügung stellen.
 
@@ -209,49 +209,46 @@ Basierend auf dem ersten Entwurf sollte weitergearbeitet werden, um eine vollumf
 ## Implementierung
 
 
-# Team Introduction
+# Teamvorstellung
 
-Wir sind ein bunt gemischtes Team, zu Beginn alles Mitglieder/Freunde des Netzwerks der Studenten und Jungingenieure des VDI (Verein Deutscher Ingenieure).
-Im weiteren Verlauf des Hackathons haben wir uns mit Experteninnen und Experten verschiedener Fachrichtungen ausgetauscht und ergänzt. 
+Wir sind ein vielfältiges Team aus dem deutschlandweiten Netzwerk der Studenten und Jungingenieure des VDI (Verein Deutscher Ingenieure e.V.).
+Zum Teil kannten wir uns vor der Zusammenarbeit noch nicht. 
+Wir haben das ganze Wochenende unglaublich gut zusammen gearbeitet und mit viel Witz und Spaß eine tolle App entwickelt! 
 
-Unser Team:
 
-**System Development / Hacking** Architecture / Development of a scalable micro-service oriented architecture 
+**System Entwicklung / Hacking** Architektur / Entwicklung von skalierbaren mikro-service orientierten Architekturen
 
-- Andreas Stutz (Architecture, Deployment, )
+- Andreas Stutz (Ideengeber, Entwickler, Architektur )
 - Benedikt Geib (REST-API / Mobile App)
 - Janik Ritz (Data Persistance)
 - Melanie Wassmer (Mobile App)
-- Philipp Gesner (Data Analysis)
+- Philipp Gesner (Datenanalyse)
 - Marwin Madsen (Mobile App)
 
 **Scientific Research**
-- Kathrin Korte (Data Analysis Algorithm)
-- Johanna Hoppe 
+- Kathrin Korte (Datenanalyse Algorithmus)
 - Charlotte Maschke
 
 
 **Public Research**
-- Luisa Miny (User Experience)
-- Torben Deppe (Research Communication)
-- David Seck (???)
-- Vincent Laux (MockUp / Usability)
+- Luisa Miny (User Experience, Video Konzept)
+- Torben Deppe (Recherche, Projektmanagement)
+- David Seck (Recherche, externe Kommunikation)
+- Vincent Laux (MockUp / Umfragen)
 - Riadh Dhaoui (Video Design)
-- Jonas Thees (???)
+- Jonas Thees (Datenschutz)
+- Johanna Hoppe (Umfragen Auswertung, Video Konzept)
 
 
-# List of Repositories
+# Liste der Archive 
 
-**Cloud Application**
+**Cloud Anwendung**
 https://github.com/stan1025/WirVsVirus
 
-Special Thanks to Amazon Web Service especially to Pawel Warmuth for supporting with a billing voucher as well as the great support!
+Ein besonderer Dank gilt Amazon Web Service insbesondere Pawel Warmuth für die großartige Unterstützung beim Zugang und der Bedienung!
 
-**Mobile Application**
+**Mobile Anwendung**
 https://github.com/stan1025/WirVsVirus_App
 
 
-
-
-
-Follow the link and find more information about our idea: ["Disease-pattern-early-recognition-in-global-distribution"](https://devpost.com/software/disease-pattern-early-recognition-in-global-distribution#updates)
+Für mehr informationen zu unserer App folge diesem Link: ["Disease-pattern-early-recognition-in-global-distribution"](https://devpost.com/software/disease-pattern-early-recognition-in-global-distribution#updates)
