@@ -57,7 +57,7 @@ namespace depr_api_test
             RestClient client = new RestClient("http://localhost:5000");
             RestRequest request = new RestRequest("api/symptome/senddiseasedataset", Method.POST);
 
-            DiseaseDataSet resData = new DiseaseDataSet()
+            DiseaseAcknowledgeSet resData = new DiseaseAcknowledgeSet()
             {
                 userID = Guid.NewGuid(),
                 time = DateTime.Now,

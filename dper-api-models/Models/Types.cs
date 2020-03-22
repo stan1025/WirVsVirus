@@ -188,6 +188,30 @@ namespace vdivsvirus.Types
 
     #region Disease Data Set Data Types
 
+    public class DiseaseData
+    {
+        /// <summary>
+        /// Disease Identifier
+        /// </summary>
+        public string id { get; set; }
+        /// <summary>
+        /// Disease Propability Finding
+        /// </summary>
+        public float propability { get; set; }
+    }
+
+    public class DiseaseAcknowledgement
+    {
+        /// <summary>
+        /// Disease Identifier
+        /// </summary>
+        public string id { get; set; }
+        /// <summary>
+        /// Acknowledged Disease Finding
+        /// </summary>
+        public bool acknowledged { get; set; }
+    }
+
 
     /// <summary>
     /// Identification Information 
@@ -251,12 +275,12 @@ namespace vdivsvirus.Types
     }
 
     /**
-     * Structs of DiseaseDataSet
+     * Structs of DiseaseAcknowledgeSet
      */
-    public class DiseaseDataSet
+    public class DiseaseAcknowledgeSet
     {
         public Guid userID { get; set; }
-        public int diseaseID { get; set; }
+        public string diseaseID { get; set; }
         public bool testResult { get; set; }
         public AuthenticationData authenticator { get; set; }
         public DateTime time { get; set; } //milliseconds since 1.1.1970 (UTC)
@@ -273,7 +297,7 @@ namespace vdivsvirus.Types
     {
         public Guid userID { get; set; }
         public DateTime time { get; set; }
-        public Dictionary<string, float> symptomes { get; set; }
+        public List<SymptomeInputData> symptomes { get; set; }
     }
 
     /**
@@ -283,7 +307,7 @@ namespace vdivsvirus.Types
     {
         public Guid userID { get; set; }
         public DateTime time { get; set; }
-        public Dictionary<string, float> propabilities { get; set; }
+        public List<DiseaseData> propabilities { get; set; }
     }
 
     #endregion
@@ -315,7 +339,7 @@ namespace vdivsvirus.Types
     {
         public Guid userID { get; set; }
         public DateTime time { get; set; }
-        public Dictionary<string, float> propabilities { get; set; }
+        public List<DiseaseData> propabilities { get; set; }
         public Dictionary<string, DiseaseType> diseaseTypes { get; set; }
         public string message { get; set; }
     }

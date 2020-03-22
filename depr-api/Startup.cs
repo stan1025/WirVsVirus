@@ -65,6 +65,7 @@ namespace vdivsvirus
             services.AddSingleton<IRequestDataSet>(dataService);
             services.AddSingleton<ISendSymptome>(dataService);
             services.AddSingleton<IKnowledgeService>(knowledgeService);
+            services.AddSingleton<IResponseService>(responseService);
             services.AddHostedService<pdaService>();
             // services.AddHostedService<pgaService>();
 
