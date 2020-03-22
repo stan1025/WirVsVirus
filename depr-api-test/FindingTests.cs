@@ -14,22 +14,29 @@ namespace depr_api_test
     [TestClass]
     public class FindingTests
     {
+        [TestMethod]
+        [Timeout(200)]
+        public void InitialEnvironment()
+        {
+            Constants.userID = Guid.NewGuid();
+            Constants.lastTime = DateTime.Now;
+        }
 
 
         [TestMethod]
         [Timeout(200)]
         public void FindingAvailableTest()
         {
+            InitialEnvironment();
+
             // arrange
             var _client = new HttpClient();
             var uri = new Uri(Constants.url + "/api/finding/newfindingavailable");
-            Guid userId = Guid.NewGuid();
-            DateTime time = DateTime.Now;
 
-            // act
+            //// act
             JObject o = new JObject();
-            o.Add("id", userId);
-            o.Add("time", time);
+            o.Add("id", Constants.userID);
+            o.Add("time", Constants.lastTime);
 
             string json = o.ToString();
             var request = new HttpRequestMessage
@@ -56,18 +63,22 @@ namespace depr_api_test
             Guid userId = Guid.NewGuid();
             DateTime time = DateTime.Now;
 
-            // act
-            JObject o = new JObject();
-            o.Add("id", userId);
-            o.Add("time", time);
+            //// act
+            //JObject o = new JObject();
+            //o.Add("id", Constants.userID);
+            //o.Add("time", Constants.lastTime);
 
-            string json = o.ToString();
+            //string json = o.ToString();
             var request = new HttpRequestMessage
             {
                 Method = HttpMethod.Get,
                 RequestUri = uri,
-                Content = new StringContent(json, Encoding.UTF8, "application/json"),
+                //Content = new StringContent(json, Encoding.UTF8, "application/json")
             };
+
+            request.Properties.Add("id", Constants.userID);
+            request.Properties.Add("time", Constants.lastTime);
+
 
             var response = _client.SendAsync(request).Result;
 
@@ -75,6 +86,8 @@ namespace depr_api_test
             Assert.IsTrue(response.IsSuccessStatusCode, "Statuscode " + response.StatusCode + " returned");
 
             UserResponseDataSet data = JsonConvert.DeserializeObject<UserResponseDataSet>(response.Content.ReadAsStringAsync().Result);
+
+            System.Diagnostics.Trace.WriteLine(response.Content.ReadAsStringAsync().Result);
 
             // assert
             Assert.IsNotNull(response.Content);

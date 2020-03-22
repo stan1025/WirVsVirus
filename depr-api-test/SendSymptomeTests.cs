@@ -14,6 +14,16 @@ namespace depr_api_test
     [TestClass]
     public class SendSymptomeTest
     {
+
+        [TestMethod]
+        [Timeout(200)]
+        public void InitialEnvironment()
+        {
+            Constants.userID = Guid.NewGuid();
+            Constants.lastTime = DateTime.Now;
+        }
+
+
         [TestMethod]
         [Timeout(200)]
         public void GetSymptomeTypes()
@@ -37,25 +47,26 @@ namespace depr_api_test
         {
             // arrange
             var _client = new HttpClient();
+            Constants.lastTime = DateTime.Now;
 
             SymptomeInputDataSet resData = new SymptomeInputDataSet()
             {
-                userID = Guid.NewGuid(),
-                time = DateTime.Now,
+                userID = Constants.userID,
+                time = Constants.lastTime,
                 geodata = new List<GeoData>(),
                 symptomes = new List<SymptomeInputData>()
                 {
-                    new SymptomeInputData(){ id = 1, strength = 70f },
-                    new SymptomeInputData(){ id = 1, strength = 80f },
-                    new SymptomeInputData(){ id = 1, strength = 60f },
-                    new SymptomeInputData(){ id = 1, strength = 30f },
-                    new SymptomeInputData(){ id = 1, strength = 40f },
-                    new SymptomeInputData(){ id = 1, strength = 30f },
-                    new SymptomeInputData(){ id = 1, strength = 20f },
-                    new SymptomeInputData(){ id = 1, strength = 70f },
-                    new SymptomeInputData(){ id = 1, strength = 0f },
-                    new SymptomeInputData(){ id = 1, strength = 40f },
-                    new SymptomeInputData(){ id = 1, strength = 0f }
+                    new SymptomeInputData(){ id = "R50.9", strength = 38.8f },
+                    new SymptomeInputData(){ id = "R05", strength = 80f },
+                    new SymptomeInputData(){ id = "R53", strength = 60f },
+                    new SymptomeInputData(){ id = "R06.0", strength = 30f },
+                    new SymptomeInputData(){ id = "M79.6", strength = 40f },
+                    new SymptomeInputData(){ id = "R07.0", strength = 30f },
+                    new SymptomeInputData(){ id = "R51", strength = 20f },
+                    new SymptomeInputData(){ id = "R68.8", strength = 70f },
+                    new SymptomeInputData(){ id = "R11", strength = 0f },
+                    new SymptomeInputData(){ id = "R06.8", strength = 40f },
+                    new SymptomeInputData(){ id = "A09.0", strength = 0f }
                 }
             };
             var json = JsonConvert.SerializeObject(resData);
@@ -63,6 +74,9 @@ namespace depr_api_test
 
             //act
             HttpResponseMessage response = _client.PostAsync(new Uri(Constants.url + "/api/symptome/sendsymptomedataset"), content).Result;
+
+
+
 
 
             Assert.IsTrue(response.IsSuccessStatusCode, "Statuscode " + response.StatusCode + " returned");

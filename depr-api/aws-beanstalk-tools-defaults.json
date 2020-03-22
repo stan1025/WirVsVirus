@@ -4,7 +4,7 @@
     "profile" : "adstan90",
     "region"  : "us-east-1",
     "application" : "DPER",
-    "environment" : "dper-env",
+    "environment" : "dper-net",
     "iis-website" : "Default Web Site",
     "app-path"    : "/",
     "enable-xray" : false

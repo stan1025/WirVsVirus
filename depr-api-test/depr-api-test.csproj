@@ -15,10 +15,6 @@
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\depr-api\depr-api.csproj" />
-  </ItemGroup>
-
   <Import Project="..\dper-api-models\dper-api-models.projitems" Label="Shared" />
 
 </Project>

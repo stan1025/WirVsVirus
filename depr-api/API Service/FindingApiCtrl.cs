@@ -27,9 +27,10 @@ namespace vdivsvirus.Services
 
         // GET api/finding/NewFindingAvailable
         [HttpGet("NewFindingAvailable")]
-        public ActionResult<bool> NewFindingAvailable(Guid id, DateTime time)
+        public ActionResult<bool> NewFindingAvailable([FromQuery] Guid id, [FromQuery]  DateTime time)
         {
-            
+            var test = this;
+
             return responseService.NewFindingAvailable(id, time);
         }
 

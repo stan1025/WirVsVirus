@@ -41,12 +41,20 @@ namespace vdivsvirus.Services
 
         private void executeAnalyzing()
         {
-            outputData = new PropabilityDataSet()
+            try
             {
-                userID = inputData.userID,
-                time = inputData.time,
-                propabilities = knowledgeService.GetDiseaseTypes().Select(item => new DiseaseData() { id = item.IdentData.id, propability = item.propabilityAlgorithm(inputData) }).ToList()
-            };
+                outputData = new PropabilityDataSet()
+                {
+                    userID = inputData.userID,
+                    time = inputData.time,
+                    propabilities = knowledgeService.GetDiseaseTypes().Select(item => new DiseaseData() { id = item.IdentData.id, propability = item.propabilityAlgorithm(inputData) }).ToList()
+                };
+            }
+            catch(Exception err)
+            {
+                System.Diagnostics.Trace.Write(err);
+                outputData = new PropabilityDataSet();
+            }
         }
 
 

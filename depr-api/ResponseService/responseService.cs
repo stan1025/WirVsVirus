@@ -23,6 +23,7 @@ namespace vdivsvirus.Services
 
         public bool NewFindingAvailable(Guid userId, DateTime time)
         {
+            
             return (dataService.RequestDiseasePropability(userId, time)?.propabilities.Count ?? 0) != 0;
         }
 
@@ -40,6 +41,8 @@ namespace vdivsvirus.Services
 
         private UserResponseDataSet CreateUserReport(Guid userId, DateTime time)
         {
+            if (!NewFindingAvailable(userId, time)) return new UserResponseDataSet();
+
             PropabilityDataSet sourceData = dataService.RequestDiseasePropability(userId, time);
 
             UserResponseDataSet res = new UserResponseDataSet();
