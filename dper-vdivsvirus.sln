@@ -5,7 +5,16 @@ VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "depr-api", "depr-api\depr-api.csproj", "{03F3F73F-BE2D-4F91-AB2B-3BFAA95E0EE2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "depr-api-test", "depr-api-test\depr-api-test.csproj", "{804FE809-0FA8-4358-91A7-5FA48A131ED2}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "dper-api-models", "dper-api-models\dper-api-models.shproj", "{02B11E64-386A-4CCA-A87D-74A254E0769F}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		dper-api-models\dper-api-models.projitems*{02b11e64-386a-4cca-a87d-74a254e0769f}*SharedItemsImports = 13
+		dper-api-models\dper-api-models.projitems*{03f3f73f-be2d-4f91-ab2b-3bfaa95e0ee2}*SharedItemsImports = 5
+		dper-api-models\dper-api-models.projitems*{804fe809-0fa8-4358-91a7-5fa48a131ed2}*SharedItemsImports = 5
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -15,6 +24,10 @@ Global
 		{03F3F73F-BE2D-4F91-AB2B-3BFAA95E0EE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03F3F73F-BE2D-4F91-AB2B-3BFAA95E0EE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03F3F73F-BE2D-4F91-AB2B-3BFAA95E0EE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{804FE809-0FA8-4358-91A7-5FA48A131ED2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{804FE809-0FA8-4358-91A7-5FA48A131ED2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{804FE809-0FA8-4358-91A7-5FA48A131ED2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{804FE809-0FA8-4358-91A7-5FA48A131ED2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

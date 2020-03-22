@@ -9,8 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-using vdivsvirus.Interfaces;
-using vdivsvirus.Services;
+
 
 namespace vdivsvirus
 {
@@ -38,8 +37,18 @@ namespace vdivsvirus
         {
             var host = CreateWebHostBuilder(args).Build();
 
+            using (var serviceScope = host.Services.CreateScope())
+            {
+                var services = serviceScope.ServiceProvider;
+
+            }
+
             await host.RunAsync();
         }
+
+
+
+
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)

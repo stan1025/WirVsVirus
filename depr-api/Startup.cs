@@ -19,6 +19,9 @@ using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using vdivsvirus.Interfaces;
 using vdivsvirus.Services;
 
+using vdivsvirus.Interfaces;
+using vdivsvirus.Services;
+
 namespace vdivsvirus
 {
     public class Startup
@@ -33,8 +36,11 @@ namespace vdivsvirus
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
+
+            //----------------
+            // DataSetService 
+            // (Central Service)
             DataSetService dataService = new DataSetService();
             IRequestDataSet requestService = dataService as IRequestDataSet;
             ISendSymptome sendService = dataService as ISendSymptome;
@@ -44,6 +50,14 @@ namespace vdivsvirus
             var pdaService = new pdaService(requestService);
             var pgaService = new pgaService(requestService);
 
+            services.AddSingleton<IRequestDataSet>(dataService);
+            services.AddSingleton<ISendSymptome>(dataService);
+            // services.AddHostedService<pdaService>();
+            // services.AddHostedService<pgaService>();
+
+
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            
             ConfigureEntityFramework(services);
         }
 

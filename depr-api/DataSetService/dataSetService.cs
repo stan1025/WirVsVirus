@@ -102,9 +102,10 @@ namespace vdivsvirus.Services
             throw new NotImplementedException();
         }
 
-        public ServiceResponse SendSymptomeDataSet(SymptomeInputData data)
+        public ServiceResponse SendSymptomeDataSet(SymptomeInputDataSet data)
         {
-            throw new NotImplementedException();
+            System.Diagnostics.Trace.Write(data);
+            return ServiceResponse.OK();
         }
     }
 }
