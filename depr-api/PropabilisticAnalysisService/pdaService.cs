@@ -45,7 +45,7 @@ namespace vdivsvirus.Services
             {
                 userID = inputData.userID,
                 time = inputData.time,
-                propabilities = knowledgeService.GetDiseaseTypes().ToDictionary(key => key.IdentData.id, val => val.propabilityAlgorithm(inputData))
+                propabilities = knowledgeService.GetDiseaseTypes().Select(item => new DiseaseData() { id = item.IdentData.id, propability = item.propabilityAlgorithm(inputData) }).ToList()
             };
         }
 

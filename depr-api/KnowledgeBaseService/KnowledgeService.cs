@@ -289,8 +289,8 @@ namespace vdivsvirus.Services
                 input =>
                 {
                     float propSum = GetSymptomeTypes().Select(item => item.symptomePropability).Sum();
-                    SymptomeType symp = GetSymptomeTypes().FirstOrDefault(item => item.IdentData.id.Equals(input.Key));
-                    return symp == null ? 0f : (symp.symptomePropability * propSum / 100) * symp.ScaleFunc(input.Value);
+                    SymptomeType symp = GetSymptomeTypes().FirstOrDefault(item => item.IdentData.id.Equals(input.id));
+                    return symp == null ? 0f : (symp.symptomePropability * propSum / 100) * symp.ScaleFunc(input.strength);
                 })
                 .Sum();
         }

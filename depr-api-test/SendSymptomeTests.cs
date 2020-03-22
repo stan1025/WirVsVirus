@@ -78,12 +78,12 @@ namespace depr_api_test
         {
             // arrange
             var _client = new HttpClient();
-            
-            DiseaseDataSet resData = new DiseaseDataSet()
+
+            DiseaseAcknowledgeSet resData = new DiseaseAcknowledgeSet()
             {
                 userID = Guid.NewGuid(),
                 time = DateTime.Now,
-                diseaseID = 1,
+                diseaseID = "1",
                 testResult = true,
                 authenticator = new AuthenticationData() {  userName = "Dr. Stutz", hashedPwd="abc123def"}
             };

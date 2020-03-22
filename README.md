@@ -71,6 +71,18 @@ Chapter 2 ...
 Chapter 3 ...
 
 
-# 
+# List of Repositories
+
+**Cloud Application**
+https://github.com/stan1025/WirVsVirus
+
+Special Thanks to Amazon Web Service especially to Pawel Warmuth for supporting with a billing voucher as well as the great support!
+
+**Mobile Application**
+https://github.com/stan1025/WirVsVirus_App
+
+
+
+
 
 Follow the link and find more information about our idea: ["Disease-pattern-early-recognition-in-global-distribution"](https://devpost.com/software/disease-pattern-early-recognition-in-global-distribution#updates)
