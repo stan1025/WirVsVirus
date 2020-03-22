@@ -42,10 +42,31 @@ namespace vdivsvirus.Services
 
         private void executeAnalyzing()
         {
-            //do the magic what ever you want :-P
+            // Calculate the disease probability
             Calculate_Covid19(inputData);
+            
+            //Propability of the symptoms
+            float prop_symp= propabilityResults.prop;
+            float mean_prop = prop_symp.Average;
+            float prop_symp_mean = prop_symp / mean_prop; //Gerne auch als Schleife ;)
 
 
+
+            //Severity of the users symptoms
+            float sev_user = propabilityResults.val;
+            float sev_user_per = propabilityResults.val*10; //points -> percent
+
+
+            //Probability to have COVID-19
+            float prop_disease_all = sev_user_per * prop_symp_mean;   //Gerne auch als Schleife ;)
+            float prop_disease = prop.disease_all.sum; 
+
+            float threshold = 0.5;
+            bool covid = false;
+            if (prop_disease > threshold)
+                {
+                covid = true;
+            }
 
 
             outputData = new PropabilityDataSet()
