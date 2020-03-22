@@ -38,21 +38,30 @@ namespace vdivsvirus
         {
 
 
-            //----------------
+            //--------------------
             // DataSetService 
             // (Central Service)
             DataSetService dataService = new DataSetService();
             IRequestDataSet requestService = dataService as IRequestDataSet;
             ISendSymptome sendService = dataService as ISendSymptome;
 
+            //--------------------
+            // Data Response Service
+            // provide feedback to users
             IResponseService responseService = new ResponseService(requestService);
 
+            //--------------------
+            // Analysing Data
+            // PDA - Propabilistic Data Analysis
+            // PGA - Propabilistic Gradient Analysis (not implemented)
             var pdaService = new pdaService(requestService);
-            var pgaService = new pgaService(requestService);
+            //var pgaService = new pgaService(requestService);
 
+            //--------------------
+            // Register Services at IC-Container
             services.AddSingleton<IRequestDataSet>(dataService);
             services.AddSingleton<ISendSymptome>(dataService);
-            // services.AddHostedService<pdaService>();
+            services.AddHostedService<pdaService>();
             // services.AddHostedService<pgaService>();
 
 

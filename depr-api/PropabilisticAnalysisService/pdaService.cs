@@ -79,15 +79,20 @@ namespace vdivsvirus.Services
         /// <returns>Related Propability Factor</returns>
         public float GetSymptomeBias(KeyValuePair<int, float> input)
         {
-            SymptomeType symp = sympInternals.FirstOrDefault(item => item.id.Equals(input.Key));
+            SymptomeType symp = sympInternals.FirstOrDefault(item => item.IdentData.id.Equals(input.Key));
             if (symp == null)
             {
                 return 0f;
             }
             else
             {
-                return symp.symptomePropability * symp.ScaleFunc(input.Value);
+                return (symp.symptomePropability * GetPropSum()/100) * symp.ScaleFunc(input.Value);
             }
+        }
+
+        public float GetPropSum()
+        {
+            return sympInternals.Select(item => item.symptomePropability).Sum();
         }
     }
 

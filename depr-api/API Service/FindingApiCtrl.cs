@@ -29,6 +29,7 @@ namespace vdivsvirus.Services
         [HttpGet("NewFindingAvailable")]
         public ActionResult<bool> NewFindingAvailable(Guid id, DateTime time)
         {
+            
             return responseService.NewFindingAvailable(id, time);
         }
 

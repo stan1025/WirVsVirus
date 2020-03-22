@@ -57,6 +57,7 @@ namespace depr_api_test
                 }
             };
 
+            request.AddParameter("UserID", resData.userID);
             request.Body = new RequestBody("application/json", string.Empty, SimpleJson.SerializeObject(resData));
 
 

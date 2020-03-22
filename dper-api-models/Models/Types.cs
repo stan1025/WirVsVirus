@@ -67,21 +67,19 @@ namespace vdivsvirus.Types
         }
 
         /// <summary>
-        /// Symptome Identifier
+        /// Symptome Ident Data
+        /// (will be sent to app)
         /// </summary>
-        public int id { get; set; }
+        public SymptomeIdentData IdentData { get; set; }
+
+
+
 
         /// <summary>
         /// Symptome Propability Factor 
         /// Setting for Proability Data Analysis 
         /// </summary>
         public float symptomePropability { get; set; }
-
-        /// <summary>
-        /// Symptome Display Data
-        /// (will be sent to app)
-        /// </summary>
-        public SymptomeDisplayData DisplayData { get; set; }
 
         /// <summary>
         /// Scaling Function for mapping of input value
@@ -94,8 +92,14 @@ namespace vdivsvirus.Types
     /// Symptome Display Data
     /// (display only information)
     /// </summary>
-    public class SymptomeDisplayData
+    public class SymptomeIdentData
     {
+
+        /// <summary>
+        /// Symptome Identifier
+        /// </summary>
+        public int id { get; set; }
+
         /// <summary>
         /// Symptome Input Classifier
         /// </summary>
