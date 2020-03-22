@@ -1,6 +1,6 @@
 ﻿# Disease Pattern Early Recognition in Global Distribution!
 <p align="center">
-<img src="documentation/images/KeyVisual.jpg" height="400">
+<img src="images/KeyVisual.jpg" height="400">
 </p>
 <p align="center">
 <em>#WirVsVirus</em>
