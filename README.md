@@ -36,7 +36,7 @@ Im Rahmen des Hackathons wurde eine Lösung entwickelt, die die Probleme 6-8 adr
 - Schnittstellen für andere Datennutzer (z. B. Regierung, medizinische Forschung) zur Verfügung stellt.
 
 ## Methodik
-Zur Erstellung der Lösung wurde methodisch vorgegangen. Es wurden zunächst Personas für die Nutzer entwickelt und Umfragen zum Funktionsumfang und zum Nutzerverhalten durchgeführt. Basierend auf den Ergebnissen wurden die Herausforderungen an diese App ermittelt, die sich in drei Hauptkategorien unterteilen lassen: Akzeptanz in der Gesellschaft, Nutzung der App und technische Umsetzung. Zu jeder der Hauptkategorien haben wir Fragen ermittelt, die beantwortet werden müssen.
+Zur Erstellung der Lösung wurde methodisch vorgegangen. Es wurden zunächst Personas für die Nutzer entwickelt und Umfragen zum Funktionsumfang und Nutzerverhalten durchgeführt. Basierend auf den Ergebnissen wurden die Herausforderungen an diese App ermittelt, die sich in drei Hauptkategorien unterteilen lassen: Akzeptanz in der Gesellschaft, Nutzung der App und technische Umsetzung. Zu jeder der Hauptkategorien haben wir Fragen ermittelt, die beantwortet werden müssen.
 
 In einem nächsten Schritt haben wir eine Analyse bestehender Lösungen durchgeführt und ermittelt, dass keiner der Lösungen, die Herausforderungen voll umfänglich erfüllt. Aus diesem Grund haben wir ein eigenes Konzept einer App entwickelt und für dieses zwei prototypische Umsetzung in Form eines Klick-Dummys sowie einer Implementierung entwickelt, auf denen im Anschluss weiter aufgebaut werden kann.
 
