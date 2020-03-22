@@ -31,16 +31,20 @@ Zusammengefasst konnten 13 Fragen in drei Hauptgruppen ermittelt werden, die von
 <img src="images/Polly.JPG" height="400">
 </p>
 <p align="center">
-<em>Slack-Umfrage</em>
+<em>Abbildung 1: Slack-Umfrage</em>
 </p>
 
 <p align="center">
 <img src="images/umfrage_Frage1.PNG" height="400">
-<em>Öffentliche Umfrage Teil I</em>
+</p>
+<p align="center">
+<em>Abbildung 1: Öffentliche Umfrage Teil I</em>
 </p>
 
 <p align="center">
 <img src="images/umfrage_Frage2.PNG" height="400">
-<em>Öffentliche Umfrage Teil II</em>
+</p>
+<p align="center">
+<em>Abbildung 1: Öffentliche Umfrage Teil II</em>
 </p>
 
