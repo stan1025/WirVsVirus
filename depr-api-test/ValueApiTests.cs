@@ -1,6 +1,10 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using RestSharp;
 using System.Net;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
+using System;
 
 namespace depr_api_test
 {
@@ -12,16 +16,16 @@ namespace depr_api_test
         public void Get_Values()
         {
             // arrange
-            RestClient client = new RestClient("http://localhost:5000");
-            RestRequest request = new RestRequest("api/values", Method.GET);
+            var _client = new HttpClient();
+            HttpResponseMessage response = _client.GetAsync(new Uri(Constants.url + "/api/values")).Result;
 
             // act
-            IRestResponse response = client.Execute(request);
+
 
 
 
             // assert
-            Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
+            Assert.IsTrue(response.IsSuccessStatusCode, "Statuscode " + response.StatusCode + " returned");
         }
     }
 }
