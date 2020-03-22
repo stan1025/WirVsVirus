@@ -39,13 +39,11 @@ Im Rahmen des Hackathons haben wir eine Lösung entwickelt, die die Probleme 2, 
 
 Auf dem Weg zur Entwicklung des Click-Dummies und der technischen Umsetzung waren mehrere Schritte notwendig. Als erstes haben wir die Zielgruppe unserer App definiert. Schnell war klar, dass wir mit der App alle Bürgerinnen und Bürger Deutschlands erreichen wollen. Denn je mehr Menschen ihre Symptom- und Positionsdaten zur Verfügung stellen, desto größer ist die Datengrundlage und die Genauigkeit der Auswertung und somit der Schutz aller. Um bei der Entwicklung aber ein konkretes Bild unserer Zielgruppe vor Augen zu haben, haben wir 4 Personas entwickelt, die prototypische Vertreter der Zielgruppe darstellen. Parallel haben wir zwei Umfragen aufgesetzt, in denen wir nach Nutzungsmotiven für die App gefragt haben, und nach bereits existierenden Lösungen recherchiert. Aus den Ergebnissen der Personas, Umfragen und der Recherche haben wir schließlich Funktionen definiert, die die App enthalten sollte. Die Recherche der bereits existierenden Lösungen ergab, dass diese weder alle oben genannten Probleme addressieren noch unsere definierten Funktionen voll umfassen. Das unterstützte uns in der Entscheidung ein eigenes App-Konzept zu erstellen, umzusetzen und zu implementieren. So entstanden ein Click-Dummy sowie eine prototypische Implementierung, auf denen im Anschluss an den Hackathon weiter aufgebaut werden soll. 
 
-# Ergebnisse
-
-## Personas
+# Personas
 
 In einem ersten Schritt wurden die Zielgruppen unserer App definiert: die allgemeine Bevölkerung, öffentliche Einrichtungen undd medizinische Einrichtungen. Es wurde sich auf die Gruppe Bevölkerung fokussiert, da diese Gruppe die App später nutzen soll. Die anderen beiden Zielgruppen benötigen die Eingabe und treten daher zunächst in den Hintergrund. Bei der Bevölkerung wurde eine weitere Unterscheidung bezüglich dem Gesundheitszustand getroffen: Gesunde Person, Person mit Vorerkrankungen aber symptomfrei und Person mit Symptomen. Hierbei waren die ersten beiden von besonderem Interesse, da diese von einer Nutzung der App überzeugt werden müssen. Aus diesem Grund wurde für diese Gruppen Peronas definiert. Insgesamt konnten vier verschiedene Personas erstellt werden. 
 
-### Robert
+## Robert
 
 Die erste Person ist Robert, 32 Jahre und Arbeiter in der Mittelschicht. Er ist derzeit gesund, hat keine Vorerkrankungen und erkennt nicht den Ernst der Lage. Er besitzt mehrere digitale Geräte und beherrscht diese gut. Er nutzt verschiedenste Medien zum Informieren und Austauschen mit anderen. Da er derzeit gesund ist und den Ernst der Lage nicht erkennt, muss eine App für ihn einen richtigen Mehrwert bieten, damit er diese nutzt. 
 
@@ -53,7 +51,7 @@ Die erste Person ist Robert, 32 Jahre und Arbeiter in der Mittelschicht. Er ist 
 <img src="images/PersonaRobert.PNG" height="400">
 </p>
 
-### Gabi
+## Gabi
 
 Die zweite Person ist Gabi, 48 Jahre, Hausfrau und hat zwei Kinder. Sie ist derzeit gesund, hat keine Vorerkrankungen ist aber leicht besorgt um sich und ihre Kinder. Sie besitzt ein Smartphone und einen PC und kann mit beiden grundlegend umgehen. Sie nutzt verschiedenste Medien zum Informieren und zum Austauschen, wobei sie sich hierbei auf die bekanntesten beschränkt. Sie würde eine angebotene App regelmäßig für sich und ihre Kinder nutzen. Da sie aber viel hat, kann es vorkommen, dass sie die Nutzung auch mal vergisst.
 
@@ -61,7 +59,7 @@ Die zweite Person ist Gabi, 48 Jahre, Hausfrau und hat zwei Kinder. Sie ist derz
 <img src="images/PersonaGabi.PNG" height="400">
 </p>
 
-### Ernst
+## Ernst
 
 Die dritte Person ist Ernst, 70 Jahre und Rentner. Er ist derzeit gesund, hat aber bereits Vorerkrankungen und ist daher panisch besorgt um seine Gesundheit. Aufgrund seines hohen Alters besitzt er zwar ein Smartphone kann dies aber nur für einfache Anwendungen nutzen. Nachdem die Kinder ihm gezeigt haben, wie eine Anwendung funktioniert, kann er diese auch nutzen. Er informiert sich vorallem im öffentlich, rechtlichen Fernsehen sowie in Printmedien. Er würde, sofern er die App verstanden hat, diese mehrmals täglich nutzen, um stets sein Gewissen zu beruhigen. 
 
@@ -69,7 +67,7 @@ Die dritte Person ist Ernst, 70 Jahre und Rentner. Er ist derzeit gesund, hat ab
 <img src="images/PersonaErnst.PNG" height="400">
 </p>
 
-### Anna
+## Anna
 
 Die letzte Person ist Anna, 20 Jahre und Studentin. Sie ist gesund und hat keine Vorerkrankungen. Spaß steht bei ihr im absoluten Fokus, sie macht sich aus allem einen Spaß und provoziert gerne. Sie gehört zur Generation digital native und informiert sich daher fast ausschließlich über Social Media. Sie würden den Sinn der App nicht verstehen und sich einen Spaß daraus machen, die App mit falschen Eingaben zu nutzen. 
 
@@ -77,7 +75,7 @@ Die letzte Person ist Anna, 20 Jahre und Studentin. Sie ist gesund und hat keine
 <img src="images/PersonaAnna.PNG" height="400">
 </p>
 
-## Umfragen und Ermittlung der Herausforderungen
+# Umfragen und Ermittlung der Herausforderungen
 
 Die App liefert nur dann eine ausreichende Datengrundlage, wenn eine Vielzahl an Menschen diese regelmäßig nutzt. Deshalb ist es wichtig, im Vorfeld die Nutzerbedürfnisse zu ermitteln. Aus diesem Grund haben wir eine Umfrage erstellt, um herauszufinden, welchen Funktionsumfang die App haben muss und welchen Mehrwert sie für eine tägliche Nutzung bieten muss. Wir haben die Umfrage sowohl im Slack-Channel des Hackathons als auch über unsere Kanäle verteilt. Insgesamt haben 451 Personen an der Umfrage teilgenommen, 101 Personen im Slack-Channel und 350 an der öffentlich verteilten Umfrage.
 
@@ -127,7 +125,7 @@ Zusammengefasst konnten 13 Leitfragen in drei Hauptgruppen ermittelt werden, die
 </p>
 
 
-## Analyse exisiterender Lösungen
+# Analyse exisiterender Lösungen
 
 Die Idee zum **#WirVsVirus** Hackathon der deutschen Bundesregierung entstand aus dem am vorigen Wochenende in Estland erfolgreich veranstalteten Hackathon. Unter den Einreichungen waren, neben einer App für die Einrichtung von täglichen Routinen, auch zahlreiche Vorschläge über Apps zum Tracking und zur Selbstdiagnose. 
 [t3n: Bundesregierung startet Hackathon](https://t3n.de/news/bundesregierung-wirvsvirus-1263682/ "t3n digital pioneers")
@@ -182,12 +180,12 @@ Das Onlinemedium Wired hat dazu einen sehr differenzierten [Artikel](www.wired.c
 Diese Technologie könnte die Akzeptanz der Bürger erhöhen, wenn diese verstehen, dass die verwendeten Daten sicher sind. Denn bei der Verwendung ist es essentiell, dass viele Individuen teilnehmen um eine fundierte Datenbasis zu bekommen.
 Allerdings gibt es auch Beschränkungen der verwendeten Daten. Neuste [Studien](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0219890)  belegen, dass mobile GPS Daten nur eine Genauigkeit zwischen 7-13 Metern haben. Da sich das Corona Virus nur in einem Bereich bis 2 Metern übertragt, kann keine hunderprozentige Aussage darüber getroffen werden, ob zwei Personen wirklich in diesem Bereich waren. Trotzdem ermöglichen diese Daten eine gute Grundlage, gerade wenn Personen sich länger an einem Ort aufgehalten haben oder zusammen eine Strecke zurücklegen. 
 
-### Fazit:
+## Fazit:
 Wie man an diesem kurzen Überblick an bestehenden Anwendungen sehen kann, gibt es bereits eine Vielzahl innovativer Lösungen. In ihrem jeweiligen Bereich bieten sie einen großen Mehrwert für die Funktion für welche sie erstellt wurden. 
 Da es bei einer Pandemie allerdings auf eine überregionale, nationale, sogar internationale Betrachtung ankommt, müssen große Datenmengen erzeugt werden. Dafür muss man einen großen Pool an Individuen von der Nutzung der jeweiligen App überzeugen. 
 Deshalb ist es sinnvoll die verschiedenen Funktionen in einer Anwendung zu vereinen. Dadurch kann man medizinische mit geographischen Daten in Verbindung setzen, die Daten für die Forschung, die Behörden und die Bürger verwenden. 
 
-## Definition der Funktionen
+# Definition der Funktionen
  
  Aus den Ergebnissen von Personas, Umfragen und Recherchen konnten wir konkrete Funktionen für die App definieren. Dabei haben wir die Perspektive der Nutzer eingenommen: Welche Funktionen können für Nutzer hilfreich sein? Welche Funktionen wünschen sich Nutzer? Welche Funktionen möchten wir anbieten? 
  
@@ -214,10 +212,10 @@ Zusätzlich zu den wichtigsten Funktionen könnte die App dem Nutzer Information
 Funktionen, die in fast jeder App zu finden sind und auch hier nicht fehlen sollten, sind Einstellungen (z.B. Einstellung von Schrift- und Icongröße) und das Profil. 
  
 Wir haben Funktionen definiert, die für uns in der täglichen Nutzung der App wichtig sind. Diese Liste ist nicht als erschöpfend zu betrachten. Die Entwicklung einer App ist dynamisch. So können Funktionen im Laufe der Entwicklung hinzugefügt, gelöscht oder durch andere ersetzt werden. Aber diese Liste stellt unsere Leitlinie und einen Ausgangspunkt für weitere Entwicklungen dar. 
-## Data Analysis Algorithm
+# Data Analysis Algorithm
 
 
-## Konzeptionierung / Vision Architecture
+# Konzeptionierung / Vision Architecture
 
 Die Idee bzw. die Vision hinter [DEEPER] ist vom Umfang deutlich größer und mächtiger als das was sich in 48h letztlich umsetzen lässt.
 Aus diesem Grund beginnen wir hier mit einem Kurzüberblick über die Vision Architecture.
@@ -230,7 +228,7 @@ Im folgenden werden die einzelnen Bausteine des DEEPER-Systems vorgestellt, die 
 Bild: Vision Architecture (eigene Grafik)
 
 
-### Architektur-Muster
+## Architektur-Muster
 Unser Ziel war und ist es ein System zu entwerfen, welches auf eine globale Anwendung skaliert werden kann.
 Die Zugriffshäufigkeit mit 1x am Tag pro Nutzer, zeitlich verteilt über den Tag und die verschiedenen Zeitzonen der Welt, erwarten wir keine großen Datenraten, die von Außen in das System eingespielt werden.
 Innerhalb des Systems, durch unter Umständen notwendigen wiederkehrenden Berechnungen (falls bspw. einer positiv markiert wurde, hätte dies rückwirkend 14 Tage Einfluss auf bereits berechnete Werte), können zu einem erhöhten Traffic innerhalb des Systems führen. 
@@ -245,9 +243,9 @@ Somit viel die Entscheidung nach kurzer Recherche für einen Architekturansatz a
 
 
 
-### System-Komponenten
+## System-Komponenten
 
-#### User-Input-Services
+### User-Input-Services
 Als mögliche Eingabe-Quelle für Symptom- und Geo-Informationen gibt es unterschiedliche Möglichkeiten. Hierbei haben wir bspw. mal die drei - Telefon, Bot, Mobile App - aufgegriffen.
 Während eine Mobile App, gerade das Geo-Tracking besser unterstützen, als ein Telefon oder Bot-System, wäre es dennoch über andere Möglichkeiten und Mechanismen durchaus in Ansätzen realisierbar. 
 
@@ -255,18 +253,18 @@ Zusammenfassend kommen den User-Input-Services die Rolle der Dateneingabe zu.
 Auf Grund einer offenen REST-Schnittstelle, wäre es aber auch denkbar andere Datenquellen in das System einzubinden (bspw. Datensysteme, Algorithmen, Lösungen anderer Teams).
 
 
-#### Medical-User-UI-Service
+### Medical-User-UI-Service
 
 Dieser Service ermöglicht medizinischem Fachpersonal über einen authentifizierten Kanal positive Befunde an die Daten des Nutzers hinzuzufügen bzw. auch wieder zu entfernen.
 Durch diese Befund-Bestätigung wird die Qualität der Symptom-Daten erhöht und gesichert. 
 Um hier keine falschen Inhalte zu generieren, ist dieser Zugang nur durch medizinisches Fachpersonal möglich.
 
-#### Short-Term-Data-Persistance
+### Short-Term-Data-Persistance
 
 Dieser Datenbank-Dienst speichert die Daten die für die Analysen über den für das Krankheitsbild notwendigen Zeitraum in der sich die Symptome ausprägen.
 Es ist quasi die Daten im System-Inneren der Anwendung. 
 
-#### Long-Term-Data-Persistance
+### Long-Term-Data-Persistance
 
 Dieser Datenbank-Dienst speichert die Daten weg, die für die Analysen im System-Inneren nicht mehr benötigt werden.
 Ziel dieses Systems ist die Langzeit-Bereitstellung der erfassten Daten für Ausbildung, Forschung und Entwicklung. 
@@ -277,7 +275,7 @@ Hierbei spielt auch die Wichtigkeit des medizinischen Befunds wieder, der den Sy
 
 Des Weiteren sind Trainingsdaten für Simulationsmodelle denkbar.
 
-#### Finding-Response-Service
+### Finding-Response-Service
 
 In diesem System wird quasi die Interpretation der Analysen durchgeführt. 
 Hierbei gibt es unterschiedliche Schweregrade der Wahrscheinlichkeitsfaktoren. 
@@ -288,16 +286,16 @@ Aufbereitete Informationen, die zum derzeitigen Wahrscheinlichkeitsfaktor des Nu
 Hier wird der eigentliche Mehrwert für den Nutzer generiert. 
 
 
-#### Analysing Services
+### Analysing Services
 
 Vorab, inhaltliche Beschreibungen der zu Grunde liegenden Modelle, Berechnungen und wissenschaftlichen Quellen, sind dem Scientific Research Team und deren wissenschaftliche Ausarbeitung zu entnehmen.
 
-##### Propability-Symptome-Analysis
+#### Propability-Symptome-Analysis
 
 Dieser Analyse-Dienst nutzt die täglichen Symptome und berechnet auf Basis eines Wahrscheinlichkeitsmodells einen Wahrscheinlichkeitsfaktor für das Krankheitsbild.
 Die Faktoren des Modells basieren auf einer gewichteten Bewertung von Symptomen nach derzeit aktuellen wissenschaftlichen Inhalten.
 
-##### Propability-Gradient-Analysis
+#### Propability-Gradient-Analysis
 
 Dieser Analyse-Dienst untersucht den Verlauf des Wahrscheinlichkeitswerts eines Tages aus dem Zeitraum der verganenen X Tage (Covid-19 wären dies 14 Tage).
 Aus diesem Grund sind die Eingaben meist auch in einer sehr feinen Auflösung, dass die Eingabe durchaus eine Trendentwicklung ermöglicht.
@@ -305,12 +303,12 @@ Aus diesem Grund sind die Eingaben meist auch in einer sehr feinen Auflösung, d
 Der Einfluss dieser Analyse auf den Wahrscheinlichkeitswert wäre eine Erhöhung, wenn in der Vergangenheit bereits ein ansteigender Trend zu verzeichnen war.
 Im Gegenzug wird der Faktor reduziert, wenn man auf dem Weg der Besserung ist.
 
-##### Geo-Tracking-Analysis
+#### Geo-Tracking-Analysis
 
 Dieser Teil erstellt quasi Heatmaps über die Wahrscheinlichkeitsfaktoren aller Nutzer einer Region. Der Wahrscheinlichkeitsfaktor wird entsprechend erhöht, wenn es mehr Nutzer mit einem bereits erhöhten Wert in der eigenen Umgebung gibt. Er wird nicht erhöht, wenn es keinen signifikanten Anteil an erhöhten Wahrscheinlichkeiten bei anderen Nutzern gibt. Er wird aber nicht reduziert. 
 
 
-#### Knowledge-Service
+### Knowledge-Service
 
 Das System soll bei weitem nicht nur Symptome und das Krankheitsbild von Covid-19 beinhalten.
 Andere Symptome und Krankheitsbilder können in allgemeinen Krankheitsphasen durch aus in einer sehr ausführlichen Breite betrieben werden.
@@ -321,15 +319,15 @@ Der Knowledge-Service ist der zentrale Knoten in dem alle Informationen, Paramet
 Der Knowledge-Service wird nochmal in einem eigenen Spezial-Kapitel betrachtet.
 
 
-#### Zusammenfassung für die Architektur
+### Zusammenfassung für die Architektur
 
 Alle Komponenten sind sehr kleinteilig angelegt und nach deren Funktionsschwerpunkt separiert (Separation of Concerns).
 Zwischen allen Komponenten wurden übergreifende Datenmodelle und Schnittstellen definiert. Jede Komponente entwickelt demnach gegen diese Schnittstellen- und Datenmodelle.
 Somit wird Austauschbarkeit, Wartbarkeit und Skalierbarkeit sichergestellt. 
 
-### Prototyp Solution / Implementation
+## Prototyp Solution / Implementation
 
-#### Umfang des Prototyps
+### Umfang des Prototyps
 
 Die prototypische Lösung hat das Ziel das Handling in Ansätzen und vorallem die wissenschaftlichen Analysen in einem realen Umfeld erlebbar zu machen und experimentieren zu können.
 Aus dem Grund war nicht das Ziel das gesamte Vision Architecture System zu realisieren.
@@ -352,7 +350,7 @@ folgende Punkte wurden nicht realisiert:
 [] User-Bot-Dienst
 [] alle anderen Anwendungsfälle die in der Vision dargestellt wurden
 
-### Technische Details
+## Technische Details
 
 Das Backend ist in AWS (Amazon-Web-Services) Beanstalk Umgebung gehostet.
 Laufzeitsystem ist ein Windows Server 2012 mit .NET Core 2.1
@@ -364,7 +362,7 @@ Hintergrund dieser Entscheidung für den Hackathon ist der hohe Aufwand zur Konf
 Alle Dienste Komponenten sind als Background-Worker in einer monolithischen Anwendung realisiert. 
 Die Datenfluss-Mechanismen, wie bspw. das Pull-Prinzip der Analyse-Dienste, wurde mit Event-Aggregator-Ansatz entsprechend realisiert. 
 
-### Architektur-Schema
+## Architektur-Schema
 
 <p align="center">
 <img src="images/Architecture_PrototypeArchitecture.PNG" height="400">
@@ -372,7 +370,7 @@ Die Datenfluss-Mechanismen, wie bspw. das Pull-Prinzip der Analyse-Dienste, wurd
 Bild: Vision Architecture (eigene Grafik)
 
 
-### Vorgehensweise
+## Vorgehensweise
 
 Das Gesamtsystem wurde Freitagabend nach Beginn der Hackathon-Phase mit Hilfe der Web-Anwendung Miro entworfen. (siehe Grafiken)
 
@@ -387,7 +385,7 @@ In grün sind die realisierten Teilsysteme dargestellt, in lila die entsprechend
 
 
 
-## Click-Dummy
+# Click-Dummy
 
 Zur besseren Darstellung und zum Test der Software wurde ein Click-Dummy erstellt. Der Click-Dummy wurde auf der professionellen Software Adobe XD aufgesetzt. Der Funktionsumfang wurde anhand der Umfrage und dem Vergleich mit anderen Apps erstellt.
 
