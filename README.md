@@ -50,7 +50,7 @@ Auf dem Weg zur Entwicklung des Click-Dummies und der technischen Umsetzung ware
 
 [Lösungskonzept](documentation/Konzept.md)
 
-[Klick-Dummy](documentation/Klick_dummy.md)
+[Click-Dummy](documentation/Click_dummy.md)
 
 [Implementierung](documentation/Implementierung.md)
 
