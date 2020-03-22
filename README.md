@@ -249,7 +249,9 @@ Dazu wird zunächst die Gesamtsumme der Wahrscheinlichkeit aller betrachteten Sy
 Nun wird die Wahrscheinlichkeit für jedes der Symptome (z. B. Fieber = 87,9 %) geteilt durch die Summe der Wahrscheinlichkeiten. 
 
 Fieber:  87,9 % / 2,795 = 31,44 %
+
 Husten: 67,7 % / 2,795 = 24,22 %
+
 etc.
 
 
