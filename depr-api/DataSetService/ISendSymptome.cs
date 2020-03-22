@@ -17,14 +17,14 @@ namespace vdivsvirus.Interfaces
         * SendSymptomes 
         * ... to the DataSet-Service
         */
-        ServiceResponse SendSymptomeDataSet(SymptomeInputDataSet data);
+        void SendSymptomeDataSet(SymptomeInputDataSet data);
 
 
         /**
         * SendDiseaseDataSet
         * ... to the DataSet-Service
         */
-        ServiceResponse SendDiseaseDataSet(DiseaseDataSet data);
+        void SendDiseaseDataSet(DiseaseDataSet data);
 
 
         /**

@@ -74,7 +74,15 @@ namespace vdivsvirus.Services
 
         public PropabilityDataSet RequestDiseasePropability(Guid userID, DateTime time)
         {
-            throw new NotImplementedException();
+            return new PropabilityDataSet()
+            {
+                userID = userID,
+                time = time,
+                propabilities = new Dictionary<int, float>()
+                {
+                    [1] = 20
+                }
+            };
         }
 
         public PropabilityHistorySet RequestDiseasePropabilityHistory(Guid userID)
@@ -87,25 +95,24 @@ namespace vdivsvirus.Services
             throw new NotImplementedException();
         }
 
-        public ServiceResponse SendDataResultSet(PropabilityDataSet data)
+        public void SendDataResultSet(PropabilityDataSet data)
         {
             throw new NotImplementedException();
         }
 
-        public ServiceResponse SendDiseaseDataSet(DiseaseDataSet data)
-        {
-            throw new NotImplementedException();
-        }
-
-        public ServiceResponse SendHistoryResultSet(PropabilityDataSet data)
-        {
-            throw new NotImplementedException();
-        }
-
-        public ServiceResponse SendSymptomeDataSet(SymptomeInputDataSet data)
+        public void SendDiseaseDataSet(DiseaseDataSet data)
         {
             System.Diagnostics.Trace.Write(data);
-            return ServiceResponse.OK();
+        }
+
+        public void SendHistoryResultSet(PropabilityDataSet data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SendSymptomeDataSet(SymptomeInputDataSet data)
+        {
+            System.Diagnostics.Trace.Write(data);
         }
     }
 }

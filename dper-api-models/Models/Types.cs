@@ -3,36 +3,6 @@ using System.Collections.Generic;
 
 namespace vdivsvirus.Types
 {
-    // ##############################
-    // Base Data Type Definitions
-    // ##############################
-
-    /**
-     * Structs of Service Response
-     */
-    public class ServiceResponse
-    {
-        public int responseId { get; set; }
-        public string message { get; set; }
-
-
-        public static ServiceResponse OK()
-        {
-            return new ServiceResponse() { responseId = 200, message = "OK" };
-        }
-
-        public static ServiceResponse Exception()
-        {
-            return new ServiceResponse() { responseId = 500, message = "Internal Error" };
-        }
-
-        public static ServiceResponse NotFound()
-        {
-            return new ServiceResponse() { responseId = 404, message = "Not Found" };
-        }
-    }
-
-
 
     // ##############################
     // Symptome Data Set Data Types
@@ -147,7 +117,7 @@ namespace vdivsvirus.Types
         /// <summary>
         /// Symptome Strength
         /// </summary>
-        public int strength { get; set; }
+        public float strength { get; set; }
     }
 
     /**
@@ -278,7 +248,7 @@ namespace vdivsvirus.Types
     {
         public Guid userID { get; set; }
         public DateTime time { get; set; }
-        public PropabilityDataSet propabilities { get; set; }
+        public Dictionary<int, float> propabilities { get; set; }
         public Dictionary<int, DiseaseType> diseaseTypes { get; set; }
         public string message { get; set; }
     }
@@ -289,7 +259,7 @@ namespace vdivsvirus.Types
     public class UserHistoryDataSet
     {
         public Guid userID { get; set; }
-        public Dictionary<DateTime, PropabilityDataSet> history { get; set; }
+        public List<PropabilityDataSet> history { get; set; }
         public Dictionary<int, DiseaseType> diseaseTypes { get; set; }
         public string message { get; set; }
     }

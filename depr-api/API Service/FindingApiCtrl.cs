@@ -27,16 +27,16 @@ namespace vdivsvirus.Services
 
         // GET api/finding/NewFindingAvailable
         [HttpGet("NewFindingAvailable")]
-        public ActionResult<bool> NewFindingAvailable(Guid id)
+        public ActionResult<bool> NewFindingAvailable(Guid id, DateTime time)
         {
-            return responseService.NewFindingAvailable(id);
+            return responseService.NewFindingAvailable(id, time);
         }
 
         // GET api/finding/RequestFinding
         [HttpGet("RequestFinding/{id}")]
-        public ActionResult<UserResponseDataSet> RequestFinding(Guid id)
+        public ActionResult<UserResponseDataSet> RequestFinding(Guid id, DateTime time)
         {
-            return responseService.RequestFinding(id);
+            return responseService.RequestFinding(id, time);
         }
 
         // GET api/finding/RequestFindingHistory

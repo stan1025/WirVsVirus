@@ -9,15 +9,17 @@ using vdivsvirus.Types;
 namespace depr_api_test
 {
     [TestClass]
-    public class SendSymptomeTest
+    public class FindingTests
     {
+
+
         [TestMethod]
         [Timeout(200)]
-        public void GetSymptomeTypes()
+        public void FindingAvailableTest()
         {
             // arrange
             RestClient client = new RestClient("http://localhost:5000");
-            RestRequest request = new RestRequest("api/symptome/getsymptometypes", Method.GET);
+            RestRequest request = new RestRequest("api/finding/newfindingavailable", Method.GET);
 
             // act
             IRestResponse response = client.Execute(request);
@@ -25,46 +27,22 @@ namespace depr_api_test
 
 
             // assert
-            Assert.IsNotNull(response.Content);
+            Assert.IsTrue(bool.Parse(response.Content));
         }
 
         [TestMethod]
         [Timeout(200)]
-        public void SendSymptomeDataSet()
+        public void RequestFinding()
         {
+            Guid userId = Guid.NewGuid();
             // arrange
             RestClient client = new RestClient("http://localhost:5000");
-            RestRequest request = new RestRequest("api/symptome/sendsymptomedataset", Method.POST);
-
-            SymptomeInputDataSet resData = new SymptomeInputDataSet()
-            {
-                userID = Guid.NewGuid(),
-                time = DateTime.Now,
-                geodata = new List<GeoData>(),
-                symptomes = new List<SymptomeInputData>()
-                {
-                    new SymptomeInputData(){ id = 1, strength = 70f },
-                    new SymptomeInputData(){ id = 1, strength = 80f },
-                    new SymptomeInputData(){ id = 1, strength = 60f },
-                    new SymptomeInputData(){ id = 1, strength = 30f },
-                    new SymptomeInputData(){ id = 1, strength = 40f },
-                    new SymptomeInputData(){ id = 1, strength = 30f },
-                    new SymptomeInputData(){ id = 1, strength = 20f },
-                    new SymptomeInputData(){ id = 1, strength = 70f },
-                    new SymptomeInputData(){ id = 1, strength = 0f },
-                    new SymptomeInputData(){ id = 1, strength = 40f },
-                    new SymptomeInputData(){ id = 1, strength = 0f }
-                }
-            };
-
-            request.Body = new RequestBody("application/json", string.Empty, SimpleJson.SerializeObject(resData));
-
+            RestRequest request = new RestRequest($"api/finding/requestfinding/{userId}", Method.POST);
 
             // act
             IRestResponse response = client.Execute(request);
 
-           
-            
+            PropabilityDataSet data = SimpleJson.DeserializeObject<PropabilityDataSet>(response.Content);
 
             // assert
             Assert.IsNotNull(response.Content);

@@ -18,13 +18,13 @@ namespace vdivsvirus.Interfaces
         * NewFindingAvailable 
         * ... request the availability of new to finding
         */
-        bool NewFindingAvailable(Guid id);
+        bool NewFindingAvailable(Guid userId, DateTime time);
 
         /**
         * RequestNextDataSet 
         * ... request the next data set
         */
-        UserResponseDataSet RequestFinding(Guid userId);
+        UserResponseDataSet RequestFinding(Guid userId, DateTime time);
 
         /**
         * SendDataResultSet 

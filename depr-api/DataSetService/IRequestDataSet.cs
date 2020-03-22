@@ -35,7 +35,7 @@ namespace vdivsvirus.Interfaces
         * SendDataResultSet 
         * ... send propability data back after finished analysis.
         */
-        ServiceResponse SendDataResultSet(PropabilityDataSet data);
+        void SendDataResultSet(PropabilityDataSet data);
 
         /**
         * HistorySetAvailable 
@@ -53,7 +53,11 @@ namespace vdivsvirus.Interfaces
         * SendHistoryResultSet 
         * ... send propability data back after finished analysis.
         */
-        ServiceResponse SendHistoryResultSet(PropabilityDataSet data);
+        void SendHistoryResultSet(PropabilityDataSet data);
+
+
+
+
 
 
         /**
