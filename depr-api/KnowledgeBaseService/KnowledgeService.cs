@@ -253,7 +253,7 @@ namespace vdivsvirus.Services
                     desc = "Sind Sie über 65?",
                     name = "Alter",
                 },
-                thresholdFactor = (float)87.9, //this should lower the threshold
+                thresholdFactor = -20.0F,
             };
 
             thresholdFactorList.Add(alter);
@@ -270,7 +270,7 @@ namespace vdivsvirus.Services
                     desc = "Leben Sie bei Ihrer Familie in einer Wohngemeinschaft oder einer betreuten Gemeinschaftseinrichtung?",
                     name = "Wohnsituation",
                 },
-                thresholdFactor = (float)87.9, //this should lower the threshold
+                thresholdFactor = -10.0F,
             };
 
             thresholdFactorList.Add(wohnsituation);
@@ -287,7 +287,7 @@ namespace vdivsvirus.Services
                     desc = "Sind Sie im medizinischen Bereich oder einer Gemeinschaftseinrichtung tätig?",
                     name = "Arbeit",
                 },
-                thresholdFactor = (float)87.9, //this should lower the threshold
+                thresholdFactor = -10.0F,
             };
 
             thresholdFactorList.Add(arbeit);
@@ -304,7 +304,7 @@ namespace vdivsvirus.Services
                     desc = "Sind Sie in den letzten 4 Wochen verreist?",
                     name = "Reise",
                 },
-                thresholdFactor = (float)87.9, //this should lower the threshold
+                thresholdFactor = -15.0F,
             };
 
             thresholdFactorList.Add(reise);
@@ -321,7 +321,7 @@ namespace vdivsvirus.Services
                     desc = "Hatten Sie engen Kontakt zu einem Verdachtsfall?",
                     name = "Verdachtsfallkontakt",
                 },
-                thresholdFactor = (float)87.9, //this should lower the threshold
+                thresholdFactor = -20.0F,
             };
 
             thresholdFactorList.Add(verdachtsfallkontakt);
@@ -368,10 +368,9 @@ namespace vdivsvirus.Services
                     desc = "Scheiß Lungenkrankheit",
                     infoLink = "www.covid19.com"
                 },
-                propabilityAlgorithm = covid19Algorithm,
+                propabilityAlgorithm = covid19Propability,
                 GetRecommendation = covid19Recommendation,
             };
-            diseaseList.Add(covid19);
 
             #endregion
 
@@ -379,21 +378,32 @@ namespace vdivsvirus.Services
 
         #region Propability Algorithms
 
-        private float covid19Algorithm(SymptomeDataSet data)
+        private float covid19Propability(SymptomeDataSet data)
         {
             return data.symptomes.Select(
                 input =>
                 {
                     float propSum = GetSymptomeTypes().Select(item => item.symptomePropability).Sum();
                     SymptomeType symp = GetSymptomeTypes().FirstOrDefault(item => item.IdentData.id.Equals(input.id));
-
-
-                    return symp == null ? 0f : (symp.symptomePropability / (propSum)) * symp.ScaleFunc(input.strength);
-
+                    return symp == null ? 0f : (symp.symptomePropability * propSum / 100) * symp.ScaleFunc(input.strength);
                 })
                 .Sum();
         }
 
+        #endregion
+
+        #region Threshold Algorithms
+
+        private float covid19Threshold(SymptomeDataSet data)
+        {
+            return data.symptomes.Select(
+                input =>
+                {
+                    SymptomeType symp = GetSymptomeTypes().FirstOrDefault(item => item.IdentData.id.Equals(input.id));
+                    return symp == null ? 0f : input.strength == 1 ? symp.thresholdFactor : 0f;
+                })
+                .Sum();
+        }
 
         #endregion
 
@@ -401,7 +411,7 @@ namespace vdivsvirus.Services
 
         private String covid19Recommendation(float propabilityResult)
         {
-            return "Das ist eine Test Nachricht";
+            return propabilityResult > 2 / 3 ? "Positiv" : "Negativ";
         }
 
         #endregion
