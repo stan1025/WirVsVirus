@@ -14,6 +14,22 @@ namespace vdivsvirus.Types
     {
         public int responseId { get; set; }
         public string message { get; set; }
+
+
+        public static ServiceResponse OK()
+        {
+            return new ServiceResponse() { responseId = 200, message = "OK" };
+        }
+
+        public static ServiceResponse Exception()
+        {
+            return new ServiceResponse() { responseId = 500, message = "Internal Error" };
+        }
+
+        public static ServiceResponse NotFound()
+        {
+            return new ServiceResponse() { responseId = 404, message = "Not Found" };
+        }
     }
 
 

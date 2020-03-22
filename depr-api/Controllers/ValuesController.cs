@@ -14,6 +14,7 @@ namespace vdivsvirus.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
+            System.Diagnostics.Trace.WriteLine("TestLog Andreas Stutz");
             return new string[] { "value1", "value2" };
         }
 
