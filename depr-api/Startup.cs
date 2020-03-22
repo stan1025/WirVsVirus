@@ -55,6 +55,15 @@ namespace vdivsvirus
             // services.AddHostedService<pdaService>();
             // services.AddHostedService<pgaService>();
 
+            using (var context = new DataSetContext())
+            {
+                // Creates the database if not exists
+                context.Database.EnsureCreated();
+
+                // Saves changes
+                context.SaveChanges();
+            }
+
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
