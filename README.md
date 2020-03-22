@@ -23,7 +23,7 @@ Zusammengefasst sind die Hauptprobleme:
 7. die Vorhersage von entstehenden Hotspots von Infizierten ist nicht gegeben und
 8. die Angst in der Bevölkerung steigt.
 
-Dies hat unter anderem zur Folge, dass Ärzte häufiger aufgesucht werden, eine hohe Dunkelziffer von Infizierten vorliegt und das gerade über milde Verläufe wenig bis keine Kenntnis möglich ist. Dies zusammen hat dann meistens zur Folge, dass vor allem die öffentlichen und medizinischen Gesundheitssysteme an ihre Kapazitäten stoßen. Um dem entgegen zu wirken, müssen Lösungen für die verschiedenen Probleme entwickelt werden. 
+Dies hat unter anderem zur Folge, dass Ärzte häufiger aufgesucht werden, eine hohe Dunkelziffer von Infizierten vorliegt und das gerade über milde Verläufe wenig bis keine Kenntnisse möglich sind. Dies zusammen hat dann meistens zur Folge, dass vor allem die öffentlichen und medizinischen Gesundheitssysteme an ihre Kapazitäten stoßen. Um dem entgegen zu wirken, müssen Lösungen für die verschiedenen Probleme entwickelt werden. 
 
 [1] Nationaler Pandemieplan Teil II. "Wissenschaftliche Grundlagen." Robert Koch-Institut, März 2017.
 
