@@ -1,7 +1,9 @@
 # Disease Pattern Early Recognition in Global Distribution!
 \#WirVsVirus
 
-![KeyVisual of Hackathon](documentation/images/KeyVisual.jpg)
+<p align="center">
+<img src="documentation/images/KeyVisual.jpg" height="400">
+</p>
 
 # Problembeschreibung
 Viruserkrankungen sind Teil von unserem Leben. Jedes Jahr treten - vor allem in den Wintermonaten - 
