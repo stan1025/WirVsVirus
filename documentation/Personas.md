@@ -8,7 +8,7 @@ Die erste Person ist Robert, 32 Jahre und Arbeiter in der Mittelschicht. Er ist 
 
 <p align="center">
 <img src="images/PersonaRobert.PNG" height="400">
-<\p>
+</p>
 
 ## Gabi
 
@@ -16,7 +16,7 @@ Die zweite Person ist Gabi, 48 Jahre, Hausfrau und hat zwei Kinder. Sie ist derz
 
 <p align="center">
 <img src="images/PersonaGabi.PNG" height="400">
-<\p>
+</p>
 
 ## Ernst
 
@@ -24,7 +24,7 @@ Die dritte Person ist Ernst, 70 Jahre und Rentner. Er ist derzeit gesund, hat ab
 
 <p align="center">
 <img src="images/PersonaErnst.PNG" height="400">
-<\p>
+</p>
 
 ## Anna
 
@@ -32,4 +32,4 @@ Die letzte Person ist Anna, 20 Jahre und Studentin. Sie ist gesund und hat keine
 
 <p align="center">
 <img src="images/PersonaAnna.PNG" height="400">
-<\p>
+</p>
