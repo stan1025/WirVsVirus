@@ -24,7 +24,7 @@ Einen anderen Ansatz verfolgen die Wissenschaftler hinter der [Geohealth App]([h
 
 So können auch verbesserte Angaben über Risikogebiete getroffen werden. Die Daten müssen zum jetzigen Zeitpunkt von der infizierten Personen gespendet werden. Das setzt eine hohe Interaktionsfreudigkeit mit der Anwendung und eine breite Akzeptanz voraus, um einen sinnvollen Effekt zu erzielen. Dieses wird von den Machern als digitale Impfung bezeichnet, wenn nur ca. 3% der Bevölkerung mitmachen, zeige es keine Wirkung. Lediglich mit der Mehrheit der Daten von Indexpersonen kann eine flächendeckende Funktion gewährleistet werden. 
 
-![Umfrage von Heiser zu Standortdaten](documentation/images/umfrage_1.PNG)
+![Umfrage von Heiser zu Standortdaten](images/umfrage_1.PNG)
 
 Einerseits können sich die Mitbürger darüber Informationen einholen, ob bei Ihnen innerhalb der letzten Tage ein Kontakt zu einem positiven Mitbürger bestand, um so beispielsweise grippale Symptome besser einzuschätzen. Andererseits können sich die Benutzer der App an einer Übersichtskarte orientieren, wie viele Menschen in Ihrer näheren Umgebung infiziert wurden.
 
