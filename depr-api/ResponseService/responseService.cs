@@ -44,6 +44,7 @@ namespace vdivsvirus.Services
             res.time = time;
             res.propabilities = sourceData.propabilities;
             res.message = "Das ist eine Test Nachricht";
+
             return res;
         }
 

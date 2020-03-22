@@ -24,6 +24,9 @@ namespace vdivsvirus.Types
     #endregion
 
 
+
+
+
     #region Symptome Data Set Data Types
 
     /// <summary>
@@ -182,6 +185,58 @@ namespace vdivsvirus.Types
 
     #region Disease Data Set Data Types
 
+
+    /// <summary>
+    /// Identification Information 
+    /// about Diseases
+    /// </summary>
+    public class DiseaseIdentData
+    {
+
+        /// <summary>
+        /// Disease Identifier
+        /// </summary>
+        public int id { get; set; }
+
+        /// <summary>
+        /// Disease Display Type
+        /// </summary>
+        public string name { get; set; }
+
+        /// <summary>
+        /// Disease Display Description
+        /// </summary>
+        public string desc { get; set; }
+
+        /// <summary>
+        /// Disease Information Link 
+        /// </summary>
+        public string infoLink { get; set; }
+
+    }
+
+
+    /// <summary>
+    /// Disease Type with Ident and Internal Data
+    /// </summary>
+    public class DiseaseType
+    {
+        /// <summary>
+        /// Disease Ident Data
+        /// </summary>
+        public DiseaseIdentData IdentData { get; set; }
+
+        /// <summary>
+        /// Returns a recommendation message
+        /// based on the propability values from the
+        /// analysis.
+        /// </summary>
+        public Func<float, string> GetRecommendation { get; set; }
+    }
+
+
+
+
     /**
      * Structs of AuthenticationData
      */
@@ -248,15 +303,6 @@ namespace vdivsvirus.Types
 
     #region Response Data Set Data Types
 
-    /**
-     * Structs of DiseaseType
-     */
-    public class DiseaseType
-    {
-        public int id { get; set; } //DiseaseID
-        public string name { get; set; } //DiseaseName
-        public string desc { get; set; } //DiseaseDescription
-    }
 
     /**
      * Structs of ResponseDataSet 

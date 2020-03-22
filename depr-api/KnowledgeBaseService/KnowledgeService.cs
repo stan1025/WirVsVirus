@@ -7,25 +7,149 @@ using vdivsvirus.Types;
 
 namespace vdivsvirus.Services
 {
-    public class DataSetService : IRequestDataSet, ISendSymptome
+    public class KnowledgeService : IKnowledgeService
 {
 
-        public DataSetService()
+        public KnowledgeService()
         {
 
         }
 
-        public bool DataSetAvailable()
+        private void loadSymptomeData()
         {
-            return true;
+            #region Fieber Symptome
+
+            SymptomeType fieber = new SymptomeType { 
+                IdentData = new SymptomeIdentData() 
+                { 
+                    id = 1, 
+                    inputType = SymptomeInputType.slider, 
+                    desc = "", 
+                    name = "Fieber", 
+                    settings = "min=36.5;max=42.5;step=0.1" 
+                },
+                symptomePropability = (float)87.9, 
+                ScaleFunc = input => input * 1000 };
+
+            #endregion
+
+            #region Husten Symptome
+
+            SymptomeType husten = new SymptomeType
+            {
+                IdentData = new SymptomeIdentData()
+                {
+                    id = 2,
+                    inputType = SymptomeInputType.slider,
+                    desc = "",
+                    name = "Husten",
+                    settings = "min=0;max=100;step=1"
+                },
+                symptomePropability = (float)67.7
+            };
+            SymptomeType husten = husten
+
+
+            #endregion
+
+            #region XXX Symptome
+
+
+
+
+            #endregion
+
+            #region XXX Symptome
+
+
+
+
+            #endregion
+
+            #region XXX Symptome
+
+
+
+
+            #endregion
+
+            #region XXX Symptome
+
+
+
+
+            #endregion
+
+            #region XXX Symptome
+
+
+
+
+            #endregion
+
+            #region XXX Symptome
+
+
+
+
+            #endregion
+
+            #region XXX Symptome
+
+
+
+
+            #endregion
+
+            #region XXX Symptome
+
+
+
+
+            #endregion
+
+            #region XXX Symptome
+
+
+
+
+            #endregion
+
+            #region XXX Symptome
+
+
+
+
+            #endregion
+
+            #region XXX Symptome
+
+
+
+
+            #endregion
+
+            #region XXX Symptome
+
+
+
+
+            #endregion
+
+
+
+
         }
+
+
+
 
         public List<SymptomeType> GetSymptomeInternals()
         {
             return new List<SymptomeType>()
             {
-                new SymptomeType{ IdentData = new SymptomeIdentData() { id = 1, inputType = SymptomeInputType.slider, desc = "", name = "Fieber", settings="min=36.5;max=42.5;step=0.1" }, symptomePropability = (float)87.9, ScaleFunc = input => input * 1000 } ,
-                new SymptomeType{ IdentData = new SymptomeIdentData() { id = 2, inputType = SymptomeInputType.slider, desc = "", name = "Husten", settings="min=0;max=100;step=1" }, symptomePropability = (float)67.7 },
+                ,
+               ,
                 new SymptomeType{ IdentData = new SymptomeIdentData() { id = 3, inputType = SymptomeInputType.slider, desc = "", name = "Abgeschlagenheit", settings="min=0;max=100;step=1" }, symptomePropability = (float)38.1 },
                 new SymptomeType{ IdentData = new SymptomeIdentData() { id = 4,inputType = SymptomeInputType.slider, desc = "", name = "Kurzatmigkeit", settings="min=0;max=100;step=1" }, symptomePropability = (float)18.6 },
                 new SymptomeType{ IdentData = new SymptomeIdentData() { id = 5, inputType = SymptomeInputType.slider, desc = "", name = "Muskel-/Gelenkschmerz", settings="min=0;max=100;step=1" }, symptomePropability = (float)14.8},
