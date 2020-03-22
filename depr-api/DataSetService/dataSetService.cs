@@ -7,7 +7,6 @@ using vdivsvirus.Types;
 
 namespace vdivsvirus.Services
 {
-
     public class UserDataSet
     {
         public Guid Ident { get; set; }
@@ -19,19 +18,38 @@ namespace vdivsvirus.Services
         public List<DiseaseAcknowledgement> Acknowledments { get; set; }
     }
 
-
+    /// <summary>
+    /// Data Service
+    /// For storing and persisting data from all users
+    /// 
+    /// Attention:
+    /// For the Hackathon the data is managed in memory
+    /// and is not persisted.
+    /// 
+    /// In a proper application environment the data
+    /// should be stored in a DataBase
+    /// </summary>
     public class DataSetService : IRequestDataSet, ISendSymptome
-{
+    {
         private readonly IKnowledgeService knowledgeService;
 
+        /// <summary>
+        /// Data Lock for access to <see cref="table"/> safe multi-threading
+        /// </summary>
         private object tableLock = new object();
 
+        /// <summary>
+        /// Data Store with data input from user and calculated values from PDA Service
+        /// </summary>
         private List<UserDataSet> table = new List<UserDataSet>();
 
+        /// <summary>
+        /// Constructor with relevant service references
+        /// </summary>
+        /// <param name="service">Required KnowledgeService</param>
         public DataSetService(IKnowledgeService service)
         {
-            if (service == null) throw new ArgumentNullException("No Knowledge Service available");
-            knowledgeService = service;
+            knowledgeService = service ?? throw new ArgumentNullException("No Knowledge Service available");
         }
 
         /// <summary>
@@ -42,13 +60,13 @@ namespace vdivsvirus.Services
         {
             lock (tableLock)
             {
-                //Es gibt ein Datensatz der noch keine RawPropability - Eintragung hat
+                // Check for data entry without calculated RawProbability
                 return table.Any(item => item.RawPropabilities == null);
             }
         }
 
         /// <summary>
-        /// returns the next to analyse dataset for the PDA analysis.
+        /// returns the next to analyze dataset for the PDA analysis.
         /// </summary>
         /// <returns></returns>
         public SymptomeDataSet RequestDataSet()
@@ -62,11 +80,11 @@ namespace vdivsvirus.Services
         }
 
         /// <summary>
-        /// returns the propabilit data, extended propability if available, otherwise the raw propability.
+        /// returns the probability data, extended probability if available, otherwise the raw probability.
         /// </summary>
         /// <param name="userID">User ID</param>
         /// <param name="time">Dataset Timestamp</param>
-        /// <returns>propabilit data</returns>
+        /// <returns>probability data</returns>
         public PropabilityDataSet RequestDiseasePropability(Guid userID, DateTime time)
         {
             lock(tableLock)
@@ -80,7 +98,7 @@ namespace vdivsvirus.Services
         }
 
         /// <summary>
-        /// Propability Result of the PDA Analysis
+        /// Probability Result of the PDA Analysis
         /// </summary>
         /// <param name="data"></param>
         public void SendDataResultSet(PropabilityDataSet data)
@@ -116,8 +134,11 @@ namespace vdivsvirus.Services
             }
         }
 
-
-
+        /// <summary>
+        /// Save Symptom Data of user
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         public bool SendSymptomeDataSet(SymptomeInputDataSet data)
         {
             try
@@ -135,9 +156,6 @@ namespace vdivsvirus.Services
             }
         }
 
-
-
-
         #region History Feature (not implemented)
 
 
@@ -145,7 +163,6 @@ namespace vdivsvirus.Services
         {
             throw new NotImplementedException();
         }
-
 
         public void SendHistoryResultSet(PropabilityDataSet data)
         {
@@ -164,15 +181,5 @@ namespace vdivsvirus.Services
 
 
         #endregion
-
-
-
     }
-
-
-
-
-
-
-
 }
