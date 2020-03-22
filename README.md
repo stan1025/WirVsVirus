@@ -279,7 +279,7 @@ Symptomprobability Fieber = 51 + (38,5 - 38,1/ 75 - 51) * (38,8 - 38,6) = 51 %
 
 Die als Disease Probability bezeichnete Gesamtwahrscheinlichkeit wird nun aus der Summe der Symptom Probabilities zusammengesetzt.
 
-DP = 57,6002 %
+DP = 52,22 %
 
 Um über die DEEPER-App eine Handlungsempfehlung auszusprechen, wird nun ein Schwellenwert festgelegt. Liegt die DP unter dem Schwellenwert, wird der Nutzer als nicht gefährdet eingestuft. Befindet sich die Person mit ihrer DP jedoch über dem Schwellenwert so wird sie als gefährdet eingestift und bekommt eine entsprechende Empfehlung als Push-Nachricht auf ihr Endgerät gesendet.
 
