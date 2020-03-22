@@ -1,6 +1,6 @@
-# Klick-Dummy
+# Click-Dummy
 
-Zur besseren Darstellung und zum Test der Software wurde ein Klick-Dummy erstellt. Der Klickdummy wurde auf der professionellen Software Adobe XD aufgesetzt. Der Funktionsumfang wurde anhand der Umfrage und dem Vergleich mit anderen Apps erstellt.
+Zur besseren Darstellung und zum Test der Software wurde ein Click-Dummy erstellt. Der Clickdummy wurde auf der professionellen Software Adobe XD aufgesetzt. Der Funktionsumfang wurde anhand der Umfrage und dem Vergleich mit anderen Apps erstellt.
 
 Dargestellt im Mockup:
 - Ersteinrichtung
