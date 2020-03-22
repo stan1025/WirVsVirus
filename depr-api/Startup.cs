@@ -57,13 +57,6 @@ namespace vdivsvirus
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            
-            ConfigureEntityFramework(services);
-        }
-
-        public static void ConfigureEntityFramework(IServiceCollection services)
-        {
-            services.AddDbContextPool<DataSetContext>(options => options.UseMySql(Helpers.GetRDSConnectionString()));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

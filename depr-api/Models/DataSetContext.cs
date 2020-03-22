@@ -5,8 +5,13 @@ namespace vdivsvirus.Models
 {
     public class DataSetContext : DbContext
     {
-        public DataSetContext(DbContextOptions options) : base(options)
+        public DataSetContext() : base()
         {
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseMySql(Helpers.GetRDSConnectionString());
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
