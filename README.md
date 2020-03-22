@@ -33,7 +33,7 @@ Dies hat unter anderem zur Folge, dass Ärzte häufiger aufgesucht werden, eine 
 Im Rahmen des Hackathons haben wir eine Lösung entwickelt, die die Probleme 2, 6, 7 und 8 aus der Problembeschreibung adressiert. Hierfür haben wir ein App-Konzept sowie eine prototypische Umsetzung entwickelt. Die App soll 
 
 - Daten, wie Symptomausprägung und Positionsdaten, vom Nutzer entgegennehmen,
-- diese Datenanalysealgorithmen verarbeiten,
+- diese mit Hilfe von Algorithmen verarbeiten,
 - die Ergebnisse dem Nutzer in einfacher und verständlicher Weise anzeigen sowie
 - Schnittstellen für andere Datennutzer (z. B. Regierung, medizinische Forschung) zur Verfügung stellen.
 
@@ -160,9 +160,7 @@ Einen anderen Ansatz verfolgen die Wissenschaftler hinter der [Geohealth App](ht
 
 Ein entscheidender Faktor im Kampf gegen die Verbreitung der Pandemie ist die Nachvollziehbarkeit von Infektionsketten und Definition von Risikogebieten.  Mit Hilfe der App können diese Informationen besser erhoben werden. Die Daten müssen zum jetzigen Zeitpunkt von der infizierten Personen gespendet werden. Das setzt eine hohe Interaktionsfreudigkeit mit der Anwendung und eine breite Akzeptanz voraus, um einen sinnvollen Effekt zu erzielen. Dieses wird von den Machern als digitale Impfung bezeichnet, wenn nur ca. 3% der Bevölkerung mitmachen, zeige es keine Wirkung. Lediglich mit der Mehrheit der Daten von Indexpersonen kann eine flächendeckende Funktion gewährleistet werden. Die Umfrage von Heise und weitere von unserer Gruppe durchgeführte Umfrage zeigen eine generelle Bereitschaft der Bürger ihre Daten zur Verfügung zu stellen. 
 
-<p align="center">
-<img src="images/umfrage_1.PNG">
-</p>
+![Umfrage von Heiser zu Standortdaten](images/umfrage_1.PNG)
 
 Einerseits können sich die Mitbürger darüber Informationen einholen, ob bei Ihnen innerhalb der letzten Tage ein Kontakt zu einem positiven Mitbürger bestand, um so beispielsweise grippale Symptome besser einzuschätzen. Andererseits können sich die Benutzer der App an einer Übersichtskarte orientieren, wie viele Menschen in Ihrer näheren Umgebung infiziert wurden.
 
@@ -188,204 +186,10 @@ Da es bei einer Pandemie allerdings auf eine überregionale, nationale, sogar in
 Deshalb ist es sinnvoll die verschiedenen Funktionen in einer Anwendung zu vereinen. Dadurch kann man medizinische mit geographischen Daten in Verbindung setzen, die Daten für die Forschung, die Behörden und die Bürger verwenden. 
 
 ## Definition der Funktionen
- 
- Aus den Ergebnissen von Personas, Umfragen und Recherchen konnten wir konkrete Funktionen für die App definieren. Dabei haben wir die Perspektive der Nutzer eingenommen: Welche Funktionen können für Nutzer hilfreich sein? Welche Funktionen wünschen sich Nutzer? Welche Funktionen möchten wir anbieten? 
- 
- Am Anfang jeder User Journey steht der Download und das erste Öffnen einer App. Rund um diesen Part sollte es aus unserer Sicht fünf Funktionen geben:
- 
-<p align="center">
-<img src="images/Funktionsdefinition.png">
-</p>
- 
- Startet ein Nutzer das erste Mal unsere App, erhält er ein ausführliches Onboarding. In dem Onboarding wird dem Nutzer kurz und prägnant aufgezeigt, was die Idee hinter der App ist und welchen Mehrwert der Nutzer von dieser App, sowie die Anonymisierung seiner Daten und Gewährleistung seiner Privatsphäre versprochen. Danach wird der Nutzer darum gebeten sich zu registrieren. Nach erfolgreicher Registrierung erfolgt der Login. Als erstes soll der Nutzer dann für eine genauere Analyse seine aktuellen Gesundheitsdaten und Vorerkrankungen eingeben. Diese werden in seinem Profil hinterlegt, in welchem er diese immer wieder anpassen kann. Hat der Nutzer den ersten Teil abgeschlossen, öffnet sich der Startbildschirm der App und der Nutzer bekommt ein Tutorial angezeigt, das er (optional) anschauen kann. Danach startet die eigentliche Nutzung der App.
 
- <p align="center">
-<img src="images/Funktionsdefinition_2.png">
-</p>
- 
-Die Hauptfunktion der App ist die Eingabe der Symptome. In einer Eingabemaske kann der Nutzer jeden Tage seine aktuellen Symptome sowie deren Ausprägung eingeben. Dies ist sowohl für ihn selbst als auch für andere möglich. Letztes ist vor allem für Familien mit Kindern oder älteren Menschen relevant, die kein eigenes Smartphone besitzen, um die Daten selbst einzugeben. Auch kann das Ergebnis eines eventuellen Covid-19-Tests eingegeben werden. Der Nutzer kann sich nach der Eingabe seine Symptome ansehen. Dabei werden ihm diese für den heutigen Tag angezeigt sowie ein Verlauf, beispielsweise über die letzten zwei Wochen. So kann der Nutzer selbst seinen Gesundheitszustand überwachen.
-
-Um einen größeren Mehrwert für den Nutzer zu generieren, könnte es eine Kartendarstellung von Risikogebieten geben. Auf diesen Karten wird dem Nutzer ganz Deutschland in Regionen eingeteilt angezeigt. Die Regionen werden nach ihrem Risiko beurteilt: geringes, mittleres oder hohes Risiko. So kann der Nutzer sehen, welche Regionen gerade ein besonders großes Risiko zeigen. Zudem kann der Nutzer sich seinen Standort anzeigen lassen und so sehen, ob er sich in einem Risikogebiet befindet. Je nach Höhe des Risikos in seinem Gebiet, wird ihm eine Empfehlung ausgesprochen. In einem Hochrisikogebiet könnte die Empfehlung lauten "Bleiben Sie zuhause.". 
-
-Um den Nutzer daran zu erinnern, seine Symptome täglich einzugeben, sollte es Erinnerungsfunktion geben. Diese könnte in Form von Push-Notifications realisiert werden. Der Nutzer könnte beispielsweise täglich per Push an die Eingabe seiner Symptome erinnert werden. 
-
-Zusätzlich zu den wichtigsten Funktionen könnte die App dem Nutzer Informationen zur Verfügung stellen. Das könnten Informationen sein zu dem Virus Covid-19, Symptomen und Krankheitsverlauf. Auch Hygienemaßnahmen und Verhaltensregeln sowie aktuelle Zahlen und Statistiken und Anlaufstellen können den Mehrwert der App erhöhen. 
-
-Funktionen, die in fast jeder App zu finden sind und auch hier nicht fehlen sollten, sind Einstellungen (z.B. Einstellung von Schrift- und Icongröße) und das Profil. 
- 
-Wir haben Funktionen definiert, die für uns in der täglichen Nutzung der App wichtig sind. Diese Liste ist nicht als erschöpfend zu betrachten. Die Entwicklung einer App ist dynamisch. So können Funktionen im Laufe der Entwicklung hinzugefügt, gelöscht oder durch andere ersetzt werden. Aber diese Liste stellt unsere Leitlinie und einen Ausgangspunkt für weitere Entwicklungen dar. 
 ## Data Analysis Algorithm
 
-
-## Konzeptionierung / Vision Architecture
-
-Die Idee bzw. die Vision hinter [DEEPER] ist vom Umfang deutlich größer und mächtiger als das was sich in 48h letztlich umsetzen lässt.
-Aus diesem Grund beginnen wir hier mit einem Kurzüberblick über die Vision Architecture.
-
-Im folgenden werden die einzelnen Bausteine des DEEPER-Systems vorgestellt, die in unseren Köpfen sich ausgemalt haben.
-
-<p align="center">
-<img src="images/Architecture_VisionArchitecture.PNG" height="400">
-</p>
-Bild: Vision Architecture (eigene Grafik)
-
-
-### Architektur-Muster
-Unser Ziel war und ist es ein System zu entwerfen, welches auf eine globale Anwendung skaliert werden kann.
-Die Zugriffshäufigkeit mit 1x am Tag pro Nutzer, zeitlich verteilt über den Tag und die verschiedenen Zeitzonen der Welt, erwarten wir keine großen Datenraten, die von Außen in das System eingespielt werden.
-Innerhalb des Systems, durch unter Umständen notwendigen wiederkehrenden Berechnungen (falls bspw. einer positiv markiert wurde, hätte dies rückwirkend 14 Tage Einfluss auf bereits berechnete Werte), können zu einem erhöhten Traffic innerhalb des Systems führen. 
-
-Auf Grund der guten Eigenschaften von Skalierbarkeit, Wartbarkeit und Anpassbarkeit, sowie den verbesserten Load-Balancing Eigenschaften im System-Inneren, ist die Entscheidung auf die Anwendung einer Micro-Service-Architecture gefallen.
-[Quelle: Richards M. (2015), Microservices vs. Service-oriented Architecture, O'Reilly Media]
-
-Das Prinzip des Share-as-less-as-possible oder gar Share-nothing Prinzip ermöglicht es ganze Dienste-Einheiten ohne große Aufwände zu duplizieren, hinzuzufügen oder zu entfernen. 
-Für ein System mit globaler Skalierung bieten sich diese Eigenschaften durchaus an.
-
-Somit viel die Entscheidung nach kurzer Recherche für einen Architekturansatz auf einen MSA-Ansatz.
-
-
-
-### System-Komponenten
-
-#### User-Input-Services
-Als mögliche Eingabe-Quelle für Symptom- und Geo-Informationen gibt es unterschiedliche Möglichkeiten. Hierbei haben wir bspw. mal die drei - Telefon, Bot, Mobile App - aufgegriffen.
-Während eine Mobile App, gerade das Geo-Tracking besser unterstützen, als ein Telefon oder Bot-System, wäre es dennoch über andere Möglichkeiten und Mechanismen durchaus in Ansätzen realisierbar. 
-
-Zusammenfassend kommen den User-Input-Services die Rolle der Dateneingabe zu. 
-Auf Grund einer offenen REST-Schnittstelle, wäre es aber auch denkbar andere Datenquellen in das System einzubinden (bspw. Datensysteme, Algorithmen, Lösungen anderer Teams).
-
-
-#### Medical-User-UI-Service
-
-Dieser Service ermöglicht medizinischem Fachpersonal über einen authentifizierten Kanal positive Befunde an die Daten des Nutzers hinzuzufügen bzw. auch wieder zu entfernen.
-Durch diese Befund-Bestätigung wird die Qualität der Symptom-Daten erhöht und gesichert. 
-Um hier keine falschen Inhalte zu generieren, ist dieser Zugang nur durch medizinisches Fachpersonal möglich.
-
-#### Short-Term-Data-Persistance
-
-Dieser Datenbank-Dienst speichert die Daten die für die Analysen über den für das Krankheitsbild notwendigen Zeitraum in der sich die Symptome ausprägen.
-Es ist quasi die Daten im System-Inneren der Anwendung. 
-
-#### Long-Term-Data-Persistance
-
-Dieser Datenbank-Dienst speichert die Daten weg, die für die Analysen im System-Inneren nicht mehr benötigt werden.
-Ziel dieses Systems ist die Langzeit-Bereitstellung der erfassten Daten für Ausbildung, Forschung und Entwicklung. 
-Hier wäre das Wunsch-Ziel eine Open-Data-Initiative zu etablieren.
-
-Anwendungsbereich für die Open-Data Inhalte wäre die Verbesserung des Systems durch historische Daten, die als Trainingsdaten genutzt werden können.
-Hierbei spielt auch die Wichtigkeit des medizinischen Befunds wieder, der den Symptomatischen Verlauf als positiv markiert. 
-
-Des Weiteren sind Trainingsdaten für Simulationsmodelle denkbar.
-
-#### Finding-Response-Service
-
-In diesem System wird quasi die Interpretation der Analysen durchgeführt. 
-Hierbei gibt es unterschiedliche Schweregrade der Wahrscheinlichkeitsfaktoren. 
-Diese Faktoren variieren basierend auf den Basis-Medizin-Informationen (bei Personen der Gefahrengruppe sind die Thresholds generell niedriger anzusätzen) die bspw. über die Covid-App der Charité Berlin ermittelt werden.
-
-Wie die Public Research Gruppe unseres Teams aufgezeigt hat, ist es notwendig, einen ausgleichenden Mehrwert für die herausgabe der Daten zu bieten.
-Aufbereitete Informationen, die zum derzeitigen Wahrscheinlichkeitsfaktor des Nutzers passen, werden durch diesen eher Content getriebenen Dienst zusammengestellt, aufbereitet und bereitgestellt. 
-Hier wird der eigentliche Mehrwert für den Nutzer generiert. 
-
-
-#### Analysing Services
-
-Vorab, inhaltliche Beschreibungen der zu Grunde liegenden Modelle, Berechnungen und wissenschaftlichen Quellen, sind dem Scientific Research Team und deren wissenschaftliche Ausarbeitung zu entnehmen.
-
-##### Propability-Symptome-Analysis
-
-Dieser Analyse-Dienst nutzt die täglichen Symptome und berechnet auf Basis eines Wahrscheinlichkeitsmodells einen Wahrscheinlichkeitsfaktor für das Krankheitsbild.
-Die Faktoren des Modells basieren auf einer gewichteten Bewertung von Symptomen nach derzeit aktuellen wissenschaftlichen Inhalten.
-
-##### Propability-Gradient-Analysis
-
-Dieser Analyse-Dienst untersucht den Verlauf des Wahrscheinlichkeitswerts eines Tages aus dem Zeitraum der verganenen X Tage (Covid-19 wären dies 14 Tage).
-Aus diesem Grund sind die Eingaben meist auch in einer sehr feinen Auflösung, dass die Eingabe durchaus eine Trendentwicklung ermöglicht.
-
-Der Einfluss dieser Analyse auf den Wahrscheinlichkeitswert wäre eine Erhöhung, wenn in der Vergangenheit bereits ein ansteigender Trend zu verzeichnen war.
-Im Gegenzug wird der Faktor reduziert, wenn man auf dem Weg der Besserung ist.
-
-##### Geo-Tracking-Analysis
-
-Dieser Teil erstellt quasi Heatmaps über die Wahrscheinlichkeitsfaktoren aller Nutzer einer Region. Der Wahrscheinlichkeitsfaktor wird entsprechend erhöht, wenn es mehr Nutzer mit einem bereits erhöhten Wert in der eigenen Umgebung gibt. Er wird nicht erhöht, wenn es keinen signifikanten Anteil an erhöhten Wahrscheinlichkeiten bei anderen Nutzern gibt. Er wird aber nicht reduziert. 
-
-
-#### Knowledge-Service
-
-Das System soll bei weitem nicht nur Symptome und das Krankheitsbild von Covid-19 beinhalten.
-Andere Symptome und Krankheitsbilder können in allgemeinen Krankheitsphasen durch aus in einer sehr ausführlichen Breite betrieben werden.
-In Krisenphasen, wie wir sie derzeit erleben, können einige Symptome rausgenommen werden und einige Krankheitsbilder nicht analysiert werden.
-Somit bietet das System die Möglichkeit seitens der medizinischen Voreinschätzung konkrete auf aktuelle Gegebenheiten zu reagieren.
-Der Knowledge-Service ist der zentrale Knoten in dem alle Informationen, Parameter und Berechnungsfunktionen ausgelagert sind, die für die Analysen benötigt werden.
-
-Der Knowledge-Service wird nochmal in einem eigenen Spezial-Kapitel betrachtet.
-
-
-#### Zusammenfassung für die Architektur
-
-Alle Komponenten sind sehr kleinteilig angelegt und nach deren Funktionsschwerpunkt separiert (Separation of Concerns).
-Zwischen allen Komponenten wurden übergreifende Datenmodelle und Schnittstellen definiert. Jede Komponente entwickelt demnach gegen diese Schnittstellen- und Datenmodelle.
-Somit wird Austauschbarkeit, Wartbarkeit und Skalierbarkeit sichergestellt. 
-
-### Prototyp Solution / Implementation
-
-#### Umfang des Prototyps
-
-Die prototypische Lösung hat das Ziel das Handling in Ansätzen und vorallem die wissenschaftlichen Analysen in einem realen Umfeld erlebbar zu machen und experimentieren zu können.
-Aus dem Grund war nicht das Ziel das gesamte Vision Architecture System zu realisieren.
-
-Folgende Punkte wurden in dem Prototyp realisiert:
-
-[x] User-UI-Dienst
-[x] Short-Term-Data-Persistance
-[x] Propability-Symptome-Analysis
-[x] Finding-Response-Service
-[x] Knowledge-Service
-
-folgende Punkte wurden nicht realisiert:
-
-[] Medical-UI-Dienst
-[] Long-Term-Data-Persistance
-[] Propability-Gradient-Analysis
-[] Geo-Tracking-Analysis
-[] User-Telefon-Dienst
-[] User-Bot-Dienst
-[] alle anderen Anwendungsfälle die in der Vision dargestellt wurden
-
-### Technische Details
-
-Das Backend ist in AWS (Amazon-Web-Services) Beanstalk Umgebung gehostet.
-Laufzeitsystem ist ein Windows Server 2012 mit .NET Core 2.1
-
-Demnach wurde mit Hilfe von Visual Studio 2019, Visual Studio Code und der Sprache C# programmiert.
-
-Das Backend-System ist auch nicht in der vorgestellten Micro-Service-Architektur realisiert worden.
-Hintergrund dieser Entscheidung für den Hackathon ist der hohe Aufwand zur Konfiguratioon der Netzwerk-Infrastruktur für ein solches verteiltes System.
-Alle Dienste Komponenten sind als Background-Worker in einer monolithischen Anwendung realisiert. 
-Die Datenfluss-Mechanismen, wie bspw. das Pull-Prinzip der Analyse-Dienste, wurde mit Event-Aggregator-Ansatz entsprechend realisiert. 
-
-### Architektur-Schema
-
-<p align="center">
-<img src="images/Architecture_PrototypeArchitecture.PNG" height="400">
-</p>
-Bild: Vision Architecture (eigene Grafik)
-
-
-### Vorgehensweise
-
-Das Gesamtsystem wurde Freitagabend nach Beginn der Hackathon-Phase mit Hilfe der Web-Anwendung Miro entworfen. (siehe Grafiken)
-
-Die Aufteilung im Entwickler-Team wurde nach agilen Methoden in einem Kanbanboard gelöst.
-
-<p align="center">
-<img src="images/Architecture_KanbanBoard.PNG" height="400">
-</p>
-Bild: Auszug aus dem Kanban-Board am Ende des Hackathons (eigene Grafik)
-
-In grün sind die realisierten Teilsysteme dargestellt, in lila die entsprechenden Bearbeiter.
-
-
+## Architektur
 
 ## Click-Dummy
 
@@ -402,45 +206,52 @@ Der Mockup ist online abrufbar unter: https://xd.adobe.com/view/130f088c-c69f-43
 
 Basierend auf dem ersten Entwurf sollte weitergearbeitet werden, um eine vollumfängliche App mit einem guten User Interface und einer guten User Expirience zu erhalten.
 
-# Nächste Schritte
-Nach dem Hackathon kann der entwickelte und implementierte Prototyp um die genannten Funktionen ergänzt und optimiert werden. Ein weiterer Austausch mit Experten wäre ratsam. Dazu zählt medizinisches Fachpersonal zur Auswertung der Symptomdaten mit Hilfe des Algorithmus, Experten im Bereich Psychologie zur Aufbereitung und Vermittlung der Daten, um Panikmache/zusätzliche Verunsicherung in der Bevölkerung zu vermeiden und Experten im Bereich Datenschutz, um eine vollständige Anonymisierung der Daten zu gewährleisten. Darüber hinaus könnten andere Projekte in der App verwendet oder verlinkt werden, beispielsweise zur Visualisierung von Daten. Für die Zukunft haben wir uns bereits mit Beteiligten der CovApp und Geohealth dazu verabredet gemeinsam Absprachen zu treffen, um nicht nebeneinander her zu entwickeln.
-Es gilt Herausforderungen wie den Datenschutz der medizinischen und geographischen Daten zu wahren. Damit und mit einem attraktiven User Interface wollen wir die Akzeptanz der App in der Bevölkerung erhöhen, denn je höher die Nutzerzahl, desto besser die Datenlage und die Analysen.
+## Implementierung
 
-# Teamvorstellung
-Wir sind ein vielfältiges Team aus dem deutschlandweiten Netzwerk der Studenten und Jungingenieure des VDI (Verein Deutscher Ingenieure e.V.).	Wir sind ein bunt gemischtes Team, zu Beginn alles Mitglieder/Freunde des Netzwerks der Studenten und Jungingenieure des VDI (Verein Deutscher Ingenieure). Zum Teil kannten wir uns vor der Zusammenarbeit noch nicht. Im weiteren Verlauf des Hackathons haben wir uns mit Experteninnen und Experten verschiedener Fachrichtungen ausgetauscht und ergänzt. Wir haben das ganze Wochenende unglaublich gut zusammen gearbeitet und mit viel Witz und Spaß eine tolle App entwickelt! 	
+
+# Team Introduction
+
+Wir sind ein bunt gemischtes Team, zu Beginn alles Mitglieder/Freunde des Netzwerks der Studenten und Jungingenieure des VDI (Verein Deutscher Ingenieure).
+Im weiteren Verlauf des Hackathons haben wir uns mit Experteninnen und Experten verschiedener Fachrichtungen ausgetauscht und ergänzt. 
 
 Unser Team:
 
-**System Entwicklung / Hacking** Architektur / Entwicklung von skalierbaren mikro-service orientierten Architekturen
-- Andreas Stutz (Ideengeber, Entwickler, Architektur )
+**System Development / Hacking** Architecture / Development of a scalable micro-service oriented architecture 
+
+- Andreas Stutz (Architecture, Deployment, )
 - Benedikt Geib (REST-API / Mobile App)
 - Janik Ritz (Data Persistance)
 - Melanie Wassmer (Mobile App)
-- Philipp Gesner (Datenanalyse)
+- Philipp Gesner (Data Analysis)
 - Marwin Madsen (Mobile App)
 
 **Scientific Research**
-- Kathrin Korte (Datenanalyse Algorithmus)
+- Kathrin Korte (Data Analysis Algorithm)
 - Charlotte Maschke
 
+
 **Public Research**
-- Luisa Miny (User Experience, Video Konzept)
-- Torben Deppe (Recherche, Projektmanagement)
-- David Seck (Recherche, externe Kommunikation)
-- Vincent Laux (MockUp / Umfragen)
+- Luisa Miny (User Experience)
+- Torben Deppe (Research Communication)
+- David Seck (???)
+- Vincent Laux (MockUp / Usability)
 - Riadh Dhaoui (Video Design)
-- Jonas Thees (Datenschutz)
-- Johanna Hoppe (Umfragen Auswertung, Video Konzept)	
+- Jonas Thees (???)
+- Johanna Hoppe (Research, Video Design)
 
-# Liste der Archive
 
-**Cloud Anwendung**
+# List of Repositories
+
+**Cloud Application**
 https://github.com/stan1025/WirVsVirus
 
-Ein besonderer Dank gilt Amazon Web Service insbesondere Pawel Warmuth für die großartige Unterstützung beim Zugang und der Bedienung!
+Special Thanks to Amazon Web Service especially to Pawel Warmuth for supporting with a billing voucher as well as the great support!
 
-**Mobile Anwendung**
+**Mobile Application**
 https://github.com/stan1025/WirVsVirus_App
 
 
-Für mehr informationen zu unserer App folge diesem Link: ["Disease-pattern-early-recognition-in-global-distribution"](https://devpost.com/software/disease-pattern-early-recognition-in-global-distribution#updates)
+
+
+
+Follow the link and find more information about our idea: ["Disease-pattern-early-recognition-in-global-distribution"](https://devpost.com/software/disease-pattern-early-recognition-in-global-distribution#updates)
