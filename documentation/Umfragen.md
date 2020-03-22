@@ -38,13 +38,13 @@ Zusammengefasst konnten 13 Fragen in drei Hauptgruppen ermittelt werden, die von
 <img src="images/umfrage_Frage1.PNG" height="400">
 </p>
 <p align="center">
-<em>Abbildung 1: Öffentliche Umfrage Teil I</em>
+<em>Abbildung 2 Öffentliche Umfrage Teil I</em>
 </p>
 
 <p align="center">
 <img src="images/umfrage_Frage2.PNG" height="400">
 </p>
 <p align="center">
-<em>Abbildung 1: Öffentliche Umfrage Teil II</em>
+<em>Abbildung 3 Öffentliche Umfrage Teil II</em>
 </p>
 
