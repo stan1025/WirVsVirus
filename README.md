@@ -228,7 +228,7 @@ Diese Werte dienen dem Analyse Algorithmus als wissenschaftlich fundierte Bemess
 
 Zusätzlich fließt eine Bewertung der Schwere des jeweiligen Symptoms mit in die Rechnung ein. Dazu hat der Nutzer die Möglichkeit einen Schieberegler seinem emfinden nach einzustellen. Das Minimum der Skala bedeutet ein Fehlen von Symptomen, das Maximum eine starke Ausprägung jener. Die zugrundeliegende Skala erlaubt dabei Eingabemöglichkeiten in einem Bereich zwischen 0-100. 
 
-Eine Ausnahme stellt der Wert für Fieber da. Der mögliche Bereich zwischen 36,3 und 42,5 wird mithilfe von nichtlinear auf den Bereich zwischen 0 und 100 abgebildet. Die Transformation erfolgt dabei als Interpolation innerhalb der einzelnen Gruppen von verschiedenen Schweregraden von Fieber. [Fieber](https://www.netdoktor.at/krankheit/fieber-7557)
+Eine Ausnahme stellt der Wert für Fieber da. Der mögliche Bereich zwischen 36,3 und 42,5 wird mithilfe von nichtlinear auf den Bereich zwischen 0 und 100 abgebildet. Die Transformation erfolgt dabei als Interpolation innerhalb der einzelnen Gruppen von verschiedenen Schweregraden von Fieber. [Einteilung von Schweregraden](https://www.netdoktor.at/krankheit/fieber-7557)
 
 | Schwere                  | von   |  bis |
 | :-----------------------:|:-----:| :---:|
@@ -257,6 +257,10 @@ Darauf folgt die Berechnung der Wahrscheinlichkeit für jedes Symptom (Symptom P
 Die Symptom Probability erfolgt durch Multiplikation vom Schwerefaktor mit der gemittelten Wahrscheinlichkeit für jedes Symptom.
 
 Beispiel:
+
+Die DP wird im folgenden berechnet für eine Nutzereingabe von 38,8 °C:
+
+Symptomprobability Fieber = 51 + (38,5 - 38,1/ 75 - 51) * (38,8 - 38,6) = 51 %
 
 - Fieber = 51% * 31,44%               = 16,008 %
 - Husten = 80% * 24,22%               = 19,376 %
