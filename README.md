@@ -70,7 +70,7 @@ Unser Team:
 - Marwin Madsen (Mobile App)
 
 **Scientific Research**
-- Kathrin Korte (Analyse Algorithmus)
+- Kathrin Korte (Data Analysis Algorithm)
 - Johanna Hoppe 
 - Charlotte Maschke
 
