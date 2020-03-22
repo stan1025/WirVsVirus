@@ -11,11 +11,14 @@ namespace vdivsvirus.Services
     {
 
         private readonly IRequestDataSet dataService;
+        private readonly IKnowledgeService knowledgeService;
 
-        public ResponseService(IRequestDataSet service)
+        public ResponseService(IRequestDataSet reqService, IKnowledgeService knowService)
         {
-            if (service == null) throw new ArgumentNullException("No data service");
-            dataService = service;
+            if (reqService == null) throw new ArgumentNullException("No data service available");
+            dataService = reqService;
+            if (knowService == null) throw new ArgumentNullException("No knowledge service available");
+            knowledgeService = knowService;
         }
 
         public bool NewFindingAvailable(Guid userId, DateTime time)

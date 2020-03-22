@@ -36,11 +36,14 @@ namespace vdivsvirus
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            //--------------------
+            // Knowledge Service 
+            // (Central Knowledge Service)
+            IKnowledgeService knowledgeService = new KnowledgeService();
 
             //--------------------
             // DataSetService 
-            // (Central Service)
+            // (Central Persistance Service)
             DataSetService dataService = new DataSetService();
             IRequestDataSet requestService = dataService as IRequestDataSet;
             ISendSymptome sendService = dataService as ISendSymptome;

@@ -232,6 +232,14 @@ namespace vdivsvirus.Types
         /// analysis.
         /// </summary>
         public Func<float, string> GetRecommendation { get; set; }
+
+        /// <summary>
+        /// Returns the function to calculate the propability
+        /// based on the given symptome data set.
+        /// </summary>
+        public Func<SymptomeDataSet, float> propabilityAlgorithm { get; set; }
+
+
     }
 
 

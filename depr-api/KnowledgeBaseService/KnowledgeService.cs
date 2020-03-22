@@ -246,6 +246,62 @@ new SymptomeType{ IdentData = new SymptomeIdentData() { id = 4,inputType = Sympt
         {
             System.Diagnostics.Trace.Write(data);
         }
+
+
+
+
+
+
+        private void LoadDiseasesTypes()
+        {
+
+            #region Covid19 Disease
+
+            DiseaseType covid19 = new DiseaseType()
+            {
+                IdentData = new DiseaseIdentData()
+                {
+                    id = 1,
+                    name = "Covid-19",
+                    desc = "Scheiß Lungenkrankheit",
+                    infoLink = "www.covid19.com"
+                },
+                propabilityAlgorithm = covid19Algorithm,
+                GetRecommendation = null
+            };
+
+
+
+            #endregion
+
+
+
+        }
+
+
+
+
+
+        #region Propability Algorithms
+
+        private float covid19Algorithm(SymptomeDataSet data)
+        {
+            return data.symptomes.Select(
+                input =>
+                {
+                    float propSum = GetSymptomeTypes().Select(item => item.symptomePropability).Sum();
+                    SymptomeType symp = GetSymptomeTypes().FirstOrDefault(item => item.IdentData.id.Equals(input.Key));
+                    return symp == null ? 0f : (symp.symptomePropability * propSum / 100) * symp.ScaleFunc(input.Value);
+                })
+                .Sum();
+        }
+
+
+        #endregion
+
+
+
+
     }
 
 
@@ -275,6 +331,15 @@ new SymptomeType{ IdentData = new SymptomeIdentData() { id = 4,inputType = Sympt
 
 
     }
+
+
+
+
+
+
+
+
+
 
 
 
