@@ -230,7 +230,7 @@ Zusätzlich fließt eine Bewertung der Schwere des jeweiligen Symptoms mit in di
 
 Eine Ausnahme stellt der Wert für Fieber da. Der mögliche Bereich zwischen 36,3 und 42,5 wird mithilfe von nichtlinear auf den Bereich zwischen 0 und 100 abgebildet. Die Transformation erfolgt dabei als Interpolation innerhalb der einzelnen Gruppen von verschiedenen Schweregraden von Fieber. [Einteilung von Schweregraden](https://www.netdoktor.at/krankheit/fieber-7557)
 
-| Schwere                  | von   |  bis |
+| Schwere                  | von [°C] |  bis [°C] |
 | :-----------------------:|:-----:| :---:|
 | Normale Körpertemperatur | 36,3  | 37,4 |
 | Erhöhte Temperatur       | 37,5  |  38  |
@@ -248,8 +248,8 @@ Dazu wird zunächst die Gesamtsumme der Wahrscheinlichkeit aller betrachteten Sy
 
 Nun wird die Wahrscheinlichkeit für jedes der Symptome (z. B. Fieber = 87,9 %) geteilt durch die Summe der Wahrscheinlichkeiten. 
 
-Fieber:  87,9% / 2,795 = 31,44%
-Husten: 67,7% / 2,795 = 24,22%
+Fieber:  87,9 % / 2,795 = 31,44 %
+Husten: 67,7 % / 2,795 = 24,22 %
 etc.
 
 
@@ -262,16 +262,16 @@ Die DP wird im folgenden berechnet für eine Nutzereingabe von 38,8 °C:
 
 Symptomprobability Fieber = 51 + (38,5 - 38,1/ 75 - 51) * (38,8 - 38,6) = 51 %
 
-- Fieber = 51% * 31,44%               = 16,008 %
-- Husten = 80% * 24,22%               = 19,376 %
-- Abgeschlagenheit = 60% * 13,63%     = 8,178 %
-- Kurzatmigkeit = 30% * 6,654         = 1,996 %
-- Muskel-/Gelenkschm. = 40% * 5,295%  = 2,118 %
-- Halsschmerz = 30% * 4,97%           = 1,491 %
-- Kopfschmerz = 20% * 4,571%          = 0,9142 %
-- Schüttelfrost = 70% * 4,078%        =  1,459 %
+- Fieber = 51 % * 31,44 %               = 16,008 %
+- Husten = 80 % * 24,22 %               = 19,376 %
+- Abgeschlagenheit = 60 % * 13,63 %     = 8,178 %
+- Kurzatmigkeit = 30 % * 6,654 %        = 1,996 %
+- Muskel-/Gelenkschm. = 40 % * 5,295 %  = 2,118 %
+- Halsschmerz = 30 % * 4,97 %           = 1,491 %
+- Kopfschmerz = 20 % * 4,571 %          = 0,9142 %
+- Schüttelfrost = 70 % * 4,078 %        =  1,459 %
 - Übelkeit = 0 %
-- Verstopfte Nase = 40% * 1,71%       = 0,686 %
+- Verstopfte Nase = 40 % * 1,71 %       = 0,686 %
 - Durchfall = 0 %                    
 
 
