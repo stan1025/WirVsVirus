@@ -56,6 +56,7 @@ namespace depr_api_test
                 geodata = new List<GeoData>(),
                 symptomes = new List<SymptomeInputData>()
                 {
+
                     new SymptomeInputData(){ id = "R50.9", strength = 38.8f },
                     new SymptomeInputData(){ id = "R05", strength = 80f },
                     new SymptomeInputData(){ id = "R53", strength = 60f },
@@ -67,6 +68,7 @@ namespace depr_api_test
                     new SymptomeInputData(){ id = "R11", strength = 0f },
                     new SymptomeInputData(){ id = "R06.8", strength = 40f },
                     new SymptomeInputData(){ id = "A09.0", strength = 0f }
+
                 }
             };
             var json = JsonConvert.SerializeObject(resData);

@@ -30,7 +30,7 @@ namespace vdivsvirus.Services
         public ActionResult<bool> NewFindingAvailable([FromQuery] Guid id, [FromQuery]  DateTime time)
         {
             var test = this;
-
+         
             return responseService.NewFindingAvailable(id, time);
         }
 
