@@ -50,7 +50,7 @@ namespace vdivsvirus.Services
 
             #endregion
 
-            #region XXX Symptome
+            #region Abgeschlagenheit Symptome
 
             SymptomeType abgeschlagenheit = new SymptomeType
             {
@@ -65,90 +65,143 @@ namespace vdivsvirus.Services
                 symptomePropability = (float)38.1
             };
 
+            #endregion
 
+            #region Kurzatmigkeit Symptome
+
+            SymptomeType kurzatmigkeit = new SymptomeType
+            {
+                IdentData = new SymptomeIdentData()
+                {
+                    id = 4,
+                    inputType = SymptomeInputType.slider,
+                    desc = "",
+                    name = "Kurzatmigkeit",
+                    settings = "min=0;max=100;step=1"
+                },
+                symptomePropability = (float)18.6
+            };
+
+            #endregion
+
+            #region Muskel-/Gelenkschmerz Symptome
+
+            SymptomeType muskelgelenkschmerz = new SymptomeType
+            {
+                IdentData = new SymptomeIdentData()
+                {
+                    id = 5,
+                    inputType = SymptomeInputType.slider,
+                    desc = "",
+                    name = "Muskel-/Gelenkschmerz",
+                    settings = "min=0;max=100;step=1"
+                },
+                symptomePropability = (float)14.8
+            };
+
+            #endregion
+
+            #region Halsschmerz Symptome
+            
+            SymptomeType halsschmerz = new SymptomeType
+            {
+                IdentData = new SymptomeIdentData()
+                {
+                    id = 6,
+                    inputType = SymptomeInputType.slider,
+                    desc = "",
+                    name = "Halsschmerz",
+                    settings = "min=0;max=100;step=1"
+                },
+                symptomePropability = (float)13.9
+            };
+
+            #endregion
+
+            #region Kopfschmerz Symptome
+            
+            SymptomeType kopfschmerz = new SymptomeType
+            {
+                IdentData = new SymptomeIdentData()
+                {
+                    id = 7,
+                    inputType = SymptomeInputType.slider,
+                    desc = "",
+                    name = "Kopfschmerz",
+                    settings = "min=0;max=100;step=1"
+                },
+                symptomePropability = (float)13.6
+            };
+
+            #endregion
+
+            #region Schüttelfrost Symptome
+
+            SymptomeType schuettelfrost = new SymptomeType
+            {
+                IdentData = new SymptomeIdentData()
+                {
+                    id = 8,
+                    inputType = SymptomeInputType.slider,
+                    desc = "",
+                    name = "Schüttelfrost",
+                    settings = "min=0;max=100;step=1"
+                },
+                symptomePropability = (float)11.4
+            };
+
+            #endregion
+
+            #region Übelkeit Symptome
+
+            SymptomeType uebelkeit = new SymptomeType
+            {
+                IdentData = new SymptomeIdentData()
+                {
+                    id = 9,
+                    inputType = SymptomeInputType.slider,
+                    desc = "",
+                    name = "Übelkeit",
+                    settings = "min=0;max=100;step=1"
+                },
+                symptomePropability = (float)5.0
+            };
 
             #endregion
 
             #region XXX Symptome
 
-
-
-
-            #endregion
-
-            #region XXX Symptome
-
-
-
-
-            #endregion
-
-            #region XXX Symptome
-
-
-
+            SymptomeType verstopfteNase = new SymptomeType
+            {
+                IdentData = new SymptomeIdentData()
+                {
+                    id = 10,
+                    inputType = SymptomeInputType.slider,
+                    desc = "",
+                    name = "Verstopfte Nase",
+                    settings = "min=0;max=100;step=1"
+                },
+                symptomePropability = (float)4.8
+            };
 
             #endregion
 
-            #region XXX Symptome
+            #region Durchfall Symptome
 
-
-
-
-            #endregion
-
-            #region XXX Symptome
-
-
-
-
-            #endregion
-
-            #region XXX Symptome
-
-
-
+            SymptomeType durchfall = new SymptomeType
+            {
+                IdentData = new SymptomeIdentData()
+                {
+                    id = 10,
+                    inputType = SymptomeInputType.slider,
+                    desc = "",
+                    name = "Durchfall",
+                    settings = "min=0;max=100;step=1"
+                },
+                symptomePropability = (float)3.7
+            };
 
             #endregion
-
-            #region XXX Symptome
-
-
-
-
-            #endregion
-
-            #region XXX Symptome
-
-
-
-
-            #endregion
-
-            #region XXX Symptome
-
-
-
-
-            #endregion
-
-            #region XXX Symptome
-
-
-
-
-            #endregion
-
-            #region XXX Symptome
-
-
-
-
-            #endregion
-
-
-
-
         }
 
 
@@ -156,19 +209,7 @@ namespace vdivsvirus.Services
 
         public List<SymptomeType> GetSymptomeInternals()
         {
-            return new List<SymptomeType>()
-            {
-
-new SymptomeType{ IdentData = new SymptomeIdentData() { id = 4,inputType = SymptomeInputType.slider, desc = "", name = "Kurzatmigkeit", settings="min=0;max=100;step=1" }, symptomePropability = (float)18.6 },
-                new SymptomeType{ IdentData = new SymptomeIdentData() { id = 5, inputType = SymptomeInputType.slider, desc = "", name = "Muskel-/Gelenkschmerz", settings="min=0;max=100;step=1" }, symptomePropability = (float)14.8},
-                new SymptomeType{ IdentData = new SymptomeIdentData() { id = 6, inputType = SymptomeInputType.slider, desc = "", name = "Halsschmerz", settings="min=0;max=100;step=1" } , symptomePropability = (float)13.9},
-                new SymptomeType{ IdentData = new SymptomeIdentData() { id = 7, inputType = SymptomeInputType.slider, desc = "", name = "Kopfschmerz", settings="min=0;max=100;step=1" }, symptomePropability = (float)13.6 },
-                new SymptomeType{ IdentData = new SymptomeIdentData() { id = 8, inputType = SymptomeInputType.slider, desc = "", name = "Schüttelfrost", settings="min=0;max=100;step=1" }, symptomePropability = (float)11.4 },
-                new SymptomeType{ IdentData = new SymptomeIdentData() { id = 9, inputType = SymptomeInputType.slider, desc = "", name = "Übelkeit", settings="min=0;max=100;step=1" } , symptomePropability = (float)5.0},
-                new SymptomeType{ IdentData = new SymptomeIdentData() { id = 10, inputType = SymptomeInputType.slider, desc = "", name = "Verstopfte Nase", settings="min=0;max=100;step=1" } , symptomePropability = (float)4.8},
-                new SymptomeType{ IdentData = new SymptomeIdentData() { id = 11, inputType = SymptomeInputType.slider, desc = "", name = "Durchfall", settings="min=0;max=100;step=1" } , symptomePropability = (float)3.7},
-            };
-
+            return loadSymptomeData();
         }
 
         public List<SymptomeType> GetSymptomeTypes()
