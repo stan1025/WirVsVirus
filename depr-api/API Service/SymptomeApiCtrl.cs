@@ -31,8 +31,8 @@ namespace vdivsvirus.Services
         }
 
         // POST api/symptome/SendDiseaseDataSet
-        [HttpPost("SendDiseaseDataSet/{id}")]
-        public void SendDiseaseDataSet([FromBody] DiseaseDataSet value)
+        [HttpPost("SendDiseaseDataSet")]
+        public void SendDiseaseDataSet(Guid id, DiseaseDataSet value)
         {
             dataService.SendDiseaseDataSet(value);
         }

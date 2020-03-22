@@ -33,14 +33,14 @@ namespace vdivsvirus.Services
         }
 
         // GET api/finding/RequestFinding
-        [HttpGet("RequestFinding/{id}")]
+        [HttpGet("RequestFinding")]
         public ActionResult<UserResponseDataSet> RequestFinding(Guid id, DateTime time)
         {
             return responseService.RequestFinding(id, time);
         }
 
         // GET api/finding/RequestFindingHistory
-        [HttpGet("RequestFindingHistory/{id}")]
+        [HttpGet("RequestFindingHistory")]
         public ActionResult<UserHistoryDataSet> RequestFindingHistory(Guid id)
         {
             return responseService.RequestFindingHistory(id);
