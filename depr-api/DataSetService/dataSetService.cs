@@ -20,7 +20,6 @@ namespace vdivsvirus.Services
     }
 
 
-
     public class DataSetService : IRequestDataSet, ISendSymptome
 {
         private readonly IKnowledgeService knowledgeService;
@@ -28,12 +27,6 @@ namespace vdivsvirus.Services
         private object tableLock = new object();
 
         private List<UserDataSet> table = new List<UserDataSet>();
-
-
-
-
-
-
 
         public DataSetService(IKnowledgeService service)
         {
@@ -50,7 +43,7 @@ namespace vdivsvirus.Services
             lock (tableLock)
             {
                 //Es gibt ein Datensatz der noch keine RawPropability - Eintragung hat
-                return table.Where(item => item.RawPropabilities == null).Count() > 0;
+                return table.Any(item => item.RawPropabilities == null);
             }
         }
 
@@ -62,7 +55,9 @@ namespace vdivsvirus.Services
         {
             lock(tableLock)
             {
-                return table.Where(item => item.RawPropabilities == null).Select(item => new SymptomeDataSet() { userID = item.Ident, time = item.Time, symptomes = item.Symptomes }).FirstOrDefault();
+                var unprocessed = table.FirstOrDefault(item => item.RawPropabilities == null);
+                return new SymptomeDataSet() {userID = unprocessed.Ident, time = unprocessed.Time, symptomes = unprocessed.Symptomes};
+
             }
         }
 
@@ -76,7 +71,9 @@ namespace vdivsvirus.Services
         {
             lock(tableLock)
             {
-                return table.Where(item => item.Ident.Equals(userID) && item.Time.Equals(time)).Select(item => item.ExtPropabilities == null ? item.RawPropabilities : item.ExtPropabilities).Select(item => new PropabilityDataSet() { userID = userID, time = time, propabilities = item }).First();
+                var prob = table.FirstOrDefault(item => item.Ident.Equals(userID) && item.Time.Equals(time));
+                return new PropabilityDataSet()
+                    {userID = userID, time = time, propabilities = prob.ExtPropabilities ?? prob.RawPropabilities};
             }
         }
 
@@ -88,10 +85,8 @@ namespace vdivsvirus.Services
         {
             lock(tableLock)
             {
-                UserDataSet dataSet = table.Where(item => item.Ident.Equals(data.userID) && item.Time.Equals(data.time)).FirstOrDefault();
-                int index = table.IndexOf(dataSet);
+                UserDataSet dataSet = table.FirstOrDefault(item => item.Ident.Equals(data.userID) && item.Time.Equals(data.time));
                 dataSet.RawPropabilities = data.propabilities;
-                table.Insert(index, dataSet);
             }
         }
 
@@ -108,10 +103,8 @@ namespace vdivsvirus.Services
                 if (data.authenticator.userName.Equals("Dr. Stutz")) return false;
                 lock (tableLock)
                 {
-                    UserDataSet dataSet = table.Where(item => item.Ident.Equals(data.userID) && item.Time.Equals(data.time)).FirstOrDefault();
-                    int index = table.IndexOf(dataSet);
+                    UserDataSet dataSet = table.FirstOrDefault(item => item.Ident.Equals(data.userID) && item.Time.Equals(data.time));
                     dataSet.Acknowledments.Add(new DiseaseAcknowledgement() { id = data.diseaseID, acknowledged = data.testResult });
-                    table.Insert(index, dataSet);
                     return true;
                 }
             }
