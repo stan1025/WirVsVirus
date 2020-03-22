@@ -47,13 +47,23 @@ namespace vdivsvirus.Services
                 },
                 symptomePropability = (float)67.7
             };
-            SymptomeType husten = husten
-
 
             #endregion
 
             #region XXX Symptome
 
+            SymptomeType abgeschlagenheit = new SymptomeType
+            {
+                IdentData = new SymptomeIdentData()
+                {
+                    id = 3,
+                    inputType = SymptomeInputType.slider,
+                    desc = "",
+                    name = "Abgeschlagenheit",
+                    settings = "min=0;max=100;step=1"
+                },
+                symptomePropability = (float)38.1
+            };
 
 
 
@@ -148,10 +158,8 @@ namespace vdivsvirus.Services
         {
             return new List<SymptomeType>()
             {
-                ,
-               ,
-                new SymptomeType{ IdentData = new SymptomeIdentData() { id = 3, inputType = SymptomeInputType.slider, desc = "", name = "Abgeschlagenheit", settings="min=0;max=100;step=1" }, symptomePropability = (float)38.1 },
-                new SymptomeType{ IdentData = new SymptomeIdentData() { id = 4,inputType = SymptomeInputType.slider, desc = "", name = "Kurzatmigkeit", settings="min=0;max=100;step=1" }, symptomePropability = (float)18.6 },
+
+new SymptomeType{ IdentData = new SymptomeIdentData() { id = 4,inputType = SymptomeInputType.slider, desc = "", name = "Kurzatmigkeit", settings="min=0;max=100;step=1" }, symptomePropability = (float)18.6 },
                 new SymptomeType{ IdentData = new SymptomeIdentData() { id = 5, inputType = SymptomeInputType.slider, desc = "", name = "Muskel-/Gelenkschmerz", settings="min=0;max=100;step=1" }, symptomePropability = (float)14.8},
                 new SymptomeType{ IdentData = new SymptomeIdentData() { id = 6, inputType = SymptomeInputType.slider, desc = "", name = "Halsschmerz", settings="min=0;max=100;step=1" } , symptomePropability = (float)13.9},
                 new SymptomeType{ IdentData = new SymptomeIdentData() { id = 7, inputType = SymptomeInputType.slider, desc = "", name = "Kopfschmerz", settings="min=0;max=100;step=1" }, symptomePropability = (float)13.6 },

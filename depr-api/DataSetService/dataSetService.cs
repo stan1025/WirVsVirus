@@ -119,32 +119,6 @@ namespace vdivsvirus.Services
 
 
 
-    public static class SymptomeScalingExtension
-    {
-
-        public static Func<float, float> OneToOne = input => input;
-
-        public static Func<float, float> FeverScaling = input =>
-        {
-            if (input < 37.5f)
-                return 0;
-            else if (37.5f <= input && input <= 38f)
-                return 1 + (0.5f / 24f) * (input - 37.5f);
-            else if (38.1f <= input && input <= 38.5f)
-                return 26 + (0.4f / 24f) * (input - 38.1f);
-            else if (38.6f <= input && input <= 39f)
-                return 51 + (0.4f / 24f) * (input - 38.6f);
-            else if (39.1f <= input && input <= 39.9f)
-                return 76 + (0.8f / 24f) * (input - 39.1f);
-            else
-                return 100f;
-        };
-
-
-
-    }
-
-
 
 
 

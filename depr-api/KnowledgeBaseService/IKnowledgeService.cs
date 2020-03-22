@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using vdivsvirus.Types;
 
-namespace vdivsvirus.KnowledgeBaseService
+namespace vdivsvirus.Interfaces
 {
 
     /// <summary>
