@@ -29,7 +29,7 @@ Dies hat unter anderem zur Folge, dass Ärzte häufiger aufgesucht werden, eine 
 [1] Nationaler Pandemieplan Teil II. "Wissenschaftliche Grundlagen." Robert Koch-Institut, März 2017.
 
 # Lösung
-Im Rahmen des Hackathons wurde eine Lösung entwickelt, die die Probleme 2, 6, 7 und 8 adressiert. Hierfür wurde eine App entwickelt, die 
+Im Rahmen des Hackathons wurde eine Lösung entwickelt, die die Probleme 2, 6, 7 und 8 aus der Problembeschreibung adressiert. Hierfür wurde eine App entwickelt, die 
 
 - Daten, wie Ausprägung der Symptome oder Positionsdaten, vom Nutzer entgegen nimmt,
 - diese mit [TODO: Wording] Algorithmen verarbeitet und
@@ -70,7 +70,7 @@ Unser Team:
 - Marwin Madsen (Mobile App)
 
 **Scientific Research**
-- Kathrin Korte
+- Kathrin Korte (Data Analysis Algorithm)
 - Johanna Hoppe 
 - Charlotte Maschke
 

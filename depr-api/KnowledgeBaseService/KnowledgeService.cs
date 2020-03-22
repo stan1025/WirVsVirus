@@ -411,7 +411,7 @@ namespace vdivsvirus.Services
 
         private String covid19Recommendation(float propabilityResult)
         {
-            return propabilityResult > 2 / 3 ? "Positiv" : "Negativ";
+            return propabilityResult > 2/3 ? "Positiv" : "Negativ";
         }
 
         #endregion
