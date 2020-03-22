@@ -28,7 +28,7 @@ namespace vdivsvirus
 
             //--------------------
             // DataSetService 
-            // (Central Persistance Service)
+            // (Central Persistence Service)
             DataSetService dataService = new DataSetService(knowledgeService);
             IRequestDataSet requestService = dataService as IRequestDataSet;
             ISendSymptome sendService = dataService as ISendSymptome;
@@ -39,9 +39,9 @@ namespace vdivsvirus
             IResponseService responseService = new ResponseService(requestService, knowledgeService);
 
             //--------------------
-            // Analysing Data
-            // PDA - Propabilistic Data Analysis
-            // PGA - Propabilistic Gradient Analysis (not implemented)
+            // Analyzing Data
+            // PDA - Probabilistic Data Analysis
+            // PGA - Probabilistic Gradient Analysis (not implemented)
             var pdaService = new pdaService(requestService, knowledgeService);
             //var pgaService = new pgaService(requestService);
 
