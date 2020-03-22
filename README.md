@@ -45,6 +45,8 @@ In einem nächsten Schritt haben wir eine Analyse bestehender Lösungen durchgef
 
 [Umfragen](documentation/Umfragen.md)
 
+[Analyse existierender Lösungen](documentation/Wettbewerbsanalyse.md)
+
 [Lösungskonzept](documentation/Konzept.md)
 
 [Klick-Dummy](documentation/Klick-Dummy.md)
