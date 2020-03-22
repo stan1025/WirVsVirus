@@ -1,10 +1,9 @@
-# #WirVsVirus
+# Disease Pattern Early Recognition in Global Distribution!
+\#WirVsVirus
+
 ![KeyVisual of Hackathon](documentation/images/KeyVisual.jpg)
 
-
-# Disease Pattern Early Recognition in Global Distribution!
-
-## Problembeschreibung
+# Problembeschreibung
 Viruserkrankungen sind Teil von unserem Leben. Jedes Jahr treten - vor allem in den Wintermonaten - 
 "Erkrankungen durch saisonal zirkulierende, humane Influenzaviren"[1] auf. Dies erfolgt durch die Mutation der Viren, welche aber prognostiziert und daher gut therapiert werden können. 
 
@@ -27,7 +26,7 @@ Dies hat unter anderem zur Folge, dass Ärzte häufiger aufgesucht werden, eine 
 
 [1] Nationaler Pandemieplan Teil II. "Wissenschaftliche Grundlagen." Robert Koch-Institut, März 2017.
 
-## Lösung
+# Lösung
 Im Rahmen des Hackathons wurde eine Lösung entwickelt, die die Probleme 6-8 adressiert. Hierfür wurde eine App entwickelt, die 
 
 - Daten, wie Ausprägung der Symptome oder Positionsdaten, vom Nutzer entgegen nimmt,
@@ -35,26 +34,84 @@ Im Rahmen des Hackathons wurde eine Lösung entwickelt, die die Probleme 6-8 adr
 - die Ergebnisse dem Nutzer in einfacher verständlicher Weise anzeigt sowie
 - Schnittstellen für andere Datennutzer (z. B. Regierung, medizinische Forschung) zur Verfügung stellt.
 
-## Methodik
+# Methodik
 Zur Erstellung der Lösung wurde methodisch vorgegangen. Es wurden zunächst Personas für die Nutzer entwickelt und Umfragen zum Funktionsumfang und Nutzerverhalten durchgeführt. Basierend auf den Ergebnissen wurden die Herausforderungen an diese App ermittelt, die sich in drei Hauptkategorien unterteilen lassen: Akzeptanz in der Gesellschaft, Nutzung der App und technische Umsetzung. Zu jeder der Hauptkategorien haben wir Fragen ermittelt, die beantwortet werden müssen.
 
 In einem nächsten Schritt haben wir eine Analyse bestehender Lösungen durchgeführt und ermittelt, dass keiner der Lösungen, die Herausforderungen voll umfänglich erfüllt. Aus diesem Grund haben wir ein eigenes Konzept einer App entwickelt und für dieses zwei prototypische Umsetzung in Form eines Klick-Dummys sowie einer Implementierung entwickelt, auf denen im Anschluss weiter aufgebaut werden kann.
 
-## Ergebnisse
+# Ergebnisse
 
 [Personas](documentation/Personas.md)
+
 [Umfragen](documentation/Umfragen.md)
 
 [Lösungskonzept](documentation/Konzept.md)
 
 [Klick-Dummy](documentation/Klick-Dummy.md)
+
 [Implementierung](documentation/Implementierung.md)
 
 
+# Team Introduction
+
+Wir sind ein bund gemischtes Team, zu Beginn alles Mitglieder/Freunde des Netzwerks der Studenten und Jungingenieure des VDI (Verein Deutscher Ingenieure).
+Im weiteren Verlauf des Hackathons haben wir uns mit Experteninnen und Experten verschiedener Fachrichtungen ausgetauscht und ergänzt. 
+
+## Unser Team:
+
+**System Development / Hacking** Architecture / Development of a scalable micro-service oriented architecture 
+
+Andreas Stutz (Architecture, Deployment, )
+
+Benedikt Geib (REST-API / Mobile App)
+
+Janik Ritz (Data Persistance)
+
+Melanie Wassmer (Mobile App)
+
+Philipp Gesner (Data Analysis)
+
+Marwin Madsen (Mobile App)
+
+**Scientific Research**
+
+Kathrin Krote
+
+Johanna Hoppe 
+
+Charlotte Maschke
+
+
+**Public Research**
+
+Luisa Miny (User Experience)
+
+Torben Deppe (Research Communication)
+
+David Seck (???)
+
+Vincent Laux (MockUp / Usability)
+
+Riadh Dhaoui (Video Design)
+
+Jonas Thees (???)
+
+
+# List of Repositories
+
+**Cloud Application**
+https://github.com/stan1025/WirVsVirus
+
+Special Thanks to Amazon Web Service especially to Pawel Warmuth for supporting with a billing voucher as well as the great support!
+
+**Mobile Application**
+https://github.com/stan1025/WirVsVirus_App
 
 
 
 
+
+Follow the link and find more information about our idea: ["Disease-pattern-early-recognition-in-global-distribution"](https://devpost.com/software/disease-pattern-early-recognition-in-global-distribution#updates)
 
 
 
@@ -95,59 +152,3 @@ Beide Seiten müssen einen Mehrwert von einem solchen System haben, damit ein so
 Neben allem Mehrwert ist die Anonymität innerhalb der Daten zu gewährleisten.
 
 
-# Team Introduction
-
-Wir sind ein bund gemischtes Team, zu Beginn alles Mitglieder/Freunde des Netzwerks der Studenten und Jungingenieure des VDI (Verein Deutscher Ingenieure).
-Im weiteren Verlauf des Hackathons haben wir uns mit Experteninnen und Experten verschiedener Fachrichtungen ausgetauscht und ergänzt. 
-
-:arrow_forward: ## Unser Team:
-
-**System Development / Hacking**
-Architecture / Development of a scalable micro-service oriented architecture 
-
-
-Andreas Stutz (Architecture, Deployment, )
-Benedikt Geib (REST-API / Mobile App)
-Janik Ritz (Data Persistance)
-Melanie Wassmer (Mobile App)
-Philipp Gesner (Data Analysis)
-Marwin Madsen (Mobile App)
-
-**Scientific Research**
-Kathrin Krote
-Johanna Hoppe 
-Charlotte Maschke
-
-**Public Research**
-Luisa Miny (User Experience)
-Torben Deppe (Research Communication)
-David Seck (???)
-Vincent Laux (MockUp / Usability)
-Riadh Dhaoui (Video Design)
-Jonas Thees (???)
-
-HAB ICH JEMAND VERGESSEN
-
-
-# List of Sections
-
-Chapter 1 ...
-Chapter 2 ...
-Chapter 3 ...
-
-
-# List of Repositories
-
-**Cloud Application**
-https://github.com/stan1025/WirVsVirus
-
-Special Thanks to Amazon Web Service especially to Pawel Warmuth for supporting with a billing voucher as well as the great support!
-
-**Mobile Application**
-https://github.com/stan1025/WirVsVirus_App
-
-
-
-
-
-Follow the link and find more information about our idea: ["Disease-pattern-early-recognition-in-global-distribution"](https://devpost.com/software/disease-pattern-early-recognition-in-global-distribution#updates)
