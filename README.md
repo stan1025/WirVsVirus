@@ -1,4 +1,4 @@
-# Disease Pattern Early Recognition in Global Distribution!
+﻿# Disease Pattern Early Recognition in Global Distribution!
 \#WirVsVirus
 
 <p align="center">
@@ -29,14 +29,14 @@ Dies hat unter anderem zur Folge, dass Ärzte häufiger aufgesucht werden, eine 
 [1] Nationaler Pandemieplan Teil II. "Wissenschaftliche Grundlagen." Robert Koch-Institut, März 2017.
 
 # Lösung
-Im Rahmen des Hackathons wurde eine Lösung entwickelt, die die Probleme 2, 6, 7 und 8 adressiert. Hierfür wurde eine App entwickelt, die 
+Im Rahmen des Hackathons haben wir eine Lösung entwickelt, die die Probleme 2, 6, 7 und 8 aus der Problembeschreibung adressiert. Hierfür haben wir ein App-Konzept sowie eine prototypische Umsetzung entwickelt. Die App soll 
 
-- Daten, wie Ausprägung der Symptome oder Positionsdaten, vom Nutzer entgegen nimmt,
-- diese mit [TODO: Wording] Algorithmen verarbeitet und
-- die Ergebnisse dem Nutzer in einfacher verständlicher Weise anzeigt sowie
-- Schnittstellen für andere Datennutzer (z. B. Regierung, medizinische Forschung) zur Verfügung stellt.
+- Daten, wie Symptomausprägung und Positionsdaten, vom Nutzer entgegennehmen,
+- diese mit [TODO: Wording] Algorithmen verarbeiten,
+- die Ergebnisse dem Nutzer in einfacher und verständlicher Weise anzeigen sowie
+- Schnittstellen für andere Datennutzer (z. B. Regierung, medizinische Forschung) zur Verfügung stellen.
 
-Zur Erstellung der Lösung wurde methodisch vorgegangen. Es wurden zunächst Personas für die Nutzer entwickelt und Umfragen zum Funktionsumfang und Nutzerverhalten durchgeführt. Basierend auf den Ergebnissen wurden die Herausforderungen an diese App ermittelt, die sich in drei Hauptkategorien unterteilen lassen: Akzeptanz in der Gesellschaft, Nutzung der App und technische Umsetzung. Zu jeder der Hauptkategorien haben wir Fragen ermittelt, die beantwortet werden müssen. In einem nächsten Schritt haben wir eine Analyse bestehender Lösungen durchgeführt und ermittelt, dass keiner der Lösungen, die Herausforderungen voll umfänglich erfüllt. Aus diesem Grund haben wir ein eigenes Konzept einer App entwickelt und für dieses zwei prototypische Umsetzung in Form eines Klick-Dummys sowie einer Implementierung entwickelt, auf denen im Anschluss weiter aufgebaut werden kann.
+Auf dem Weg zur Entwicklung des Click-Dummies und der technischen Umsetzung waren mehrere Schritte notwendig. Als erstes haben wir die Zielgruppe unserer App definiert. Schnell war klar, dass wir mit der App alle Bürgerinnen und Bürger Deutschlands erreichen wollen. Denn je mehr Menschen ihre Symptom- und Positionsdaten, desto größer ist die Datengrundlage und desto genauer ist die Auswertung und damit der Schutz aller. Um bei der Entwicklung aber ein konkretes Bild unserer Zielgruppe vor Augen zu haben, haben wir 4 Personas entwickelt, die prototypische Vertreter der Zielgruppe darstellen. Parallel haben wir zwei Umfragen aufgesetzt, in denen wir nach Nutzungsmotiven für die App gefragt haben, und nach bereits existierenden Lösungen recherchiert. Aus den Ergebnissen der Personas, Umfragen und der Recherche haben wir schließlich Funktionen definiert, die die App enthalten sollte. Die Recherche der bereits existierenden Lösungen ergab, dass diese Lösungen weder alle oben genannten Probleme addressieren noch unsere definierten Funktionen voll umfassen. Das unterstützte uns in der Entscheidung ein eigenes App-Konzept zu erstellen, umzusetzen und zu implementieren. So entstanden ein Click-Dummy sowie eine prototypische Implementierung, auf denen im Anschluss an den Hackathon weiter aufgebaut werden soll. 
 
 # Ergebnisse
 
@@ -46,9 +46,11 @@ Zur Erstellung der Lösung wurde methodisch vorgegangen. Es wurden zunächst Per
 
 [Analyse existierender Lösungen](documentation/Wettbewerbsanalyse.md)
 
+[Funktionsdefintion](documentation/Funktionsdefinition.md)
+
 [Lösungskonzept](documentation/Konzept.md)
 
-[Klick-Dummy](documentation/Klick-Dummy.md)
+[Klick-Dummy](documentation/Klick_dummy.md)
 
 [Implementierung](documentation/Implementierung.md)
 
@@ -70,7 +72,7 @@ Unser Team:
 - Marwin Madsen (Mobile App)
 
 **Scientific Research**
-- Kathrin Korte
+- Kathrin Korte (Data Analysis Algorithm)
 - Johanna Hoppe 
 - Charlotte Maschke
 
