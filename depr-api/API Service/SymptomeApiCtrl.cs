@@ -14,19 +14,22 @@ namespace vdivsvirus.Services
     public class SymptomeController : ControllerBase
     {
         private readonly ISendSymptome dataService;
+        private readonly IKnowledgeService knowledgeService;
 
 
-        public SymptomeController(ISendSymptome service)
+        public SymptomeController(ISendSymptome service, IKnowledgeService knowService)
         {
-            if (service == null) throw new ArgumentNullException("No data service");
+            if (service == null) throw new ArgumentNullException("No data service available");
             dataService = service;
+            if (knowService == null) throw new ArgumentNullException("No knowledge service available");
+            knowledgeService = knowService;
         }
 
         // GET api/symptome/GetSymptomeTypes
         [HttpGet("GetSymptomeTypes")]
-        public ActionResult<IEnumerable<SymptomeType>> GetSymptomeTypes()
+        public ActionResult<IEnumerable<SymptomeIdentData>> GetSymptomeTypes()
         {
-            return dataService.GetSymptomeTypes();
+            return knowledgeService.GetSymptomeIdentData();
             
         }
 

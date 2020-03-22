@@ -44,38 +44,32 @@ namespace vdivsvirus
             //--------------------
             // DataSetService 
             // (Central Persistance Service)
-            DataSetService dataService = new DataSetService();
+            DataSetService dataService = new DataSetService(knowledgeService);
             IRequestDataSet requestService = dataService as IRequestDataSet;
             ISendSymptome sendService = dataService as ISendSymptome;
 
             //--------------------
             // Data Response Service
             // provide feedback to users
-            IResponseService responseService = new ResponseService(requestService);
+            IResponseService responseService = new ResponseService(requestService, knowledgeService);
 
             //--------------------
             // Analysing Data
             // PDA - Propabilistic Data Analysis
             // PGA - Propabilistic Gradient Analysis (not implemented)
-            var pdaService = new pdaService(requestService);
+            var pdaService = new pdaService(requestService, knowledgeService);
             //var pgaService = new pgaService(requestService);
 
             //--------------------
             // Register Services at IC-Container
             services.AddSingleton<IRequestDataSet>(dataService);
             services.AddSingleton<ISendSymptome>(dataService);
+            services.AddSingleton<IKnowledgeService>(knowledgeService);
             services.AddHostedService<pdaService>();
             // services.AddHostedService<pgaService>();
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            
-            ConfigureEntityFramework(services);
-        }
-
-        public static void ConfigureEntityFramework(IServiceCollection services)
-        {
-            services.AddDbContextPool<DataSetContext>(options => options.UseMySql(Helpers.GetRDSConnectionString()));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

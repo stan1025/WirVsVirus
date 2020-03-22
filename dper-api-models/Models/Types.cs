@@ -101,7 +101,7 @@ namespace vdivsvirus.Types
         /// <summary>
         /// Symptome Identifier
         /// </summary>
-        public int id { get; set; }
+        public string id { get; set; }
 
         /// <summary>
         /// Symptome Input Classifier
@@ -196,7 +196,7 @@ namespace vdivsvirus.Types
         /// <summary>
         /// Disease Identifier
         /// </summary>
-        public int id { get; set; }
+        public string id { get; set; }
 
         /// <summary>
         /// Disease Display Type
@@ -277,7 +277,7 @@ namespace vdivsvirus.Types
     {
         public Guid userID { get; set; }
         public DateTime time { get; set; }
-        public Dictionary<int, float> symptomes { get; set; }
+        public Dictionary<string, float> symptomes { get; set; }
     }
 
     /**
@@ -287,7 +287,7 @@ namespace vdivsvirus.Types
     {
         public Guid userID { get; set; }
         public DateTime time { get; set; }
-        public Dictionary<int, float> propabilities { get; set; }
+        public Dictionary<string, float> propabilities { get; set; }
     }
 
     #endregion
@@ -319,8 +319,8 @@ namespace vdivsvirus.Types
     {
         public Guid userID { get; set; }
         public DateTime time { get; set; }
-        public Dictionary<int, float> propabilities { get; set; }
-        public Dictionary<int, DiseaseType> diseaseTypes { get; set; }
+        public Dictionary<string, float> propabilities { get; set; }
+        public Dictionary<string, DiseaseType> diseaseTypes { get; set; }
         public string message { get; set; }
     }
 

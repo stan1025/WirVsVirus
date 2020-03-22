@@ -45,19 +45,19 @@ namespace vdivsvirus.Services
             {
                 userID = Guid.NewGuid(),
                 time = DateTime.Now,
-                symptomes = new Dictionary<int, float>()
+                symptomes = new Dictionary<string, float>()
                 {
-                    [1] = 70f,
-                    [2] = 80f,
-                    [3] = 60f,
-                    [4] = 30f,
-                    [5] = 40f,
-                    [6] = 30f,
-                    [7] = 20f,
-                    [8] = 70f,
-                    [9] = 0f,
-                    [10] = 40f,
-                    [11] = 0f,
+                    ["1"] = 70f,
+                    ["2"] = 80f,
+                    ["3"] = 60f,
+                    ["4"] = 30f,
+                    ["5"] = 40f,
+                    ["6"] = 30f,
+                    ["7"] = 20f,
+                    ["8"] = 70f,
+                    ["9"] = 0f,
+                    ["10"] = 40f,
+                    ["11"] = 0f,
                 },
 
             };
@@ -69,9 +69,9 @@ namespace vdivsvirus.Services
             {
                 userID = userID,
                 time = time,
-                propabilities = new Dictionary<int, float>()
+                propabilities = new Dictionary<string, float>()
                 {
-                    [1] = 20
+                    ["1"] = 20
                 }
             };
         }

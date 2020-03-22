@@ -9,10 +9,14 @@ namespace vdivsvirus.Services
 {
     public class KnowledgeService : IKnowledgeService
 {
+        private List<SymptomeType> symptomeList = new List<SymptomeType>();
+        private List<DiseaseType> diseaseList = new List<DiseaseType>();
+
 
         public KnowledgeService()
         {
-
+            loadSymptomeData();
+            LoadDiseasesTypes();
         }
 
         private void loadSymptomeData()
@@ -22,7 +26,7 @@ namespace vdivsvirus.Services
             SymptomeType fieber = new SymptomeType { 
                 IdentData = new SymptomeIdentData() 
                 { 
-                    id = 1, 
+                    id = "1", 
                     inputType = SymptomeInputType.slider, 
                     desc = "", 
                     name = "Fieber", 
@@ -31,6 +35,7 @@ namespace vdivsvirus.Services
                 symptomePropability = (float)87.9, 
                 ScaleFunc = input => input * 1000 };
 
+            symptomeList.Add(fieber);
             #endregion
 
             #region Husten Symptome
@@ -39,7 +44,7 @@ namespace vdivsvirus.Services
             {
                 IdentData = new SymptomeIdentData()
                 {
-                    id = 2,
+                    id = "2",
                     inputType = SymptomeInputType.slider,
                     desc = "",
                     name = "Husten",
@@ -48,6 +53,7 @@ namespace vdivsvirus.Services
                 symptomePropability = (float)67.7
             };
 
+            symptomeList.Add(husten);
             #endregion
 
             #region Abgeschlagenheit Symptome
@@ -56,7 +62,7 @@ namespace vdivsvirus.Services
             {
                 IdentData = new SymptomeIdentData()
                 {
-                    id = 3,
+                    id = "3",
                     inputType = SymptomeInputType.slider,
                     desc = "",
                     name = "Abgeschlagenheit",
@@ -64,6 +70,8 @@ namespace vdivsvirus.Services
                 },
                 symptomePropability = (float)38.1
             };
+
+            symptomeList.Add(abgeschlagenheit);
 
             #endregion
 
@@ -73,7 +81,7 @@ namespace vdivsvirus.Services
             {
                 IdentData = new SymptomeIdentData()
                 {
-                    id = 4,
+                    id = "4",
                     inputType = SymptomeInputType.slider,
                     desc = "",
                     name = "Kurzatmigkeit",
@@ -81,6 +89,8 @@ namespace vdivsvirus.Services
                 },
                 symptomePropability = (float)18.6
             };
+
+            symptomeList.Add(kurzatmigkeit);
 
             #endregion
 
@@ -90,7 +100,7 @@ namespace vdivsvirus.Services
             {
                 IdentData = new SymptomeIdentData()
                 {
-                    id = 5,
+                    id = "5",
                     inputType = SymptomeInputType.slider,
                     desc = "",
                     name = "Muskel-/Gelenkschmerz",
@@ -99,15 +109,16 @@ namespace vdivsvirus.Services
                 symptomePropability = (float)14.8
             };
 
+            symptomeList.Add(muskelgelenkschmerz);
             #endregion
 
             #region Halsschmerz Symptome
-            
+
             SymptomeType halsschmerz = new SymptomeType
             {
                 IdentData = new SymptomeIdentData()
                 {
-                    id = 6,
+                    id = "6",
                     inputType = SymptomeInputType.slider,
                     desc = "",
                     name = "Halsschmerz",
@@ -116,15 +127,17 @@ namespace vdivsvirus.Services
                 symptomePropability = (float)13.9
             };
 
+            symptomeList.Add(halsschmerz);
+
             #endregion
 
             #region Kopfschmerz Symptome
-            
+
             SymptomeType kopfschmerz = new SymptomeType
             {
                 IdentData = new SymptomeIdentData()
                 {
-                    id = 7,
+                    id = "7",
                     inputType = SymptomeInputType.slider,
                     desc = "",
                     name = "Kopfschmerz",
@@ -132,6 +145,8 @@ namespace vdivsvirus.Services
                 },
                 symptomePropability = (float)13.6
             };
+
+            symptomeList.Add(kopfschmerz);
 
             #endregion
 
@@ -141,7 +156,7 @@ namespace vdivsvirus.Services
             {
                 IdentData = new SymptomeIdentData()
                 {
-                    id = 8,
+                    id = "8",
                     inputType = SymptomeInputType.slider,
                     desc = "",
                     name = "Schüttelfrost",
@@ -149,6 +164,8 @@ namespace vdivsvirus.Services
                 },
                 symptomePropability = (float)11.4
             };
+
+            symptomeList.Add(schuettelfrost);
 
             #endregion
 
@@ -158,7 +175,7 @@ namespace vdivsvirus.Services
             {
                 IdentData = new SymptomeIdentData()
                 {
-                    id = 9,
+                    id = "9",
                     inputType = SymptomeInputType.slider,
                     desc = "",
                     name = "Übelkeit",
@@ -167,15 +184,17 @@ namespace vdivsvirus.Services
                 symptomePropability = (float)5.0
             };
 
+            symptomeList.Add(uebelkeit);
+
             #endregion
 
-            #region XXX Symptome
+            #region verstopfteNase Symptome
 
             SymptomeType verstopfteNase = new SymptomeType
             {
                 IdentData = new SymptomeIdentData()
                 {
-                    id = 10,
+                    id = "10",
                     inputType = SymptomeInputType.slider,
                     desc = "",
                     name = "Verstopfte Nase",
@@ -183,6 +202,8 @@ namespace vdivsvirus.Services
                 },
                 symptomePropability = (float)4.8
             };
+
+            symptomeList.Add(verstopfteNase);
 
             #endregion
 
@@ -192,7 +213,7 @@ namespace vdivsvirus.Services
             {
                 IdentData = new SymptomeIdentData()
                 {
-                    id = 10,
+                    id = "11",
                     inputType = SymptomeInputType.slider,
                     desc = "",
                     name = "Durchfall",
@@ -201,94 +222,33 @@ namespace vdivsvirus.Services
                 symptomePropability = (float)3.7
             };
 
+            symptomeList.Add(durchfall);
+
             #endregion
         }
 
 
 
-
-        public List<SymptomeType> GetSymptomeInternals()
-        {
-            return loadSymptomeData();
-        }
-
         public List<SymptomeType> GetSymptomeTypes()
         {
-            return GetSymptomeInternals();//.Select(item => item.DisplayData).ToList();
+            return symptomeList;
         }
 
-        public bool HistorySetAvailable()
+
+        public List<SymptomeIdentData> GetSymptomeIdentData()
         {
-            throw new NotImplementedException();
+            return symptomeList.Select(item => item.IdentData).ToList();
         }
 
-        public SymptomeDataSet RequestDataSet()
+        public List<DiseaseType> GetDiseaseTypes()
         {
-            return new SymptomeDataSet() 
-            { userID = Guid.NewGuid(), 
-              time = DateTime.Now, 
-              symptomes = new Dictionary<int, float>() 
-              { 
-                  [1] = 70f,
-                  [2] = 80f,
-                  [3] = 60f,
-                  [4] = 30f,
-                  [5] = 40f,
-                  [6] = 30f,
-                  [7] = 20f,
-                  [8] = 70f,
-                  [9] = 0f,
-                  [10] = 40f,
-                  [11] = 0f,
-              },
-
-            };
+            return diseaseList;
         }
 
-        public PropabilityDataSet RequestDiseasePropability(Guid userID, DateTime time)
+        public List<DiseaseIdentData> GetDiseaseIdentData()
         {
-            return new PropabilityDataSet()
-            {
-                userID = userID,
-                time = time,
-                propabilities = new Dictionary<int, float>()
-                {
-                    [1] = 20
-                }
-            };
+            return diseaseList.Select(item => item.IdentData).ToList();
         }
-
-        public PropabilityHistorySet RequestDiseasePropabilityHistory(Guid userID)
-        {
-            throw new NotImplementedException();
-        }
-
-        public PropabilityHistorySet RequestHistorySet()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void SendDataResultSet(PropabilityDataSet data)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void SendDiseaseDataSet(DiseaseDataSet data)
-        {
-            System.Diagnostics.Trace.Write(data);
-        }
-
-        public void SendHistoryResultSet(PropabilityDataSet data)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void SendSymptomeDataSet(SymptomeInputDataSet data)
-        {
-            System.Diagnostics.Trace.Write(data);
-        }
-
-
 
 
 
@@ -302,7 +262,7 @@ namespace vdivsvirus.Services
             {
                 IdentData = new DiseaseIdentData()
                 {
-                    id = 1,
+                    id = "1",
                     name = "Covid-19",
                     desc = "Scheiß Lungenkrankheit",
                     infoLink = "www.covid19.com"
@@ -310,8 +270,6 @@ namespace vdivsvirus.Services
                 propabilityAlgorithm = covid19Algorithm,
                 GetRecommendation = null
             };
-
-
 
             #endregion
 
@@ -340,7 +298,13 @@ namespace vdivsvirus.Services
 
         #endregion
 
+        #region Recommendation Algorithms
 
+
+
+
+
+        #endregion
 
 
     }
