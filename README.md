@@ -48,7 +48,7 @@ Zur Erstellung der Lösung wurde methodisch vorgegangen. Es wurden zunächst Per
 
 [Lösungskonzept](documentation/Konzept.md)
 
-[Klick-Dummy](documentation/Klick-Dummy.md)
+[Klick-Dummy](documentation/Klick_dummy.md)
 
 [Implementierung](documentation/Implementierung.md)
 
