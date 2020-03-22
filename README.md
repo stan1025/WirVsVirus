@@ -215,8 +215,6 @@ Wir haben Funktionen definiert, die für uns in der täglichen Nutzung der App w
 
 # Data Analysis Algorithm
 
-# Data Analysis Algorithm
-
 Der Analyse Algorithmus hat das Ziel, die vom Nutzer eingegebenen Daten auszuwerten. Die Eingaben erfolgen über die Benutzeroberfläche. Erfasst werden dabei sowohl Symptome wie Fieber und Husten, als auch Angaben zu Alter, Wohnsituation, beruflichem Umfeld etc.
 
 Das Ergebnis des Algorithmus ist eine Wahrscheinlichkeit, hier Disease Probability (DP) genannt, mit der der Nutzer, basierend auf seinen aktuellen Symptomen an COVID-19 erkrankt ist. Die Wahrscheilichkeiten basieren dabei auf Daten der WHO. Im  [Report of the WHO-China Joint Mission on Coronavirus Disease 2019 (COVID-19)](https://www.who.int/docs/default-source/coronaviruse/who-china-joint-mission-on-covid-19-final-report.pdf) findet sich eine Auflistung der, im Zusammenhang mit der COVID-19 Lungenkrankheit, auftretenden Symptome und einer Wahrscheinlichkeit mit der sie bei Patienten beobachtet werden. 
