@@ -38,25 +38,6 @@ namespace vdivsvirus
         {
             var host = CreateWebHostBuilder(args).Build();
 
-            using (var serviceScope = host.Services.CreateScope())
-            {
-                var services = serviceScope.ServiceProvider;
-
-                //----------------
-                // DataSetService 
-                // (Central Service)
-                DataSetService dataService = new DataSetService();
-                IRequestDataSet requestService = dataService as IRequestDataSet;
-                ISendSymptome sendService = dataService as ISendSymptome;
-
-                IResponseService responseService = new ResponseService(requestService);
-
-                var pdaService = new pdaService(requestService);
-                var pgaService = new pgaService(requestService);
-
-
-            }
-
             await host.RunAsync();
         }
 
