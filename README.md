@@ -70,7 +70,7 @@ Unser Team:
 - Marwin Madsen (Mobile App)
 
 **Scientific Research**
-- Kathrin Krote
+- Kathrin Korte
 - Johanna Hoppe 
 - Charlotte Maschke
 
