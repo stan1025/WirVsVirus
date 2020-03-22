@@ -26,19 +26,17 @@ namespace vdivsvirus.Services
 
 
         // GET api/finding/NewFindingAvailable
-        [HttpGet("NewFindingAvailable")]
-        public ActionResult<bool> NewFindingAvailable([FromQuery] Guid id, [FromQuery]  DateTime time)
+        [HttpPost("NewFindingAvailable")]
+        public ActionResult<bool> NewFindingAvailable([FromBody] UserDataRef dataRef)
         {
-            var test = this;
-         
-            return responseService.NewFindingAvailable(id, time);
+            return responseService.NewFindingAvailable(dataRef.userID, dataRef.time);
         }
 
         // GET api/finding/RequestFinding
-        [HttpGet("RequestFinding")]
-        public ActionResult<UserResponseDataSet> RequestFinding(Guid id, DateTime time)
+        [HttpPost("RequestFinding")]
+        public ActionResult<UserResponseDataSet> RequestFinding([FromBody] UserDataRef dataRef)
         {
-            return responseService.RequestFinding(id, time);
+            return responseService.RequestFinding(dataRef.userID, dataRef.time);
         }
 
         // GET api/finding/RequestFindingHistory

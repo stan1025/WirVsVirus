@@ -15,14 +15,6 @@ namespace depr_api_test
     public class SendSymptomeTest
     {
 
-        [TestMethod]
-        [Timeout(200)]
-        public void InitialEnvironment()
-        {
-            Constants.userID = Guid.NewGuid();
-            Constants.lastTime = DateTime.Now;
-        }
-
 
         [TestMethod]
         [Timeout(200)]
@@ -47,12 +39,11 @@ namespace depr_api_test
         {
             // arrange
             var _client = new HttpClient();
-            Constants.lastTime = DateTime.Now;
 
             SymptomeInputDataSet resData = new SymptomeInputDataSet()
             {
-                userID = Constants.userID,
-                time = Constants.lastTime,
+                userID = Guid.Parse(Constants.userID),
+                time = DateTime.Parse(Constants.lastTime),
                 geodata = new List<GeoData>(),
                 symptomes = new List<SymptomeInputData>()
                 {

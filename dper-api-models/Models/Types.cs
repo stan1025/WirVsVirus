@@ -4,26 +4,6 @@ using System.Collections.Generic;
 namespace vdivsvirus.Types
 {
 
-    #region Database Types
-
-    internal class UserDataHistory
-    {
-        public Guid userID { get; set; }
-        public List<UserDataSet> history { get; set; }
-        public bool hasNew { get; set; } // has unprocessed UserDataSet
-    }
-
-    internal class UserDataSet
-    {
-        public Dictionary<int, int> symptomes { get; set; }
-        public Dictionary<int, sbyte> propabilities { get; set; }
-        public List<GeoData> geodata { get; set; }
-        public DateTime time { get; set; }
-    }
-
-    #endregion
-
-
 
 
 
@@ -182,6 +162,21 @@ namespace vdivsvirus.Types
         /// </summary>
         public DateTime time { get; set; }
     }
+
+
+    public class UserDataRef
+    {
+        /// <summary>
+        /// Anonymized User ID
+        /// </summary>
+        public Guid userID { get; set; }
+        /// <summary>
+        /// Timestamp
+        /// </summary>
+        public DateTime time { get; set; }
+    }
+
+
 
     #endregion
 

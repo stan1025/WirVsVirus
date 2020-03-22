@@ -14,34 +14,25 @@ namespace depr_api_test
     [TestClass]
     public class FindingTests
     {
-        [TestMethod]
-        [Timeout(200)]
-        public void InitialEnvironment()
-        {
-            Constants.userID = Guid.NewGuid();
-            Constants.lastTime = DateTime.Now;
-        }
 
 
         [TestMethod]
-        [Timeout(200)]
         public void FindingAvailableTest()
         {
-            InitialEnvironment();
 
             // arrange
             var _client = new HttpClient();
-            var uri = new Uri(Constants.url + "/api/finding/newfindingavailable");
+            var uri = new Uri($"{Constants.url}/api/finding/newfindingavailable");
 
             //// act
             JObject o = new JObject();
-            o.Add("id", Constants.userID);
-            o.Add("time", Constants.lastTime);
+            o.Add("userID", Guid.Parse(Constants.userID));
+            o.Add("time", DateTime.Parse(Constants.lastTime));
 
             string json = o.ToString();
             var request = new HttpRequestMessage
             {
-                Method = HttpMethod.Get,
+                Method = HttpMethod.Post,
                 RequestUri = uri,
                 Content = new StringContent(json, Encoding.UTF8, "application/json"),
             };
@@ -54,30 +45,26 @@ namespace depr_api_test
         }
 
         [TestMethod]
-        [Timeout(200)]
         public void RequestFindingTest()
         {
             // arrange
             var _client = new HttpClient();
             var uri = new Uri(Constants.url + "/api/finding/requestfinding");
-            Guid userId = Guid.NewGuid();
-            DateTime time = DateTime.Now;
+
 
             //// act
-            //JObject o = new JObject();
-            //o.Add("id", Constants.userID);
-            //o.Add("time", Constants.lastTime);
+            JObject o = new JObject();
+            o.Add("userID", Guid.Parse(Constants.userID));
+            o.Add("time", DateTime.Parse(Constants.lastTime));
 
-            //string json = o.ToString();
+            string json = o.ToString();
             var request = new HttpRequestMessage
             {
-                Method = HttpMethod.Get,
+                Method = HttpMethod.Post,
                 RequestUri = uri,
-                //Content = new StringContent(json, Encoding.UTF8, "application/json")
+                Content = new StringContent(json, Encoding.UTF8, "application/json")
             };
 
-            request.Properties.Add("id", Constants.userID);
-            request.Properties.Add("time", Constants.lastTime);
 
 
             var response = _client.SendAsync(request).Result;
