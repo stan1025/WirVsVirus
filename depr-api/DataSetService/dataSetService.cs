@@ -39,9 +39,9 @@ namespace vdivsvirus.Services
 
         }
 
-        public List<SymptomeDisplayData> GetSymptomeTypes()
+        public List<SymptomeType> GetSymptomeTypes()
         {
-            return GetSymptomeInternals().Select(item => item.DisplayData).ToList();
+            return GetSymptomeInternals();//.Select(item => item.DisplayData).ToList();
         }
 
         public bool HistorySetAvailable()

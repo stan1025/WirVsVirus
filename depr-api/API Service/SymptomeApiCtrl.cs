@@ -24,7 +24,7 @@ namespace vdivsvirus.Services
 
         // GET api/symptome/GetSymptomeTypes
         [HttpGet("GetSymptomeTypes")]
-        public ActionResult<IEnumerable<SymptomeDisplayData>> GetSymptomeTypes()
+        public ActionResult<IEnumerable<SymptomeType>> GetSymptomeTypes()
         {
             return dataService.GetSymptomeTypes();
             

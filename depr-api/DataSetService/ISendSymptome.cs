@@ -31,6 +31,6 @@ namespace vdivsvirus.Interfaces
         * SendSymptomes 
         * ... get the Symptome-List for the UI Service
         */
-        List<SymptomeDisplayData> GetSymptomeTypes();
+        List<SymptomeType> GetSymptomeTypes();
     }
 }
