@@ -105,7 +105,7 @@ namespace vdivsvirus.Services
         public ServiceResponse SendSymptomeDataSet(SymptomeInputData data)
         {
             System.Diagnostics.Trace.Write(data);
-            return new ServiceResponse()
+            return ServiceResponse.OK();
         }
     }
 }

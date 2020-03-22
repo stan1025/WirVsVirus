@@ -44,30 +44,6 @@ namespace vdivsvirus.Services
         {
             // Calculate the disease probability
             Calculate_Covid19(inputData);
-            
-            //Propability of the symptoms
-            float prop_symp= propabilityResults.prop;
-            float mean_prop = prop_symp.Average;
-            float prop_symp_mean = prop_symp / mean_prop; //Gerne auch als Schleife ;)
-
-
-
-            //Severity of the users symptoms
-            float sev_user = propabilityResults.val;
-            float sev_user_per = propabilityResults.val*10; //points -> percent
-
-
-            //Probability to have COVID-19
-            float prop_disease_all = sev_user_per * prop_symp_mean;   //Gerne auch als Schleife ;)
-            float prop_disease = prop.disease_all.sum; 
-
-            float threshold = 0.5;
-            bool covid = false;
-            if (prop_disease > threshold)
-                {
-                covid = true;
-            }
-
 
             outputData = new PropabilityDataSet()
             {
@@ -81,10 +57,7 @@ namespace vdivsvirus.Services
 
         private void Calculate_Covid19(SymptomeDataSet input)
         {
-            (float prop,float val) = sympInternals.GetSymptomeData(input.symptomes.First());
-
-
-            propabilityResults.Add(1, prop * val);
+            propabilityResults.Add(1, input.symptomes.Select(item => GetSymptomeBias(item)).Sum());
         }
 
 
@@ -95,23 +68,27 @@ namespace vdivsvirus.Services
         //}
 
 
-
-    }
-
-
-    public static class PDAServiceExtension
-    {
-        public static Tuple<float, float> GetSymptomeData(this List<SymptomeType> sympInt, KeyValuePair<int, float> input)
+        /// <summary>
+        /// Combined Method to establish the right internal symptome data
+        /// and apply its scaling function.
+        /// After scaling the input value it will be multiplied with the propability factor
+        /// which is also constant in the symptome type data. 
+        /// </summary>
+        /// <param name="sympInt">Internal Symptome Data Table</param>
+        /// <param name="input">Input Item</param>
+        /// <returns>Related Propability Factor</returns>
+        public float GetSymptomeBias(KeyValuePair<int, float> input)
         {
-            SymptomeType symp = sympInt.FirstOrDefault(item => item.id.Equals(input.Key));
+            SymptomeType symp = sympInternals.FirstOrDefault(item => item.id.Equals(input.Key));
             if (symp == null)
             {
-                return new Tuple<float, float>(0f, 0f);
+                return 0f;
             }
             else
             {
-                return new Tuple<float, float>(symp.symptomePropability, symp.ScaleFunc(input.Value));
+                return symp.symptomePropability * symp.ScaleFunc(input.Value);
             }
         }
     }
+
 }
