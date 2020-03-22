@@ -217,7 +217,7 @@ Wir haben Funktionen definiert, die für uns in der täglichen Nutzung der App w
 ## Data Analysis Algorithm
 
 
-# Konzeptionierung / Vision Architecture
+## Konzeptionierung / Vision Architecture
 
 Die Idee bzw. die Vision hinter [DEEPER] ist vom Umfang deutlich größer und mächtiger als das was sich in 48h letztlich umsetzen lässt.
 Aus diesem Grund beginnen wir hier mit einem Kurzüberblick über die Vision Architecture.
@@ -230,7 +230,7 @@ Im folgenden werden die einzelnen Bausteine des DEEPER-Systems vorgestellt, die 
 Bild: Vision Architecture (eigene Grafik)
 
 
-## Architektur-Muster
+### Architektur-Muster
 Unser Ziel war und ist es ein System zu entwerfen, welches auf eine globale Anwendung skaliert werden kann.
 Die Zugriffshäufigkeit mit 1x am Tag pro Nutzer, zeitlich verteilt über den Tag und die verschiedenen Zeitzonen der Welt, erwarten wir keine großen Datenraten, die von Außen in das System eingespielt werden.
 Innerhalb des Systems, durch unter Umständen notwendigen wiederkehrenden Berechnungen (falls bspw. einer positiv markiert wurde, hätte dies rückwirkend 14 Tage Einfluss auf bereits berechnete Werte), können zu einem erhöhten Traffic innerhalb des Systems führen. 
@@ -245,9 +245,9 @@ Somit viel die Entscheidung nach kurzer Recherche für einen Architekturansatz a
 
 
 
-## System-Komponenten
+### System-Komponenten
 
-### User-Input-Services
+#### User-Input-Services
 Als mögliche Eingabe-Quelle für Symptom- und Geo-Informationen gibt es unterschiedliche Möglichkeiten. Hierbei haben wir bspw. mal die drei - Telefon, Bot, Mobile App - aufgegriffen.
 Während eine Mobile App, gerade das Geo-Tracking besser unterstützen, als ein Telefon oder Bot-System, wäre es dennoch über andere Möglichkeiten und Mechanismen durchaus in Ansätzen realisierbar. 
 
@@ -255,18 +255,18 @@ Zusammenfassend kommen den User-Input-Services die Rolle der Dateneingabe zu.
 Auf Grund einer offenen REST-Schnittstelle, wäre es aber auch denkbar andere Datenquellen in das System einzubinden (bspw. Datensysteme, Algorithmen, Lösungen anderer Teams).
 
 
-### Medical-User-UI-Service
+#### Medical-User-UI-Service
 
 Dieser Service ermöglicht medizinischem Fachpersonal über einen authentifizierten Kanal positive Befunde an die Daten des Nutzers hinzuzufügen bzw. auch wieder zu entfernen.
 Durch diese Befund-Bestätigung wird die Qualität der Symptom-Daten erhöht und gesichert. 
 Um hier keine falschen Inhalte zu generieren, ist dieser Zugang nur durch medizinisches Fachpersonal möglich.
 
-### Short-Term-Data-Persistance
+#### Short-Term-Data-Persistance
 
 Dieser Datenbank-Dienst speichert die Daten die für die Analysen über den für das Krankheitsbild notwendigen Zeitraum in der sich die Symptome ausprägen.
 Es ist quasi die Daten im System-Inneren der Anwendung. 
 
-### Long-Term-Data-Persistance
+#### Long-Term-Data-Persistance
 
 Dieser Datenbank-Dienst speichert die Daten weg, die für die Analysen im System-Inneren nicht mehr benötigt werden.
 Ziel dieses Systems ist die Langzeit-Bereitstellung der erfassten Daten für Ausbildung, Forschung und Entwicklung. 
@@ -277,7 +277,7 @@ Hierbei spielt auch die Wichtigkeit des medizinischen Befunds wieder, der den Sy
 
 Des Weiteren sind Trainingsdaten für Simulationsmodelle denkbar.
 
-### Finding-Response-Service
+#### Finding-Response-Service
 
 In diesem System wird quasi die Interpretation der Analysen durchgeführt. 
 Hierbei gibt es unterschiedliche Schweregrade der Wahrscheinlichkeitsfaktoren. 
@@ -288,16 +288,16 @@ Aufbereitete Informationen, die zum derzeitigen Wahrscheinlichkeitsfaktor des Nu
 Hier wird der eigentliche Mehrwert für den Nutzer generiert. 
 
 
-### Analysing Services
+#### Analysing Services
 
 Vorab, inhaltliche Beschreibungen der zu Grunde liegenden Modelle, Berechnungen und wissenschaftlichen Quellen, sind dem Scientific Research Team und deren wissenschaftliche Ausarbeitung zu entnehmen.
 
-#### Propability-Symptome-Analysis
+##### Propability-Symptome-Analysis
 
 Dieser Analyse-Dienst nutzt die täglichen Symptome und berechnet auf Basis eines Wahrscheinlichkeitsmodells einen Wahrscheinlichkeitsfaktor für das Krankheitsbild.
 Die Faktoren des Modells basieren auf einer gewichteten Bewertung von Symptomen nach derzeit aktuellen wissenschaftlichen Inhalten.
 
-#### Propability-Gradient-Analysis
+##### Propability-Gradient-Analysis
 
 Dieser Analyse-Dienst untersucht den Verlauf des Wahrscheinlichkeitswerts eines Tages aus dem Zeitraum der verganenen X Tage (Covid-19 wären dies 14 Tage).
 Aus diesem Grund sind die Eingaben meist auch in einer sehr feinen Auflösung, dass die Eingabe durchaus eine Trendentwicklung ermöglicht.
@@ -305,12 +305,12 @@ Aus diesem Grund sind die Eingaben meist auch in einer sehr feinen Auflösung, d
 Der Einfluss dieser Analyse auf den Wahrscheinlichkeitswert wäre eine Erhöhung, wenn in der Vergangenheit bereits ein ansteigender Trend zu verzeichnen war.
 Im Gegenzug wird der Faktor reduziert, wenn man auf dem Weg der Besserung ist.
 
-#### Geo-Tracking-Analysis
+##### Geo-Tracking-Analysis
 
 Dieser Teil erstellt quasi Heatmaps über die Wahrscheinlichkeitsfaktoren aller Nutzer einer Region. Der Wahrscheinlichkeitsfaktor wird entsprechend erhöht, wenn es mehr Nutzer mit einem bereits erhöhten Wert in der eigenen Umgebung gibt. Er wird nicht erhöht, wenn es keinen signifikanten Anteil an erhöhten Wahrscheinlichkeiten bei anderen Nutzern gibt. Er wird aber nicht reduziert. 
 
 
-### Knowledge-Service
+#### Knowledge-Service
 
 Das System soll bei weitem nicht nur Symptome und das Krankheitsbild von Covid-19 beinhalten.
 Andere Symptome und Krankheitsbilder können in allgemeinen Krankheitsphasen durch aus in einer sehr ausführlichen Breite betrieben werden.
@@ -321,15 +321,15 @@ Der Knowledge-Service ist der zentrale Knoten in dem alle Informationen, Paramet
 Der Knowledge-Service wird nochmal in einem eigenen Spezial-Kapitel betrachtet.
 
 
-### Zusammenfassung für die Architektur
+#### Zusammenfassung für die Architektur
 
 Alle Komponenten sind sehr kleinteilig angelegt und nach deren Funktionsschwerpunkt separiert (Separation of Concerns).
 Zwischen allen Komponenten wurden übergreifende Datenmodelle und Schnittstellen definiert. Jede Komponente entwickelt demnach gegen diese Schnittstellen- und Datenmodelle.
 Somit wird Austauschbarkeit, Wartbarkeit und Skalierbarkeit sichergestellt. 
 
-## Prototyp Solution / Implementation
+### Prototyp Solution / Implementation
 
-### Umfang des Prototyps
+#### Umfang des Prototyps
 
 Die prototypische Lösung hat das Ziel das Handling in Ansätzen und vorallem die wissenschaftlichen Analysen in einem realen Umfeld erlebbar zu machen und experimentieren zu können.
 Aus dem Grund war nicht das Ziel das gesamte Vision Architecture System zu realisieren.
@@ -352,7 +352,7 @@ folgende Punkte wurden nicht realisiert:
 [] User-Bot-Dienst
 [] alle anderen Anwendungsfälle die in der Vision dargestellt wurden
 
-## Technische Details
+### Technische Details
 
 Das Backend ist in AWS (Amazon-Web-Services) Beanstalk Umgebung gehostet.
 Laufzeitsystem ist ein Windows Server 2012 mit .NET Core 2.1
@@ -364,7 +364,7 @@ Hintergrund dieser Entscheidung für den Hackathon ist der hohe Aufwand zur Konf
 Alle Dienste Komponenten sind als Background-Worker in einer monolithischen Anwendung realisiert. 
 Die Datenfluss-Mechanismen, wie bspw. das Pull-Prinzip der Analyse-Dienste, wurde mit Event-Aggregator-Ansatz entsprechend realisiert. 
 
-## Architektur-Schema
+### Architektur-Schema
 
 <p align="center">
 <img src="images/Architecture_PrototypeArchitecture.PNG" height="400">
@@ -372,7 +372,7 @@ Die Datenfluss-Mechanismen, wie bspw. das Pull-Prinzip der Analyse-Dienste, wurd
 Bild: Vision Architecture (eigene Grafik)
 
 
-## Vorgehensweise
+### Vorgehensweise
 
 Das Gesamtsystem wurde Freitagabend nach Beginn der Hackathon-Phase mit Hilfe der Web-Anwendung Miro entworfen. (siehe Grafiken)
 
