@@ -9,5 +9,6 @@
     <Import_RootNamespace>dper_api_models</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Types.cs" />
   </ItemGroup>
 </Project>

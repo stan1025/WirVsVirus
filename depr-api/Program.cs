@@ -9,8 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-using vdivsvirus.Interfaces;
-using vdivsvirus.Services;
+
 
 namespace vdivsvirus
 {
@@ -48,33 +47,12 @@ namespace vdivsvirus
         }
 
 
-        private static void ConfigureServiceAction(IServiceCollection services)
-        {
-
-            //----------------
-            // DataSetService 
-            // (Central Service)
-            DataSetService dataService = new DataSetService();
-            IRequestDataSet requestService = dataService as IRequestDataSet;
-            ISendSymptome sendService = dataService as ISendSymptome;
-
-            IResponseService responseService = new ResponseService(requestService);
-
-            var pdaService = new pdaService(requestService);
-            var pgaService = new pgaService(requestService);
-
-            services.AddSingleton<IRequestDataSet>(dataService);
-            services.AddSingleton<ISendSymptome>(dataService);
-           // services.AddHostedService<pdaService>();
-           // services.AddHostedService<pgaService>();
-
-        }
 
 
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>().ConfigureServices(ConfigureServiceAction);
+                .UseStartup<Startup>();
             
             
     }

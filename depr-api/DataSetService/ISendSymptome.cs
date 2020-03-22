@@ -17,7 +17,7 @@ namespace vdivsvirus.Interfaces
         * SendSymptomes 
         * ... to the DataSet-Service
         */
-        ServiceResponse SendSymptomeDataSet(SymptomeInputData data);
+        ServiceResponse SendSymptomeDataSet(SymptomeInputDataSet data);
 
 
         /**

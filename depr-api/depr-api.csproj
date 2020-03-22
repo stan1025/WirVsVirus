@@ -18,4 +18,6 @@
     <Page Include="wwwroot\index.html" />
   </ItemGroup>
 
+  <Import Project="..\dper-api-models\dper-api-models.projitems" Label="Shared" />
+
 </Project>
