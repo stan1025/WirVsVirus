@@ -230,7 +230,7 @@ Zusätzlich fließt eine Bewertung der Schwere des jeweiligen Symptoms mit in di
 
 Eine Ausnahme stellt der Wert für Fieber da. Der mögliche Bereich zwischen 36,3 und 42,5 wird mithilfe von nichtlinear auf den Bereich zwischen 0 und 100 abgebildet. Die Transformation erfolgt dabei als Interpolation innerhalb der einzelnen Gruppen von verschiedenen Schweregraden von Fieber. [Einteilung von Schweregraden](https://www.netdoktor.at/krankheit/fieber-7557).
 
-<p align="center">
+<center>
 | Schwere                  | von [°C] |  bis [°C] |
 | :-----------------------:|:-----:| :---:|
 | Normale Körpertemperatur | 36,3  | 37,4 |
@@ -239,7 +239,7 @@ Eine Ausnahme stellt der Wert für Fieber da. Der mögliche Bereich zwischen 36,
 | Mäßiges Fieber           | 38,6  |  39  |
 | Hohes Fieber             | 39,1  | 39,9 |
 | Sehr hohes Fieber        |  40   | 42,5 |
-</p>
+</center>
 
 
 Um die Wahrscheinlichkeit mit denen ein Symptom bei einem Patienten auftritt auf unseren Algorithmus zu übertragen, werden die Werte gemittelt, um eine theoretische Gesamtwahrscheinlichkeit von 100% zu erreichen, für den Fall, dass der Nutzer alle Symptome aufweist.
@@ -296,7 +296,7 @@ Im folgenden werden die einzelnen Bausteine des DEEPER-Systems vorgestellt, die 
 <p align="center">
 <img src="images/Architecture_VisionArchitecture.PNG" height="400">
 </p>
-<p>
+<p align="center">
 <em>Vision Architecture</em>
 </p>
 
