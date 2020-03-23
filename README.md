@@ -207,7 +207,7 @@ Um einen größeren Mehrwert für den Nutzer zu generieren, könnte es eine Kart
 
 Um den Nutzer daran zu erinnern, seine Symptome täglich einzugeben, sollte es Erinnerungsfunktion geben. Diese könnte in Form von Push-Notifications realisiert werden. Der Nutzer könnte beispielsweise täglich per Push an die Eingabe seiner Symptome erinnert werden. 
 
-Zusätzlich zu den wichtigsten Funktionen könnte die App dem Nutzer Informationen zur Verfügung stellen. Das könnten Informationen sein zu dem Virus Covid-19, Symptomen und Krankheitsverlauf. Auch Hygienemaßnahmen und Verhaltensregeln sowie aktuelle Zahlen und Statistiken und Anlaufstellen können den Mehrwert der App erhöhen. 
+Zusätzlich zu den wichtigsten Funktionen könnte die App dem Nutzer Informationen zur Verfügung stellen. Das könnten Informationen sein zu dem Virus SARS-CoV-2, der Krankheit Covid-19 und den zugehörigen Symptomen und dem Krankheitsverlauf. Auch Hygienemaßnahmen und Verhaltensregeln sowie aktuelle Zahlen und Statistiken und Anlaufstellen können den Mehrwert der App erhöhen. 
 
 Funktionen, die in fast jeder App zu finden sind und auch hier nicht fehlen sollten, sind Einstellungen (z.B. Einstellung von Schrift- und Icongröße) und das Profil. 
  
@@ -281,7 +281,7 @@ Die als Disease Probability bezeichnete Gesamtwahrscheinlichkeit wird nun aus de
 
 DP = 52,22 %
 
-Um über die DEEPER-App eine Handlungsempfehlung auszusprechen, wird nun ein Schwellenwert festgelegt. Liegt die DP unter dem Schwellenwert, wird der Nutzer als nicht gefährdet eingestuft. Befindet sich die Person mit ihrer DP jedoch über dem Schwellenwert so wird sie als gefährdet eingestift und bekommt eine entsprechende Empfehlung als Push-Nachricht auf ihr Endgerät gesendet.
+Um über die DEEPER-App eine Handlungsempfehlung auszusprechen, wird nun ein Schwellenwert festgelegt. Liegt die DP unter dem Schwellenwert, wird der Nutzer als nicht gefährdet eingestuft. Befindet sich die Person mit ihrer DP jedoch über dem Schwellenwert so wird sie als gefährdet eingestuft und bekommt eine entsprechende Empfehlung als Push-Nachricht auf ihr Endgerät gesendet.
 
 Die Höhe des Schwellenwerts wird individuell für jeden Nutzer festgelegt. Sie orientiert sich dabei an seinem persönlichen Risikopotenzial, welches mithilfe verschiedener Fragen z. B. zu Alter, Wohnsituation und beruflichem Umfeld ermittelt wird.
 
