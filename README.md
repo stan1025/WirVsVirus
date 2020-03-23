@@ -309,7 +309,7 @@ Auf Grund der guten Eigenschaften von Skalierbarkeit, Wartbarkeit und Anpassbark
 Das Prinzip des Share-as-less-as-possible oder gar Share-nothing Prinzip ermöglicht es ganze Dienste-Einheiten ohne große Aufwände zu duplizieren, hinzuzufügen oder zu entfernen. 
 Für ein System mit globaler Skalierung bieten sich diese Eigenschaften durchaus an.
 
-Somit viel die Entscheidung nach kurzer Recherche für einen Architekturansatz auf einen MSA-Ansatz.
+Somit fiel die Entscheidung nach kurzer Recherche für einen Architekturansatz auf einen MSA-Ansatz.
 
 
 
@@ -331,8 +331,8 @@ Um hier keine falschen Inhalte zu generieren, ist dieser Zugang nur durch medizi
 
 ### Short-Term-Data-Persistance
 
-Dieser Datenbank-Dienst speichert die Daten die für die Analysen über den für das Krankheitsbild notwendigen Zeitraum in der sich die Symptome ausprägen.
-Es ist quasi die Daten im System-Inneren der Anwendung. 
+Dieser Datenbank-Dienst speichert die Daten, die für die Analysen über den für das Krankheitsbild notwendigen Zeitraum in der sich die Symptome ausprägen notwendig sind.
+Es sind quasi die Daten im System-Inneren der Anwendung. 
 
 ### Long-Term-Data-Persistance
 
@@ -341,24 +341,24 @@ Ziel dieses Systems ist die Langzeit-Bereitstellung der erfassten Daten für Aus
 Hier wäre das Wunsch-Ziel eine Open-Data-Initiative zu etablieren.
 
 Anwendungsbereich für die Open-Data Inhalte wäre die Verbesserung des Systems durch historische Daten, die als Trainingsdaten genutzt werden können.
-Hierbei spielt auch die Wichtigkeit des medizinischen Befunds wieder, der den Symptomatischen Verlauf als positiv markiert. 
+Hierbei spielt auch die Wichtigkeit des medizinischen Befunds wieder, der den symptomatischen Verlauf als positiv markiert. 
 
 Des Weiteren sind Trainingsdaten für Simulationsmodelle denkbar.
 
 ### Finding-Response-Service
 
-In diesem System wird quasi die Interpretation der Analysen durchgeführt. 
+In diesem System wird die Interpretation der Analysen durchgeführt. 
 Hierbei gibt es unterschiedliche Schweregrade der Wahrscheinlichkeitsfaktoren. 
-Diese Faktoren variieren basierend auf den Basis-Medizin-Informationen (bei Personen der Gefahrengruppe sind die Thresholds generell niedriger anzusätzen) die bspw. über die Covid-App der Charité Berlin ermittelt werden.
+Diese Faktoren variieren basierend auf den Basis-Medizin-Informationen (bei Personen der Gefahrengruppe sind die Thresholds generell niedriger anzusetzen) die bspw. über die Covid-App der Charité Berlin ermittelt werden.
 
-Wie die Public Research Gruppe unseres Teams aufgezeigt hat, ist es notwendig, einen ausgleichenden Mehrwert für die herausgabe der Daten zu bieten.
+Wie die Public Research Gruppe unseres Teams aufgezeigt hat, ist es notwendig, einen ausgleichenden Mehrwert für die Herausgabe der Daten zu bieten.
 Aufbereitete Informationen, die zum derzeitigen Wahrscheinlichkeitsfaktor des Nutzers passen, werden durch diesen eher Content getriebenen Dienst zusammengestellt, aufbereitet und bereitgestellt. 
 Hier wird der eigentliche Mehrwert für den Nutzer generiert. 
 
 
 ### Analysing Services
 
-Vorab, inhaltliche Beschreibungen der zu Grunde liegenden Modelle, Berechnungen und wissenschaftlichen Quellen, sind dem Scientific Research Team und deren wissenschaftliche Ausarbeitung zu entnehmen.
+Vorab, inhaltliche Beschreibungen der zu Grunde liegenden Modelle, Berechnungen und wissenschaftlichen Quellen, sind dem Kapitel Data Analysis Algorithm zu entnehmen.
 
 #### Propability-Symptome-Analysis
 
@@ -405,19 +405,29 @@ Aus dem Grund war nicht das Ziel das gesamte Vision Architecture System zu reali
 Folgende Punkte wurden in dem Prototyp realisiert:
 
 [x] User-UI-Dienst
+
 [x] Short-Term-Data-Persistance
+
 [x] Propability-Symptome-Analysis
+
 [x] Finding-Response-Service
+
 [x] Knowledge-Service
 
 folgende Punkte wurden nicht realisiert:
 
 [] Medical-UI-Dienst
+
 [] Long-Term-Data-Persistance
+
 [] Propability-Gradient-Analysis
+
 [] Geo-Tracking-Analysis
+
 [] User-Telefon-Dienst
+
 [] User-Bot-Dienst
+
 [] alle anderen Anwendungsfälle die in der Vision dargestellt wurden
 
 ## Technische Details
@@ -428,16 +438,19 @@ Laufzeitsystem ist ein Windows Server 2012 mit .NET Core 2.1
 Demnach wurde mit Hilfe von Visual Studio 2019, Visual Studio Code und der Sprache C# programmiert.
 
 Das Backend-System ist auch nicht in der vorgestellten Micro-Service-Architektur realisiert worden.
-Hintergrund dieser Entscheidung für den Hackathon ist der hohe Aufwand zur Konfiguratioon der Netzwerk-Infrastruktur für ein solches verteiltes System.
-Alle Dienste Komponenten sind als Background-Worker in einer monolithischen Anwendung realisiert. 
-Die Datenfluss-Mechanismen, wie bspw. das Pull-Prinzip der Analyse-Dienste, wurde mit Event-Aggregator-Ansatz entsprechend realisiert. 
+Hintergrund dieser Entscheidung für den Hackathon ist der hohe Aufwand zur Konfiguration der Netzwerk-Infrastruktur für ein solches verteiltes System.
+Alle Dienste-Komponenten sind als Background-Worker in einer monolithischen Anwendung realisiert. 
+Die Datenfluss-Mechanismen, wie bspw. das Pull-Prinzip der Analyse-Dienste, wurde mit einem Event-Aggregator-Ansatz entsprechend realisiert. 
 
 ## Architektur-Schema
 
 <p align="center">
 <img src="images/Architecture_PrototypeArchitecture.PNG" height="400">
 </p>
-Bild: Vision Architecture (eigene Grafik)
+<p align="center">
+<em>Vision Architecture</em>
+</p>
+
 
 
 ## Vorgehensweise
@@ -449,11 +462,11 @@ Die Aufteilung im Entwickler-Team wurde nach agilen Methoden in einem Kanbanboar
 <p align="center">
 <img src="images/Architecture_KanbanBoard.PNG" height="400">
 </p>
-Bild: Auszug aus dem Kanban-Board am Ende des Hackathons (eigene Grafik)
+<p align="center">
+<em>Auszug aus dem Kanban-Board am Ende des Hackathons</em>
+</p>
 
 In grün sind die realisierten Teilsysteme dargestellt, in lila die entsprechenden Bearbeiter.
-
-
 
 # Click-Dummy
 
