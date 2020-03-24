@@ -183,7 +183,7 @@ Allerdings gibt es auch Beschränkungen der verwendeten Daten. Neuste [Studien](
 ## Fazit:
 Wie man an diesem kurzen Überblick an bestehenden Anwendungen sehen kann, gibt es bereits eine Vielzahl innovativer Lösungen. In ihrem jeweiligen Bereich bieten sie einen großen Mehrwert für die Funktion für welche sie erstellt wurden. 
 Da es bei einer Pandemie allerdings auf eine überregionale, nationale, sogar internationale Betrachtung ankommt, müssen große Datenmengen erzeugt werden. Dafür muss man einen großen Pool an Individuen von der Nutzung der jeweiligen App überzeugen. 
-Deshalb ist es sinnvoll die verschiedenen Funktionen in einer Anwendung zu vereinen. Dadurch kann man medizinische mit geographischen Daten in Verbindung setzen, die Daten für die Forschung, die Behörden und die Bürger verwenden. 
+Deshalb ist es sinnvoll die verschiedenen Funktionen in einer Anwendung zu vereinen und den Nutzern einzelne Funktionen nur nach Eingabe ihrer Daten zur Verfügung zu stellen (Zum Beispiel müssen erst die Symptome und der Standort eingegeben werden, bevor eine Karte mit Infizierten angezeigt wird). Dadurch kann man medizinische mit geographischen Daten in Verbindung setzen, die Daten für die Forschung, die Behörden und die Bürger verwenden. 
 
 # Definition der Funktionen
  
